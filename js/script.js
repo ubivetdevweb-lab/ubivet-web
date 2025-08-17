@@ -1,12 +1,19 @@
 // UbiVet Website JavaScript
 // Mobile Navigation & General functionality
 
-// Mobile Navigation Toggle - Actualizado para componentes
+// Mobile Navigation Toggle - Actualizado para componentes y Safari
 document.addEventListener('DOMContentLoaded', function() {
-    // Esperar a que los componentes se carguen
-    setTimeout(initializeMobileMenu, 1000);
+    // Esperar a que los componentes se carguen - más tiempo para Safari
+    setTimeout(initializeMobileMenu, 1500);
     initializeSmoothScrolling();
     initializeContactForm();
+});
+
+// Para Safari en iOS - evento adicional
+document.addEventListener('readystatechange', function() {
+    if (document.readyState === 'complete') {
+        setTimeout(initializeMobileMenu, 500);
+    }
 });
 
 // También reinicializar cuando se cargan componentes
@@ -25,18 +32,28 @@ function initializeMobileMenu() {
 
     function openMenu() {
         if (sidebar) {
-            // Remover la clase que oculta el sidebar
-            sidebar.classList.remove('-translate-x-full');
-            sidebar.classList.add('translate-x-0');
+            // Forzar display para Safari
+            sidebar.style.display = 'block';
+            
+            // Usar setTimeout para Safari
+            setTimeout(() => {
+                sidebar.classList.remove('-translate-x-full');
+                sidebar.classList.add('translate-x-0');
+                sidebar.style.transform = 'translateX(0)';
+            }, 10);
             
             // Mostrar overlay si existe
             if (overlay) {
+                overlay.style.display = 'block';
                 overlay.classList.remove('hidden');
                 overlay.classList.add('opacity-100');
             }
             
-            // Prevenir scroll en body
+            // Prevenir scroll en body - Safari compatible
             document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+            
             isMenuOpen = true;
             
             console.log('Menu opened'); // Debug
@@ -48,26 +65,50 @@ function initializeMobileMenu() {
             // Ocultar el sidebar
             sidebar.classList.remove('translate-x-0');
             sidebar.classList.add('-translate-x-full');
+            sidebar.style.transform = 'translateX(-100%)';
+            
+            // Ocultar después de animación
+            setTimeout(() => {
+                sidebar.style.display = 'none';
+            }, 300);
             
             // Ocultar overlay si existe
             if (overlay) {
                 overlay.classList.add('hidden');
                 overlay.classList.remove('opacity-100');
+                overlay.style.display = 'none';
             }
             
-            // Restaurar scroll en body
+            // Restaurar scroll en body - Safari compatible
             document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+            
             isMenuOpen = false;
             
             console.log('Menu closed'); // Debug
         }
     }
 
-    // Event listeners
+    // Event listeners - Compatible con Safari
     if (menuToggle) {
+        // Click y Touch para mejor compatibilidad
         menuToggle.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             console.log('Menu toggle clicked, isOpen:', isMenuOpen); // Debug
+            if (!isMenuOpen) {
+                openMenu();
+            } else {
+                closeMenu();
+            }
+        });
+        
+        // Touch events para iOS Safari
+        menuToggle.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Menu toggle touched, isOpen:', isMenuOpen); // Debug
             if (!isMenuOpen) {
                 openMenu();
             } else {
@@ -79,7 +120,15 @@ function initializeMobileMenu() {
     if (menuClose) {
         menuClose.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             console.log('Menu close clicked'); // Debug
+            closeMenu();
+        });
+        
+        menuClose.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Menu close touched'); // Debug
             closeMenu();
         });
     }
@@ -87,6 +136,7 @@ function initializeMobileMenu() {
     // Cerrar menú al hacer click en overlay
     if (overlay) {
         overlay.addEventListener('click', closeMenu);
+        overlay.addEventListener('touchend', closeMenu);
     }
 
     // Cerrar menú al hacer click en links de navegación
