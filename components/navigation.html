@@ -1,0 +1,68 @@
+<!-- Navigation Component -->
+<header>
+    <nav class="fixed top-0 w-full bg-white shadow-lg z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-3 sm:px-4 flex justify-between items-center h-14 sm:h-16">
+            <div class="flex items-center gap-2">
+                <img src="plantilla/Asset 1@4x.png" alt="UbiVet Logo" class="h-8 sm:h-10 md:h-12 w-auto">
+            </div>
+            <!-- Botón menú móvil -->
+            <button id="menu-toggle" type="button" class="md:hidden p-2 text-gray-800 hover:bg-gray-100 rounded-lg transition-colors" aria-controls="sidebar-menu" aria-expanded="false">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Menú horizontal escritorio - Minimalista -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#inicio" class="text-gray-800 text-sm font-medium hover:text-vet-teal transition-colors">
+                    Inicio
+                </a>
+                <a href="#tutores" class="text-gray-800 text-sm font-medium hover:text-vet-teal transition-colors">
+                    Tutores
+                </a>
+                <a href="#veterinarios" class="text-gray-800 text-sm font-medium hover:text-vet-teal transition-colors">
+                    Veterinarios
+                </a>
+                <a href="#clinicas" class="text-gray-800 text-sm font-medium hover:text-vet-teal transition-colors">
+                    Clínicas
+                </a>
+                <a href="#contacto" class="text-gray-800 text-sm font-medium hover:text-vet-teal transition-colors">
+                    Contacto
+                </a>
+            </div>
+        </div>
+        <!-- Sidebar menú móvil -->
+        <aside id="sidebar-menu" class="fixed top-0 left-0 z-40 w-72 sm:w-80 h-screen transition-transform -translate-x-full bg-gradient-to-br from-vet-teal to-vet-teal-dark shadow-lg md:hidden" aria-label="Sidebar">
+            <div class="h-full px-4 sm:px-6 py-4 sm:py-6">
+                <div class="flex items-center justify-between mb-6 sm:mb-8">
+                    <div class="flex items-center gap-2">
+                        <img src="plantilla/Asset 1@4x.png" alt="UbiVet Logo" class="h-8 sm:h-10 w-auto">
+                    </div>
+                    <button id="menu-close" type="button" class="text-white hover:text-white/70">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="space-y-2">
+                    <a href="#inicio" class="block px-4 py-3 text-white text-base font-medium hover:bg-white/20 rounded-lg transition-all duration-200 border border-transparent hover:border-white/30">
+                        🏠 Inicio
+                    </a>
+                    <a href="#tutores" class="block px-4 py-3 text-white text-base font-medium hover:bg-white/20 rounded-lg transition-all duration-200 border border-transparent hover:border-white/30">
+                        🐕 Tutores
+                    </a>
+                    <a href="#veterinarios" class="block px-4 py-3 text-white text-base font-medium hover:bg-white/20 rounded-lg transition-all duration-200 border border-transparent hover:border-white/30">
+                        👩‍⚕️ Veterinarios
+                    </a>
+                    <a href="#clinicas" class="block px-4 py-3 text-white text-base font-medium hover:bg-white/20 rounded-lg transition-all duration-200 border border-transparent hover:border-white/30">
+                        🏥 Clínicas
+                    </a>
+                    <a href="#contacto" class="block px-4 py-3 text-white text-base font-medium hover:bg-white/20 rounded-lg transition-all duration-200 border border-transparent hover:border-white/30">
+                        📞 Contacto
+                    </a>
+                </nav>
+            </div>
+        </aside>
+        <!-- Overlay para sidebar -->
+        <div id="sidebar-overlay" class="hidden fixed inset-0 bg-black/40 z-30 md:hidden transition-opacity duration-300"></div>
+    </nav>
+</header>

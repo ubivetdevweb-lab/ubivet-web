@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <!-- SEO Meta Tags -->
+    <title>🐾 UbiVet - Plataforma Veterinaria Digital | Atención Veterinaria en Línea</title>
+    <meta name="description" content="🏥 UbiVet - Plataforma digital veterinaria que conecta dueños de mascotas con profesionales veterinarios. Consultas en línea, gestión de citas, atención veterinaria profesional y confiable.">
+    <meta name="keywords" content="UbiVet, plataforma veterinaria, veterinario online, consultas veterinarias, citas veterinarias, telemedicina veterinaria, aplicación veterinaria, mascotas, perros, gatos, atención veterinaria digital, veterinaria virtual">
+    <meta name="author" content="UbiVet - Plataforma Veterinaria Digital">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="CL-TA">
+    <meta name="geo.placename" content="Demo City, Chile">
+    <meta name="geo.position" content="-20.2208;-70.1431">
+    <meta name="ICBM" content="-20.2208, -70.1431">
+    <link rel="canonical" href="https://ubivet-demo.vercel.app/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:url" content="https://ubivet-demo.vercel.app/">
+    <meta property="og:title" content="🐾 UbiVet - Plataforma Veterinaria Digital">
+    <meta property="og:description" content="🏥 UbiVet - Plataforma digital que conecta dueños de mascotas con veterinarios profesionales. Consultas en línea y atención veterinaria confiable.">
+    <meta property="og:image" content="https://ubivet-demo.vercel.app/images/logo.png">
+    <meta property="og:locale" content="es_CL">
+    <meta property="business:contact_data:street_address" content="Avenida Salvador Allende #3638">
+    <meta property="business:contact_data:locality" content="Demo City">
+    <meta property="business:contact_data:region" content="Demo Region">
+    <meta property="business:contact_data:postal_code" content="1100000">
+    <meta property="business:contact_data:country_name" content="Chile">
+    <meta property="place:location:latitude" content="-20.2208">
+    <meta property="place:location:longitude" content="-70.1431">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ubivet-demo.vercel.app/">
+    <meta property="twitter:title" content="🐾 UbiVet - Plataforma Veterinaria Digital">
+    <meta property="twitter:description" content="🏥 UbiVet - Plataforma digital veterinaria. Conecta dueños de mascotas con profesionales veterinarios.">
+    <meta property="twitter:image" content="https://ubivet-demo.vercel.app/images/logo.png">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"></noscript>
+    <link rel="preload" href="images/logo.png" as="image">
+    <link rel="preload" href="images/perfil2.jpg" as="image">
+    <link rel="preload" href="images/perfilyessenia.png" as="image">
+    <link rel="preload" href="images/drajavieracisternas.png" as="image">
+    <link rel="preload" href="css/styles.css" as="style">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/dragonfly-icon.png">
+    <link rel="apple-touch-icon" href="images/dragonfly-icon.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vet-teal': '#4ECDC4',
+                        'vet-teal-light': '#7EDDD7',
+                        'vet-teal-dark': '#2BB8B1',
+                        'vet-teal-darker': '#1A9B93',
+                        'vet-gray': '#f8f9fa',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Animaciones elegantes para los celulares */
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0px) rotate(-12deg) scale(0.9); }
+            50% { transform: translateY(-8px) rotate(-12deg) scale(0.9); }
+        }
+        
+        @keyframes float-gentle-right {
+            0% { transform: translateY(0px) rotate(12deg) scale(0.9); }
+            50% { transform: translateY(-10px) rotate(12deg) scale(0.9); }
+            100% { transform: translateY(0px) rotate(12deg) scale(0.9); }
+        }
+        
+        @keyframes breathe-main {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        .phone-float-left {
+            transform: translateY(0px) rotate(-12deg) scale(0.9);
+            animation: float-gentle 3s ease-in-out infinite;
+            animation-fill-mode: both;
+        }
+        
+        .phone-float-right {
+            transform: translateY(0px) rotate(12deg) scale(0.9);
+            animation: float-gentle-right 3.5s ease-in-out infinite;
+            animation-delay: 1s;
+            animation-fill-mode: both;
+        }
+        
+        .phone-main {
+            animation: breathe-main 4s ease-in-out infinite;
+        }
+        
+        /* Phone Mockup Mejorado - Ultra Realista */
+        .phone-mockup {
+            width: 320px;
+            height: 640px;
+            position: relative;
+            margin: 0 auto;
+            filter: drop-shadow(0 35px 80px rgba(0,0,0,0.4));
+        }
+        
+        .phone-frame {
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(145deg, #3a3a3a 0%, #2a2a2a 25%, #1a1a1a 50%, #0f0f0f 75%, #000 100%);
+            border-radius: 45px;
+            padding: 8px;
+            position: relative;
+            box-shadow: 
+                /* Bordes metálicos */
+                inset 0 0 0 1px rgba(255,255,255,0.1),
+                inset 0 0 0 2px rgba(0,0,0,0.8),
+                inset 0 0 0 3px rgba(255,255,255,0.05),
+                /* Sombras de profundidad */
+                0 0 0 1px #1a1a1a,
+                0 2px 10px rgba(0,0,0,0.3),
+                0 10px 40px rgba(0,0,0,0.4),
+                0 30px 60px rgba(0,0,0,0.3),
+                /* Reflejo de luz */
+                inset -2px -2px 5px rgba(255,255,255,0.1),
+                inset 2px 2px 5px rgba(0,0,0,0.4);
+            animation: phoneFloat 6s ease-in-out infinite;
+        }
+        
+        @keyframes phoneFloat {
+            0%, 100% { transform: translateY(0px) rotateX(0deg); }
+            50% { transform: translateY(-10px) rotateX(2deg); }
+        }
+        
+        /* Dynamic Island (como iPhone 14 Pro) */
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 35px;
+            background: 
+                linear-gradient(145deg, #000 0%, #1a1a1a 50%, #000 100%);
+            border-radius: 25px;
+            z-index: 15;
+            box-shadow: 
+                inset 0 2px 8px rgba(0,0,0,0.8),
+                inset 0 -1px 3px rgba(255,255,255,0.1),
+                0 0 20px rgba(0,0,0,0.5);
+        }
+        
+        /* Cámara principal en Dynamic Island */
+        .phone-frame::after {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: calc(50% - 25px);
+            width: 12px;
+            height: 12px;
+            background: 
+                radial-gradient(circle, #000 30%, #333 60%, #000 100%);
+            border-radius: 50%;
+            z-index: 16;
+            box-shadow: 
+                inset 0 0 3px rgba(0,0,0,0.8),
+                0 0 5px rgba(0,0,0,0.5);
+        }
+        
+        /* Sensor secundario */
+        .phone-sensor {
+            position: absolute;
+            top: 37px;
+            left: calc(50% + 15px);
+            width: 8px;
+            height: 8px;
+            background: 
+                radial-gradient(circle, #1a1a1a 20%, #000 70%);
+            border-radius: 50%;
+            z-index: 16;
+            box-shadow: inset 0 0 2px rgba(0,0,0,0.9);
+        }
+        
+        /* Botones laterales mejorados */
+        .volume-up {
+            position: absolute;
+            left: -3px;
+            top: 140px;
+            width: 6px;
+            height: 30px;
+            background: linear-gradient(90deg, #2a2a2a, #1a1a1a, #2a2a2a);
+            border-radius: 0 3px 3px 0;
+            box-shadow: 
+                inset 1px 0 2px rgba(255,255,255,0.1),
+                inset -1px 0 2px rgba(0,0,0,0.3);
+        }
+        
+        .volume-down {
+            position: absolute;
+            left: -3px;
+            top: 180px;
+            width: 6px;
+            height: 30px;
+            background: linear-gradient(90deg, #2a2a2a, #1a1a1a, #2a2a2a);
+            border-radius: 0 3px 3px 0;
+            box-shadow: 
+                inset 1px 0 2px rgba(255,255,255,0.1),
+                inset -1px 0 2px rgba(0,0,0,0.3);
+        }
+        
+        .power-button {
+            position: absolute;
+            right: -3px;
+            top: 160px;
+            width: 6px;
+            height: 45px;
+            background: linear-gradient(90deg, #2a2a2a, #1a1a1a, #2a2a2a);
+            border-radius: 3px 0 0 3px;
+            box-shadow: 
+                inset -1px 0 2px rgba(255,255,255,0.1),
+                inset 1px 0 2px rgba(0,0,0,0.3);
+        }
+        
+        /* Speaker mejorado */
+        .speaker-grill {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: 
+                linear-gradient(90deg, transparent 0%, #333 20%, #555 50%, #333 80%, transparent 100%);
+            border-radius: 2px;
+            z-index: 15;
+            box-shadow: 
+                inset 0 1px 1px rgba(0,0,0,0.8),
+                0 1px 0 rgba(255,255,255,0.1);
+        }
+        
+        .phone-screen {
+            width: 100%;
+            height: calc(100% - 16px);
+            background: 
+                radial-gradient(circle at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                linear-gradient(180deg, #000 0%, #111  100%);
+            border-radius: 35px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 
+                inset 0 0 30px rgba(0,0,0,0.8),
+                inset 0 1px 0 rgba(255,255,255,0.2),
+                0 0 50px rgba(0,0,0,0.5);
+        }
+        
+        /* Efecto de pantalla encendida */
+        .phone-screen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 40%),
+                radial-gradient(circle at 70% 80%, rgba(78, 205, 196,0.05) 0%, transparent 40%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        /* Status bar simulado */
+        .phone-screen::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            right: 20px;
+            height: 20px;
+            background: 
+                linear-gradient(90deg, 
+                    transparent 0%, 
+                    rgba(255,255,255,0.1) 20%, 
+                    transparent 40%,
+                    transparent 60%,
+                    rgba(255,255,255,0.1) 80%,
+                    transparent 100%
+                );
+            border-radius: 10px;
+            z-index: 5;
+        }
+        
+        .phone-content-area {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: 35px;
+            overflow: hidden;
+            z-index: 2;
+        }
+        
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transform: translateX(100%) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+        
+        .content.show {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        
+        .content.hide {
+            opacity: 0;
+            transform: translateX(-100%) scale(0.95);
+        }
+        
+        .screen-content {
+            width: 100%;
+            height: 100%;
+            border-radius: 35px;
+            position: relative;
+            overflow: hidden;
+            /* Efecto de pantalla OLED */
+            box-shadow: 
+                inset 0 0 100px rgba(0,0,0,0.3),
+                inset 0 0 50px rgba(255,255,255,0.05);
+        }
+        
+        /* Mejora de las pantallas con efecto glassmorphism */
+        .screen-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        /* Asegurar que el texto esté por encima */
+        .screen-content > div {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Navigation Buttons */
+        .phone-nav-button {
+            border: none;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .phone-nav-button:hover {
+            box-shadow: 0 10px 30px rgba(78, 205, 196, 0.2);
+        }
+        
+        .phone-nav-button.active {
+            background: rgba(78, 205, 196, 0.1);
+            border-color: #4ECDC4 !important;
+            box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+        }
+        
+        .phone-nav-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .phone-nav-button:hover::before {
+            left: 100%;
+        }
+        
+        /* Responsive adjustments mejorados */
+        @media (max-width: 1024px) {
+            .phone-mockup {
+                width: 280px;
+                height: 560px;
+            }
+            
+            .phone-frame {
+                padding: 6px;
+                border-radius: 35px;
+            }
+            
+            /* Dynamic Island más pequeño */
+            .phone-frame::before {
+                width: 100px;
+                height: 30px;
+                top: 20px;
+                border-radius: 20px;
+            }
+            
+            /* Cámara ajustada */
+            .phone-frame::after {
+                width: 10px;
+                height: 10px;
+                top: 30px;
+                left: calc(50% - 20px);
+            }
+            
+            .phone-sensor {
+                top: 32px;
+                left: calc(50% + 12px);
+                width: 6px;
+                height: 6px;
+            }
+            
+            /* Botones más pequeños */
+            .volume-up, .volume-down {
+                width: 4px;
+                height: 25px;
+                left: -2px;
+            }
+            
+            .volume-down {
+                top: 160px;
+            }
+            
+            .power-button {
+                width: 4px;
+                height: 35px;
+                right: -2px;
+                top: 140px;
+            }
+            
+            .speaker-grill {
+                width: 50px;
+                height: 3px;
+                bottom: 20px;
+            }
+            
+            .phone-screen {
+                border-radius: 30px;
+            }
+            
+            .phone-content-area, .screen-content {
+                border-radius: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Layout móvil optimizado */
+            .grid.lg\\:grid-cols-3 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            /* Reorganizar orden en móvil */
+            .order-1 {
+                order: 1;
+            }
+            
+            .order-2 {
+                order: 2;
+            }
+            
+            .order-3 {
+                order: 3;
+            }
+            
+            /* Botones en grid 2x2 para móvil */
+            .space-y-6 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                space-y: 0;
+            }
+            
+            .phone-mockup {
+                width: 240px;
+                height: 480px;
+                margin: 0 auto;
+            }
+            
+            .phone-frame {
+                padding: 5px;
+                border-radius: 30px;
+                /* Sombras simplificadas para mejor rendimiento */
+                box-shadow: 
+                    inset 0 0 0 1px rgba(255,255,255,0.1),
+                    0 10px 40px rgba(0,0,0,0.3),
+                    inset -1px -1px 3px rgba(255,255,255,0.1);
+            }
+            
+            /* Dynamic Island móvil */
+            .phone-frame::before {
+                width: 80px;
+                height: 25px;
+                top: 15px;
+                border-radius: 15px;
+            }
+            
+            .phone-frame::after {
+                width: 8px;
+                height: 8px;
+                top: 23px;
+                left: calc(50% - 15px);
+            }
+            
+            .phone-sensor {
+                top: 25px;
+                left: calc(50% + 8px);
+                width: 5px;
+                height: 5px;
+            }
+            
+            /* Botones móvil simplificados */
+            .volume-up {
+                top: 100px;
+                height: 20px;
+                width: 3px;
+            }
+            
+            .volume-down {
+                top: 130px;
+                height: 20px;
+                width: 3px;
+            }
+            
+            .power-button {
+                top: 115px;
+                height: 30px;
+                width: 3px;
+            }
+            
+            .speaker-grill {
+                width: 40px;
+                height: 2px;
+                bottom: 15px;
+            }
+            
+            .phone-screen {
+                border-radius: 25px;
+                margin-top: 5px;
+            }
+            
+            .phone-content-area, .screen-content {
+                border-radius: 25px;
+            }
+            
+            /* Botones navegación móvil */
+            .phone-nav-button {
+                padding: 1rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .phone-nav-button h3 {
+                font-size: 1rem;
+            }
+            
+            .phone-nav-button p {
+                font-size: 0.75rem;
+            }
+            
+            .phone-nav-button .w-12 {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+            
+            /* Desactivar animación flotante en móvil */
+            .phone-frame {
+                animation: none;
+            }
+            
+            /* Contenido pantalla móvil */
+            .screen-content .p-6 {
+                padding: 1rem;
+            }
+            
+            .screen-content h2 {
+                font-size: 1.125rem;
+            }
+            
+            .screen-content .text-sm {
+                font-size: 0.75rem;
+            }
+            
+            .screen-content .w-16 {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Extra pequeño - teléfonos muy pequeños */
+            .phone-mockup {
+                width: 280px;
+                height: 200px;
+                /* Cambiar a vista horizontal más simple */
+            }
+            
+            .phone-frame {
+                padding: 8px;
+                border-radius: 20px;
+                background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+                /* Simplificar frame para mejor rendimiento */
+                box-shadow: 
+                    0 5px 20px rgba(0,0,0,0.3),
+                    inset 0 1px 2px rgba(255,255,255,0.1);
+            }
+            
+            /* Simplificar Dynamic Island */
+            .phone-frame::before {
+                width: 40px;
+                height: 15px;
+                top: 8px;
+                border-radius: 8px;
+                background: #000;
+            }
+            
+            .phone-frame::after {
+                width: 4px;
+                height: 4px;
+                top: 13px;
+                left: calc(50% - 8px);
+            }
+            
+            .phone-sensor {
+                top: 14px;
+                left: calc(50% + 4px);
+                width: 3px;
+                height: 3px;
+            }
+            
+            .phone-screen {
+                border-radius: 15px;
+                height: calc(100% - 10px);
+                margin-top: 3px;
+            }
+            
+            .phone-content-area, .screen-content {
+                border-radius: 15px;
+            }
+            
+            /* Ocultar todos los botones físicos */
+            .volume-up, .volume-down, .power-button, .speaker-grill {
+                display: none;
+            }
+            
+            /* Botones navegación más compactos */
+            .space-y-6 {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            
+            .phone-nav-button {
+                padding: 0.75rem;
+                border-radius: 12px;
+            }
+            
+            .phone-nav-button h3 {
+                font-size: 0.875rem;
+                margin-bottom: 0.25rem;
+            }
+            
+            .phone-nav-button p {
+                font-size: 0.625rem;
+                line-height: 1.2;
+            }
+            
+            .phone-nav-button .w-12 {
+                width: 2rem;
+                height: 2rem;
+                margin-right: 0.5rem;
+            }
+            
+            /* Contenido de pantalla más compacto */
+            .screen-content .p-6 {
+                padding: 0.75rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .screen-content h2 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .screen-content .text-sm {
+                font-size: 0.625rem;
+            }
+            
+            .screen-content .w-16 {
+                width: 2rem;
+                height: 2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .screen-content .space-y-3 {
+                gap: 0.5rem;
+            }
+            
+            .screen-content .bg-white\\/10 {
+                padding: 0.5rem;
+                border-radius: 6px;
+            }
+        }
+    </style>
+    
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Non-critical CSS -->
+    <!-- Font Awesome - Carga directa con fallback -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Fallback para Font Awesome -->
+    <script>
+        // Verificar si Font Awesome se cargó correctamente
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const testIcon = document.createElement('i');
+                testIcon.className = 'fas fa-check';
+                testIcon.style.position = 'absolute';
+                testIcon.style.left = '-9999px';
+                document.body.appendChild(testIcon);
+                
+                const computed = window.getComputedStyle(testIcon, ':before');
+                if (!computed.content || computed.content === 'none') {
+                    console.warn('Font Awesome no se cargó, usando fallback...');
+                    // Cargar desde CDN alternativo
+                    const fallbackLink = document.createElement('link');
+                    fallbackLink.rel = 'stylesheet';
+                    fallbackLink.href = 'https://use.fontawesome.com/releases/v6.5.1/css/all.css';
+                    document.head.appendChild(fallbackLink);
+                }
+                document.body.removeChild(testIcon);
+                
+                // Verificar iconos específicos y agregar fallbacks con emojis
+                setTimeout(function() {
+                    // TikTok icons fallback
+                    document.querySelectorAll('.fa-tiktok').forEach(function(icon) {
+                        if (!window.getComputedStyle(icon, ':before').content || window.getComputedStyle(icon, ':before').content === 'none') {
+                            icon.style.fontFamily = 'initial';
+                            icon.textContent = '📱';
+                            icon.style.fontSize = icon.style.fontSize || '1em';
+                        }
+                    });
+                    
+                    // WhatsApp icons fallback
+                    document.querySelectorAll('.fa-whatsapp').forEach(function(icon) {
+                        if (!window.getComputedStyle(icon, ':before').content || window.getComputedStyle(icon, ':before').content === 'none') {
+                            icon.style.fontFamily = 'initial';
+                            icon.textContent = '💬';
+                            icon.style.fontSize = icon.style.fontSize || '1em';
+                        }
+                    });
+                    
+                    // Instagram icons fallback
+                    document.querySelectorAll('.fa-instagram').forEach(function(icon) {
+                        if (!window.getComputedStyle(icon, ':before').content || window.getComputedStyle(icon, ':before').content === 'none') {
+                            icon.style.fontFamily = 'initial';
+                            icon.textContent = '📷';
+                            icon.style.fontSize = icon.style.fontSize || '1em';
+                        }
+                    });
+                }, 1000);
+            }, 500);
+        });
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "UbiVet",
+      "alternateName": "Plataforma Veterinaria Digital",
+      "description": "Plataforma digital que conecta dueños de mascotas con profesionales veterinarios. Facilita consultas en línea, gestión de citas y acceso a atención veterinaria profesional.",
+      "url": "https://ubivet.com/",
+      "logo": "https://ubivet.com/images/logo.png",
+      "image": "https://ubivet.com/images/logo.png",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "250"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Neering SPA",
+        "url": "https://neering.cl"
+      },
+      "featureList": [
+        "Registro de usuarios (dueños y veterinarios)",
+        "Sistema de citas en línea",
+        "Consultas veterinarias virtuales",
+        "Gestión de historial médico de mascotas",
+        "Notificaciones y recordatorios",
+        "Búsqueda de veterinarios cercanos"
+      ],
+      "screenshot": "https://ubivet.com/images/app-screenshot.png",
+      "downloadUrl": "https://ubivet.com/",
+      "installUrl": "https://ubivet.com/registro",
+      "keywords": "UbiVet, plataforma veterinaria, veterinario online, consultas veterinarias, citas veterinarias, telemedicina veterinaria, aplicación veterinaria, mascotas"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="fixed top-0 w-full bg-white shadow-lg z-50 transition-all duration-300">
+            <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <img src="plantilla/Asset 1@4x.png" alt="UbiVet Logo" class="h-12 w-auto">
+                </div>
+                <!-- Botón menú móvil -->
+                <button id="menu-toggle" type="button" class="md:hidden p-2 text-gray-800 hover:bg-gray-100 rounded-lg transition-colors" aria-controls="sidebar-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <!-- Menú horizontal escritorio - Minimalista -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-800 text-sm font-medium hover:text-vet-teal transition-colors">
+                        Inicio
+                    </a>
+                    <a href="#tutores" class="text-gray-800 text-sm font-medium hover:text-vet-teal transition-colors">
+                        Tutores
+                    </a>
+                    <a href="#veterinarios" class="text-gray-800 text-sm font-medium hover:text-vet-teal transition-colors">
+                        Veterinarios
+                    </a>
+                    <a href="#clinicas" class="text-gray-800 text-sm font-medium hover:text-vet-teal transition-colors">
+                        Clínicas
+                    </a>
+                    <a href="#contacto" class="text-gray-800 text-sm font-medium hover:text-vet-teal transition-colors">
+                        Contacto
+                    </a>
+                </div>
+            </div>
+            <!-- Sidebar menú móvil -->
+            <aside id="sidebar-menu" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full bg-red-500 shadow-lg md:hidden" aria-label="Sidebar">
+                <div class="h-full px-6 py-6">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="flex items-center gap-2">
+                            <img src="plantilla/Asset 1@4x.png" alt="UbiVet Logo" class="h-10 w-auto">
+                        </div>
+                        <button id="menu-close" type="button" class="text-white hover:text-white/70">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <nav class="space-y-1">
+                        <a href="#inicio" class="block px-3 py-2 text-white text-sm font-medium hover:bg-white/10 rounded transition-colors">
+                            Inicio
+                        </a>
+                        <a href="#tutores" class="block px-3 py-2 text-white text-sm font-medium hover:bg-white/10 rounded transition-colors">
+                            Tutores
+                        </a>
+                        <a href="#veterinarios" class="block px-3 py-2 text-white text-sm font-medium hover:bg-white/10 rounded transition-colors">
+                            Veterinarios
+                        </a>
+                        <a href="#clinicas" class="block px-3 py-2 text-white text-sm font-medium hover:bg-white/10 rounded transition-colors">
+                            Clínicas
+                        </a>
+                        <a href="#contacto" class="block px-3 py-2 text-white text-sm font-medium hover:bg-white/10 rounded transition-colors">
+                            Contacto
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+            <!-- Overlay para sidebar -->
+            <div id="sidebar-overlay" class="hidden fixed inset-0 bg-black/40 z-30 md:hidden transition-opacity duration-300"></div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="relative bg-gradient-to-br from-vet-teal to-vet-teal-dark min-h-screen flex items-center overflow-hidden">
+            <!-- 3 blobs muy separados verticalmente -->
+            <div class="absolute -top-60 -right-32 w-[30rem] h-[30rem] bg-white/60 z-0" style="border-radius: 70% 30% 60% 40% / 50% 70% 30% 50%;"></div>
+            <div class="absolute top-1/2 -right-40 w-[28rem] h-[28rem] bg-white/50 z-0" style="border-radius: 40% 60% 30% 70% / 70% 30% 60% 40%;"></div>
+            <!-- Blob más arriba y menos claro superpuesto -->
+            <div class="absolute top-10 -right-36 w-[32rem] h-[32rem] bg-white/25 z-1" style="border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;"></div>
+            <div class="relative z-20 max-w-7xl mx-auto px-6 py-20">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Contenido de texto -->
+                    <div class="text-center lg:text-left text-white">
+                        <div class="mb-8">
+                            <img src="plantilla/Asset 3@4x.png" alt="UbiVet Logo" class="w-64 h-auto mx-auto lg:mx-0">
+                        </div>
+                        
+                        <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                            La revolución veterinaria digital
+                        </h1>
+                        
+                        <p class="text-xl mb-8 opacity-90 leading-relaxed">
+                            Conectamos a los mejores veterinarios con dueños de mascotas a través de nuestra plataforma inteligente
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center lg:justify-start">
+                            <!-- Botón Google Play SVG -->
+                            <a href="#" class="transition-transform hover:scale-105 w-auto">
+                                <img src="plantilla/Asset6.svg" alt="Disponible en Google Play" class="h-12 sm:h-14 w-auto">
+                            </a>
+                            
+                            <!-- Botón App Store - Próximamente -->
+                            <div class="transition-transform hover:scale-105 relative z-30 w-auto">
+                                <div class="bg-black text-white rounded-lg px-3 sm:px-4 py-2 h-12 sm:h-14 flex items-center gap-2 sm:gap-3 border border-gray-600 relative z-30 whitespace-nowrap">
+                                    <div class="flex flex-col items-center">
+                                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-300">Próximamente en</span>
+                                        <span class="text-xs sm:text-sm font-semibold">App Store</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Mockups -->
+                    <div class="flex justify-center">
+                        <div class="relative">
+                            <!-- Mockup principal con animación de respiración -->
+                            <img src="plantilla/1.png" alt="UbiVet App" class="w-80 h-auto relative z-10 phone-main">
+                            
+                            <!-- Mockup izquierdo superpuesto con flotación -->
+                            <div class="absolute top-8 -left-16 z-0 phone-float-left">
+                                <img src="plantilla/2.png" alt="UbiVet App Left" class="w-72 h-auto">
+                            </div>
+                            
+                            <!-- Mockup derecho superpuesto con flotación inversa -->
+                            <div class="absolute top-8 -right-16 z-0 phone-float-right">
+                                <img src="plantilla/3.png" alt="UbiVet App Right" class="w-72 h-auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección TUTORES DE MASCOTAS -->
+        <section id="tutores" class="relative py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+            <!-- Blobs siguiendo lógica del hero - variante izquierda, sin interferir con texto -->
+            <div class="absolute top-1/2 -right-80 w-[30rem] h-[30rem] bg-vet-teal/40 z-0" style="border-radius: 70% 30% 60% 40% / 50% 70% 30% 50%;"></div>
+            <div class="absolute bottom-20 -left-50 w-[28rem] h-[28rem] bg-vet-teal-light/30 z-0" style="border-radius: 40% 60% 30% 70% / 70% 30% 60% 40%;"></div>
+            <!-- Blob superpuesto más sutil -->
+            <div class="absolute top-1/4 -left-44 w-[32rem] h-[32rem] bg-white/15 z-0" style="border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;"></div>
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                        Si eres Tutor de Mascotas...
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                        La herramienta definitiva para el cuidado de tu mascota. Con UbiVet puedes:
+                    </p>
+                </div>
+                
+                <!-- App Showcase con Frame de Celular -->
+                <div class="mb-20">
+                    <div class="max-w-7xl mx-auto px-6">
+                        <div class="grid lg:grid-cols-3 gap-12 items-center">
+                            
+                            <!-- Botones Izquierda - TUTORES -->
+                            <div class="space-y-6 order-2 lg:order-1">
+                                <button id="click" data-destination="tutorItem1" class="phone-nav-button active w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v8z"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11h8m-8 4h4"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-bold text-gray-800">Pantalla Principal</h3>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Vista general de la app UbiVet con acceso a todas las funciones.</p>
+                                </button>
+                                
+                                <button data-destination="tutorItem2" class="phone-nav-button w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-bold text-gray-800">Perfil Personalizado</h3>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Mantén actualizado el historial médico de tu mascota.</p>
+                                </button>
+                                
+                                <button data-destination="tutorItem3" class="phone-nav-button w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-bold text-gray-800">Agenda Citas</h3>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Encuentra veterinarios a domicilio y programa citas con facilidad.</p>
+                                </button>
+                            </div>
+                            
+                            <!-- Frame de Celular Central -->
+                            <div class="order-1 lg:order-2 flex justify-center">
+                                <div class="phone-mockup relative">
+                                    <!-- Frame del teléfono -->
+                                    <div class="phone-frame">
+                                        <!-- Elementos físicos del teléfono -->
+                                        <div class="phone-sensor"></div>
+                                        <div class="volume-up"></div>
+                                        <div class="volume-down"></div>
+                                        <div class="power-button"></div>
+                                        <div class="speaker-grill"></div>
+                                        
+                                        <div class="phone-screen">
+                                            <!-- Pantallas del carrusel -->
+                                            <div class="phone-content-area">
+                                                <div class="content show" id="tutorItem1">
+                                                    <div class="screen-content relative overflow-hidden">
+                                                        <!-- Imagen del home de UbiVet como pantalla inicial por defecto -->
+                                                        <div class="absolute inset-0 w-full h-full">
+                                                            <img src="images/app-home-interface.png" 
+                                                                 alt="Pantalla principal de UbiVet" 
+                                                                 class="w-full h-full object-cover object-center" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="content" id="tutorItem2">
+                                                    <div class="screen-content relative overflow-hidden">
+                                                        <!-- Imagen del perfil de mascota -->
+                                                        <div class="absolute inset-0 w-full h-full">
+                                                            <img src="images/pet-profile-interface.png" 
+                                                                 alt="Interfaz real del perfil de mascota bob" 
+                                                                 class="w-full h-full object-cover object-center" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="content" id="tutorItem3">
+                                                    <div class="screen-content bg-gradient-to-br from-blue-500 to-blue-600 text-white">
+                                                        <div class="p-6 h-full flex flex-col justify-center">
+                                                            <div class="text-center mb-6">
+                                                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                                                    </svg>
+                                                                </div>
+                                                                <h2 class="text-xl font-bold mb-2">Agenda Citas</h2>
+                                                                <p class="text-sm opacity-90">Con veterinarios a domicilio</p>
+                                                            </div>
+                                                            <div class="space-y-3">
+                                                                <div class="bg-white/10 rounded-lg p-3">
+                                                                    <p class="text-sm">🏠 Veterinarios a domicilio</p>
+                                                                </div>
+                                                                <div class="bg-white/10 rounded-lg p-3">
+                                                                    <p class="text-sm">📅 Programa citas con facilidad</p>
+                                                                </div>
+                                                                <div class="bg-white/10 rounded-lg p-3">
+                                                                    <p class="text-sm">⏰ Horarios flexibles</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="content" id="tutorItem4">
+                                                    <div class="screen-content bg-gradient-to-br from-green-500 to-green-600 text-white">
+                                                        <div class="p-6 h-full flex flex-col justify-center">
+                                                            <div class="text-center mb-6">
+                                                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                                                    </svg>
+                                                                </div>
+                                                                <h2 class="text-xl font-bold mb-2">Encuentra Clínicas</h2>
+                                                                <p class="text-sm opacity-90">Veterinarias cercanas</p>
+                                                            </div>
+                                                            <div class="space-y-3">
+                                                                <div class="bg-white/10 rounded-lg p-3">
+                                                                    <p class="text-sm">🗺️ Consulta horarios y servicios</p>
+                                                                </div>
+                                                                <div class="bg-white/10 rounded-lg p-3">
+                                                                    <p class="text-sm">📍 Ubicaciones disponibles</p>
+                                                                </div>
+                                                                <div class="bg-white/10 rounded-lg p-3">
+                                                                    <p class="text-sm">⭐ Reseñas y calificaciones</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="content" id="tutorItem5">
+                                                    <div class="screen-content bg-gradient-to-br from-purple-500 to-purple-600 text-white">
+                                                        <div class="p-6 h-full flex flex-col justify-center">
+                                                            <div class="text-center mb-6">
+                                                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                                                                    </svg>
+                                                                </div>
+                                                                <h2 class="text-xl font-bold mb-2">Membresía Premium</h2>
+                                                                <p class="text-sm opacity-90">Descuentos y beneficios</p>
+                                                            </div>
+                                                            <div class="space-y-3">
+                                                                <div class="bg-white/10 rounded-lg p-3">
+                                                                    <p class="text-sm">💎 Descuentos exclusivos</p>
+                                                                </div>
+                                                                <div class="bg-white/10 rounded-lg p-3">
+                                                                    <p class="text-sm">🎁 Beneficios especiales</p>
+                                                                </div>
+                                                                <div class="bg-white/10 rounded-lg p-3">
+                                                                    <p class="text-sm">🤝 Ayuda a fundaciones locales</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="content" id="tutorItem6">
+                                                    <div class="screen-content relative overflow-hidden">
+                                                        <!-- Imagen de la funcionalidad SOS -->
+                                                        <div class="absolute inset-0 w-full h-full">
+                                                            <img src="images/sos-emergency-interface.png" 
+                                                                 alt="Interfaz SOS para emergencias veterinarias" 
+                                                                 class="w-full h-full object-cover object-center" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Botones Derecha - TUTORES -->
+                            <div class="space-y-6 order-3">
+                                <button data-destination="tutorItem4" class="phone-nav-button w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-bold text-gray-800">Encuentra Clínicas</h3>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Localiza clínicas veterinarias cercanas con horarios y servicios.</p>
+                                </button>
+                                
+                                <button data-destination="tutorItem5" class="phone-nav-button w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-bold text-gray-800">Membresía Premium</h3>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Accede a descuentos exclusivos y ayuda a fundaciones locales.</p>
+                                </button>
+
+                                <button data-destination="tutorItem6" class="phone-nav-button w-full text-left p-6 bg-red-50 rounded-2xl border-2 border-transparent hover:border-red-500 transition-all duration-300 hover:scale-105">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.99-.833-2.498 0L4.268 18.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-lg font-bold text-red-600">SOS Emergencias</h3>
+                                    </div>
+                                    <p class="text-sm text-red-600">Encuentra clínicas abiertas para emergencias 24/7.</p>
+                                </button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección VETERINARIOS con carrusel interactivo -->
+        <section id="veterinarios" class="relative py-20 bg-gradient-to-br from-vet-teal to-vet-teal-dark overflow-hidden" style="background: linear-gradient(to bottom right, #4ECDC4, #2BB8B1);">
+            <!-- Blobs siguiendo lógica del hero - variante derecha, sin interferir con texto -->
+            <div class="absolute -top-80 -right-40 w-[30rem] h-[30rem] bg-vet-teal-dark/40 z-0" style="border-radius: 70% 30% 60% 40% / 50% 70% 30% 50%;"></div>
+            <div class="absolute bottom-20 -right-50 w-[28rem] h-[28rem] bg-white/20 z-0" style="border-radius: 40% 60% 30% 70% / 70% 30% 60% 40%;"></div>
+            <!-- Blob superpuesto más sutil -->
+            <div class="absolute top-1/4 -right-44 w-[32rem] h-[32rem] bg-white/10 z-0" style="border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 relative">
+                <!-- Título principal -->
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+                        Si eres veterinario...
+                    </h2>
+                    <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+                        Únete a la revolución digital en el cuidado animal con herramientas profesionales
+                    </p>
+                </div>
+
+                <!-- Sistema de carrusel interactivo para veterinarios -->
+                <div class="relative">
+                    <div class="grid lg:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
+                        
+                        <!-- Botones Izquierda - VETERINARIOS -->
+                        <div class="space-y-6 order-2 lg:order-1">
+                            <button data-destination="vetItem1" class="phone-nav-button active w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-white hover:border-white transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800">Agenda Digital</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Gestiona citas, horarios y disponibilidad desde cualquier lugar.</p>
+                            </button>
+                            
+                            <button data-destination="vetItem2" class="phone-nav-button w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800">Historiales Médicos</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Acceso completo a expedientes, vacunas y tratamientos previos.</p>
+                            </button>
+                        </div>
+
+                        <!-- Frame de Celular Central - VETERINARIOS -->
+                        <div class="order-1 lg:order-2 flex justify-center">
+                            <div class="phone-mockup relative">
+                                <!-- Frame del teléfono -->
+                                <div class="phone-frame">
+                                    <!-- Elementos físicos del teléfono -->
+                                    <div class="phone-sensor"></div>
+                                    <div class="volume-up"></div>
+                                    <div class="volume-down"></div>
+                                    <div class="power-button"></div>
+                                    <div class="speaker-grill"></div>
+                                    
+                                    <div class="phone-screen">
+                                        <!-- Pantallas del carrusel -->
+                                        <div class="phone-content-area">
+                                            <div class="content show" id="vetItem1">
+                                                <div class="screen-content bg-gradient-to-br from-vet-teal to-vet-teal-dark text-white">
+                                                    <div class="p-6 h-full flex flex-col justify-center">
+                                                        <div class="text-center mb-6">
+                                                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <h2 class="text-xl font-bold mb-2">Agenda Digital</h2>
+                                                            <p class="text-sm opacity-90">Gestiona citas profesionales</p>
+                                                        </div>
+                                                        <div class="space-y-3">
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">📅 Horarios y disponibilidad</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">⏰ Sincronización automática</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">📱 Desde cualquier lugar</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="content" id="vetItem2">
+                                                <div class="screen-content bg-gradient-to-br from-blue-500 to-blue-600 text-white">
+                                                    <div class="p-6 h-full flex flex-col justify-center">
+                                                        <div class="text-center mb-6">
+                                                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <h2 class="text-xl font-bold mb-2">Historiales Médicos</h2>
+                                                            <p class="text-sm opacity-90">Acceso completo e instantáneo</p>
+                                                        </div>
+                                                        <div class="space-y-3">
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">📋 Expedientes completos</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">💉 Vacunas y tratamientos</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">📊 Información al instante</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="content" id="vetItem3">
+                                                <div class="screen-content bg-gradient-to-br from-purple-500 to-purple-600 text-white">
+                                                    <div class="p-6 h-full flex flex-col justify-center">
+                                                        <div class="text-center mb-6">
+                                                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <h2 class="text-xl font-bold mb-2">Gestión de Pacientes</h2>
+                                                            <p class="text-sm opacity-90">Organización inteligente</p>
+                                                        </div>
+                                                        <div class="space-y-3">
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">🗂️ Seguimiento completo</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">🔔 Recordatorios automáticos</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">📈 Estadísticas de pacientes</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="content" id="vetItem4">
+                                                <div class="screen-content bg-gradient-to-br from-green-500 to-green-600 text-white">
+                                                    <div class="p-6 h-full flex flex-col justify-center">
+                                                        <div class="text-center mb-6">
+                                                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <h2 class="text-xl font-bold mb-2">Reportes y Análisis</h2>
+                                                            <p class="text-sm opacity-90">Optimiza tu práctica</p>
+                                                        </div>
+                                                        <div class="space-y-3">
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">📊 Analíticas profesionales</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">💰 Control de ingresos</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">📈 Métricas de rendimiento</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones Derecha - VETERINARIOS -->
+                        <div class="space-y-6 order-3">
+                            <button data-destination="vetItem3" class="phone-nav-button w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800">Gestión de Pacientes</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Organiza y da seguimiento inteligente a todos tus pacientes.</p>
+                            </button>
+                            
+                            <button data-destination="vetItem4" class="phone-nav-button w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800">Reportes y Análisis</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Analíticas profesionales para optimizar tu práctica veterinaria.</p>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección DUEÑOS DE CLÍNICAS con carrusel interactivo -->
+        <section id="clinicas" class="relative py-20 bg-white overflow-hidden">
+            <!-- Formas orgánicas removidas temporalmente -->
+            
+            <div class="max-w-7xl mx-auto px-6 relative">
+                <!-- Título principal -->
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                        Si eres dueño de clínica...
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                        Transforma tu clínica con tecnología de vanguardia
+                    </p>
+                </div>
+
+                <!-- Sistema de carrusel interactivo para dueños de clínicas -->
+                <div class="relative">
+                    <div class="grid lg:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
+                        
+                        <!-- Botones Izquierda - DUEÑOS DE CLÍNICAS -->
+                        <div class="space-y-6 order-2 lg:order-1">
+                            <button data-destination="clinicItem1" class="phone-nav-button active w-full text-left p-6 bg-gradient-to-r from-vet-teal/5 to-vet-teal/10 rounded-2xl border-2 border-vet-teal hover:border-vet-teal-dark transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800">Aumenta tu Visibilidad</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Atrae más clientes con nuestra funcionalidad de mapas y búsqueda inteligente.</p>
+                            </button>
+                            
+                            <button data-destination="clinicItem2" class="phone-nav-button w-full text-left p-6 bg-gradient-to-r from-vet-teal/5 to-vet-teal/10 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800">Perfil Profesional</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Crea un perfil completo con servicios, horarios y información detallada.</p>
+                            </button>
+                        </div>
+
+                        <!-- Frame de Celular Central - DUEÑOS DE CLÍNICAS -->
+                        <div class="order-1 lg:order-2 flex justify-center">
+                            <div class="phone-mockup relative">
+                                <!-- Frame del teléfono -->
+                                <div class="phone-frame">
+                                    <!-- Elementos físicos del teléfono -->
+                                    <div class="phone-sensor"></div>
+                                    <div class="volume-up"></div>
+                                    <div class="volume-down"></div>
+                                    <div class="power-button"></div>
+                                    <div class="speaker-grill"></div>
+                                    
+                                    <div class="phone-screen">
+                                        <!-- Pantallas del carrusel -->
+                                        <div class="phone-content-area">
+                                            <div class="content show" id="clinicItem1">
+                                                <div class="screen-content bg-gradient-to-br from-vet-teal to-vet-teal-dark text-white">
+                                                    <div class="p-6 h-full flex flex-col justify-center">
+                                                        <div class="text-center mb-6">
+                                                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <h2 class="text-xl font-bold mb-2">Aumenta tu Visibilidad</h2>
+                                                            <p class="text-sm opacity-90">Atrae más clientes fácilmente</p>
+                                                        </div>
+                                                        <div class="space-y-3">
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">🗺️ Funcionalidad de mapas</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">🔍 Búsqueda inteligente</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">📈 Mayor alcance local</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="content" id="clinicItem2">
+                                                <div class="screen-content bg-gradient-to-br from-blue-500 to-blue-600 text-white">
+                                                    <div class="p-6 h-full flex flex-col justify-center">
+                                                        <div class="text-center mb-6">
+                                                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <h2 class="text-xl font-bold mb-2">Perfil Profesional</h2>
+                                                            <p class="text-sm opacity-90">Información completa y detallada</p>
+                                                        </div>
+                                                        <div class="space-y-3">
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">🏥 Servicios que ofreces</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">⏰ Horarios de atención</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">📞 Información de contacto</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="content" id="clinicItem3">
+                                                <div class="screen-content bg-gradient-to-br from-purple-500 to-purple-600 text-white">
+                                                    <div class="p-6 h-full flex flex-col justify-center">
+                                                        <div class="text-center mb-6">
+                                                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <h2 class="text-xl font-bold mb-2">Marketing Digital</h2>
+                                                            <p class="text-sm opacity-90">Promociones y beneficios</p>
+                                                        </div>
+                                                        <div class="space-y-3">
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">🎯 Plan de marketing</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">📢 Promociones destacadas</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">👥 Miles de suscriptores</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="content" id="clinicItem4">
+                                                <div class="screen-content bg-gradient-to-br from-orange-500 to-orange-600 text-white">
+                                                    <div class="p-6 h-full flex flex-col justify-center">
+                                                        <div class="text-center mb-6">
+                                                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <h2 class="text-xl font-bold mb-2">Panel de Control</h2>
+                                                            <p class="text-sm opacity-90">Gestiona tu clínica integralmente</p>
+                                                        </div>
+                                                        <div class="space-y-3">
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">📊 Monitorea estadísticas</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">👥 Nuevos clientes</p>
+                                                            </div>
+                                                            <div class="bg-white/10 rounded-lg p-3">
+                                                                <p class="text-sm">📈 Citas generadas</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones Derecha - DUEÑOS DE CLÍNICAS -->
+                        <div class="space-y-6 order-3">
+                            <button data-destination="clinicItem3" class="phone-nav-button w-full text-left p-6 bg-gradient-to-r from-vet-teal/5 to-vet-teal/10 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800">Marketing Digital</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Publica promociones y beneficios para miles de suscriptores.</p>
+                            </button>
+                            
+                            <button data-destination="clinicItem4" class="phone-nav-button w-full text-left p-6 bg-gradient-to-r from-vet-teal/5 to-vet-teal/10 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800">Panel de Control</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Monitorea estadísticas y gestiona tu clínica integralmente.</p>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección separadora con ilustración central -->
+        <div class="relative py-16 bg-gradient-to-r from-vet-teal/5 to-vet-teal/10 overflow-hidden">
+            <!-- Formas orgánicas removidas temporalmente -->
+            
+            <div class="text-center relative">
+                <img src="images/app-users.png" alt="Personas usando UbiVet felizmente" class="w-96 mx-auto">
+            </div>
+        </div>
+
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="relative py-20 bg-vet-teal overflow-hidden" style="background-color: #4ECDC4;">
+            <!-- Formas decorativas + ilustraciones -->
+            <div class="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-float"></div>
+            <!-- Ilustración de mascotas jugando -->
+            <div class="absolute top-5 left-5 hidden lg:block">
+                <img src="images/pets-playing.png" alt="Mascotas jugando" class="w-32 opacity-40">
+            </div>
+            
+            <!-- Ilustración de corazón con mascota -->
+            <div class="absolute bottom-5 right-5 hidden lg:block">
+                <img src="images/pet-love.png" alt="Amor por mascotas" class="w-24 opacity-40">
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-6 relative">
+                <!-- Título principal -->
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+                        Contacto
+                    </h2>
+                    <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+                        ¿Quieres saber más de UbiVet?
+                    </p>
+                    <p class="text-base md:text-lg text-white/80 max-w-2xl mx-auto mt-4">
+                        No dudes en contactarnos y responderemos todas tus consultas a la brevedad.
+                    </p>
+                </div>
+                
+                <!-- Grid de contacto y descarga -->
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                    <!-- Formulario de contacto -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-white font-medium mb-2" for="email">Tu correo electrónico</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    placeholder="tu@email.com" 
+                                    class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/60 focus:ring-2 focus:ring-white focus:border-white"
+                                    required
+                                >
+                            </div>
+                            
+                            <div>
+                                <label class="block text-white font-medium mb-2" for="nombre">Tu nombre</label>
+                                <input 
+                                    type="text" 
+                                    id="nombre" 
+                                    name="nombre" 
+                                    placeholder="Ingresa tu nombre" 
+                                    class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/60 focus:ring-2 focus:ring-white focus:border-white"
+                                    required
+                                >
+                            </div>
+                            
+                            <div>
+                                <label class="block text-white font-medium mb-2" for="comentario">Comentario</label>
+                                <textarea 
+                                    id="comentario" 
+                                    name="comentario" 
+                                    placeholder="Escribe tu mensaje aquí..." 
+                                    rows="4" 
+                                    class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/60 focus:ring-2 focus:ring-white focus:border-white resize-none"
+                                    required
+                                ></textarea>
+                            </div>
+                            
+                            <button 
+                                type="submit" 
+                                class="w-full bg-white text-vet-teal font-semibold py-4 px-6 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+                            >
+                                Enviar
+                            </button>
+                        </form>
+                        
+                        <!-- Información de contacto -->
+                        <div class="mt-8 pt-8 border-t border-white/20">
+                            <div class="text-center">
+                                <p class="text-white/90 mb-2">jsolis@ubivet.cl</p>
+                                <p class="text-white/90">+569 8810 8227</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sección de descarga -->
+                    <div class="text-center">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-8">Disponible en</h3>
+                        
+                        <div class="flex flex-col gap-4 items-center max-w-sm mx-auto">
+                            <!-- Botón Google Play SVG -->
+                            <a href="#" class="transition-transform hover:scale-105">
+                                <img src="plantilla/Asset6.svg" alt="Disponible en Google Play" class="h-14 w-auto">
+                            </a>
+                            
+                            <!-- Botón App Store - Próximamente -->
+                            <div class="transition-transform hover:scale-105">
+                                <div class="bg-black text-white rounded-lg px-4 py-2 h-14 flex items-center gap-3 border border-gray-600 w-auto">
+                                    <div class="flex flex-col items-center">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col whitespace-nowrap">
+                                        <span class="text-xs text-gray-300">Próximamente en</span>
+                                        <span class="text-sm font-semibold">App Store</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/56988108227" target="_blank" aria-label="WhatsApp" class="fixed z-50 bottom-6 right-6 md:bottom-8 md:right-8 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg flex items-center justify-center w-16 h-16 md:w-20 md:h-20 transition-all duration-300 group">
+        <i class="fab fa-whatsapp text-4xl md:text-5xl"></i>
+        <span class="absolute opacity-0 group-hover:opacity-100 bg-green-600 text-white text-xs rounded px-2 py-1 bottom-20 right-0 transition-all duration-300 pointer-events-none">¡Escríbenos!</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-6">
+                    <div class="flex items-center space-x-2">
+                        <img src="https://via.placeholder.com/60x30/4ECDC4/000000?text=CORFO" alt="CORFO" class="h-8">
+                        <span class="text-gray-400 text-sm">Desarrollado por Neering SPA 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js" defer></script>
+    <script src="js/security.js" defer></script>
+    <script src="js/social-feed.js" defer></script>
+    
+    <!-- Phone Mockup Carousel JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.querySelectorAll(".content");
+            const buttons = document.querySelectorAll(".phone-nav-button");
+
+            // Initialize - hide all content except first
+            content.forEach((item, index) => {
+                if (index === 0) {
+                    item.classList.add("show");
+                } else {
+                    item.classList.add("hide");
+                }
+            });
+
+            // Add click listeners to navigation buttons
+            buttons.forEach((button) => {
+                button.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    
+                    const targetDiv = this.dataset.destination;
+                    
+                    // Remove active class from all buttons
+                    buttons.forEach(btn => btn.classList.remove("active"));
+                    
+                    // Add active class to clicked button
+                    this.classList.add("active");
+                    
+                    // Hide all content
+                    hideAll();
+                    
+                    // Show target content
+                    showDiv(targetDiv);
+                });
+            });
+
+            function hideAll() {
+                content.forEach((item) => {
+                    item.classList.add("hide");
+                    item.classList.remove("show");
+                });
+            }
+
+            function showDiv(targetDiv) {
+                const targetElement = document.querySelector("#" + targetDiv);
+                if (targetElement) {
+                    // Small delay for smooth transition
+                    setTimeout(() => {
+                        targetElement.classList.remove("hide");
+                        targetElement.classList.add("show");
+                    }, 100);
+                }
+            }
+
+            // Auto-click first button on load
+            setTimeout(() => {
+                const firstButton = document.getElementById("click");
+                if (firstButton) {
+                    firstButton.click();
+                }
+            }, 500);
+        });
+    </script>
+
+    <!-- Service Worker Registration (Comentado para evitar errores) -->
+    <script>
+        // if ('serviceWorker' in navigator) {
+        //     window.addEventListener('load', () => {
+        //         navigator.serviceWorker.register('/sw.js').catch(() => {
+        //             // Service worker registration failed, but that's okay
+        //         });
+        //     });
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta tags y configuración básica -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Cargar meta tags desde componente -->
+    <script>
+        // Cargar meta tags de forma síncrona
+        fetch('components/head-meta.html')
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const metaTags = doc.querySelectorAll('meta, link, script, title');
+                metaTags.forEach(tag => {
+                    if (tag.tagName === 'TITLE') {
+                        document.title = tag.textContent;
+                    } else {
+                        document.head.appendChild(tag.cloneNode(true));
+                    }
+                });
+            });
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vet-teal': '#4ECDC4',
+                        'vet-teal-light': '#7EDDD7',
+                        'vet-teal-dark': '#2BB8B1',
+                        'vet-teal-darker': '#1A9B93',
+                        'vet-gray': '#f8f9fa',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- CSS optimizado -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Fallback para Font Awesome -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const testIcon = document.createElement('i');
+                testIcon.className = 'fas fa-check';
+                testIcon.style.position = 'absolute';
+                testIcon.style.left = '-9999px';
+                document.body.appendChild(testIcon);
+                
+                const computed = window.getComputedStyle(testIcon, ':before');
+                if (!computed.content || computed.content === 'none') {
+                    console.warn('Font Awesome no se cargó, usando fallback...');
+                    const fallbackLink = document.createElement('link');
+                    fallbackLink.rel = 'stylesheet';
+                    fallbackLink.href = 'https://use.fontawesome.com/releases/v6.5.1/css/all.css';
+                    document.head.appendChild(fallbackLink);
+                }
+                document.body.removeChild(testIcon);
+            }, 500);
+        });
+    </script>
+</head>
+
+<body class="font-poppins">
+    <!-- Navigation placeholder -->
+    <div id="navigation-placeholder"></div>
+
+    <main>
+        <!-- Hero section placeholder -->
+        <div id="hero-placeholder"></div>
+
+        <!-- Tutores section placeholder -->
+        <div id="tutores-placeholder"></div>
+
+        <!-- Veterinarios section placeholder -->
+        <div id="veterinarios-placeholder"></div>
+
+        <!-- Clínicas section placeholder -->
+        <div id="clinicas-placeholder"></div>
+
+        <!-- Contact section placeholder -->
+        <div id="contact-placeholder"></div>
+    </main>
+
+    <!-- Component Loader -->
+    <script src="js/component-loader.js"></script>
+
+    <!-- Carousel Controller -->
+    <script src="js/components/carousel.js"></script>
+
+    <!-- Scripts existentes optimizados -->
+    <script src="js/script.js" defer></script>
+
+    <!-- Loading indicator -->
+    <div id="loading-indicator" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-vet-teal border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="text-vet-teal font-medium">Cargando UbiVet...</p>
+        </div>
+    </div>
+
+    <script>
+        // Ocultar loading indicator cuando todo esté cargado
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-indicator').style.display = 'none';
+            }, 1000);
+        });
+
+        // Monitorear carga de componentes
+        let loadedComponents = 0;
+        const totalComponents = 6;
+
+        document.addEventListener('componentLoaded', () => {
+            loadedComponents++;
+            console.log(`Componente cargado: ${loadedComponents}/${totalComponents}`);
+            
+            if (loadedComponents >= totalComponents) {
+                console.log('Todos los componentes cargados');
+                
+                // Inicializar carruseles después de que todo esté cargado
+                setTimeout(() => {
+                    if (window.carouselController) {
+                        window.carouselController.reinitialize();
+                        
+                        // Auto-click del primer botón de cada sección
+                        setTimeout(() => {
+                            const firstButtons = ['click', 'vet-click', 'clinic-click'];
+                            firstButtons.forEach(buttonId => {
+                                const button = document.getElementById(buttonId);
+                                if (button) {
+                                    console.log(`Auto-clicking botón: ${buttonId}`);
+                                    button.click();
+                                }
+                            });
+                        }, 500);
+                    }
+                }, 1000);
+            }
+        });
+
+        // Función de debug para probar carruseles
+        window.debugCarousels = () => {
+            if (window.carouselController) {
+                console.log('Carruseles disponibles:', window.carouselController.carousels.size);
+                window.carouselController.carousels.forEach((carousel, id) => {
+                    console.log(id, window.carouselController.getCarouselInfo(id));
+                });
+            }
+        };
+    </script>
+</body>
+</html>
