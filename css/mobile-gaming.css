@@ -1,0 +1,245 @@
+/* CSS Gaming Mobile - Forzado */
+
+/* RESET DESKTOP - Layout original */
+@media (min-width: 768px) {
+    /* Restaurar grid desktop */
+    .grid.lg\:grid-cols-3,
+    section .grid.lg\:grid-cols-3,
+    div .grid.lg\:grid-cols-3 {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 3rem !important;
+    }
+    
+    /* Restaurar orders desktop */
+    .order-2.lg\:order-1 {
+        order: 1 !important;
+        grid-column: 1 !important;
+    }
+    
+    .order-1.lg\:order-2 {
+        order: 2 !important;
+        grid-column: 2 !important;
+    }
+    
+    /* Mostrar columna derecha en desktop */
+    .order-3 {
+        order: 3 !important;
+        grid-column: 3 !important;
+        display: block !important;
+    }
+    
+    /* Restaurar botones desktop */
+    .responsive-button-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        max-width: none !important;
+        width: 100% !important;
+    }
+    
+    .phone-nav-button {
+        min-height: auto !important;
+        max-height: none !important;
+        width: 100% !important;
+        padding: 1.5rem !important;
+        text-align: left !important;
+    }
+    
+    .phone-nav-button .w-12.h-12 {
+        width: 3rem !important;
+        height: 3rem !important;
+        margin-right: 1rem !important;
+    }
+    
+    .phone-nav-button h3,
+    .phone-nav-button p {
+        display: block !important;
+    }
+    
+    .phone-nav-button .flex.items-center {
+        flex-direction: row !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    /* Ocultar botones mobile-only en desktop */
+    .mobile-only {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Reducir espaciado general en móvil */
+    .mb-20 {
+        margin-bottom: 3rem !important;
+    }
+    
+    .mb-16 {
+        margin-bottom: 2rem !important;
+    }
+    
+    /* FORZAR Layout principal móvil - BOTONES A LOS LADOS */
+    .grid.lg\:grid-cols-3,
+    section .grid.lg\:grid-cols-3,
+    div .grid.lg\:grid-cols-3 {
+        display: grid !important;
+        grid-template-columns: 1fr 2fr 1fr !important;
+        gap: 0.5rem !important;
+        align-items: start !important;
+    }
+    
+    /* FORZAR Botones izquierda */
+    .order-2.lg\:order-1,
+    section .order-2.lg\:order-1,
+    div .order-2.lg\:order-1 {
+        order: 1 !important;
+        grid-column: 1 !important;
+    }
+    
+    /* FORZAR Celular centro */
+    .order-1.lg\:order-2,
+    section .order-1.lg\:order-2,
+    div .order-1.lg\:order-2 {
+        order: 2 !important;
+        grid-column: 2 !important;
+        justify-self: center !important;
+    }
+    
+    /* MOSTRAR columna derecha en móvil también */
+    .order-3.responsive-button-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.4rem !important;
+        width: 100% !important;
+        max-width: 80px !important;
+        grid-column: 3 !important;
+        order: 3 !important;
+    }
+    
+    /* OCULTAR botones mobile-only (ya no los necesitamos) */
+    .mobile-only {
+        display: none !important;
+    }
+    
+    /* FORZAR Grid de botones gaming - VERTICAL COMPACTO */
+    .responsive-button-grid,
+    section .responsive-button-grid,
+    div .responsive-button-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.4rem !important;
+        width: 100% !important;
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+        max-width: 80px !important;
+    }
+    
+    /* OVERRIDE cualquier space-y */
+    .space-y-6,
+    section .space-y-6,
+    div .space-y-6 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.4rem !important;
+    }
+    
+    .space-y-6 > *,
+    section .space-y-6 > *,
+    div .space-y-6 > * {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Estilo botones gaming - COMPACTOS LATERALES */
+    .phone-nav-button {
+        min-height: 50px !important;
+        max-height: 50px !important;
+        width: 50px !important;
+        padding: 0.5rem !important;
+        text-align: center !important;
+        border-radius: 0.75rem !important;
+        background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%) !important;
+        border: 2px solid rgba(78, 205, 196, 0.3) !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+        transition: all 0.2s ease !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .phone-nav-button:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4) !important;
+        border-color: rgba(78, 205, 196, 0.6) !important;
+    }
+    
+    .phone-nav-button.active {
+        background: linear-gradient(135deg, #4ECDC4 0%, #2BB8B1 100%) !important;
+        border-color: #2BB8B1 !important;
+        transform: scale(0.97) !important;
+        box-shadow: 0 2px 8px rgba(78, 205, 196, 0.6) !important;
+    }
+    
+    .phone-nav-button.active h3 {
+        color: white !important;
+    }
+    
+    /* Layout interno del botón - SOLO ICONO */
+    .phone-nav-button .flex.items-center {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Iconos gaming - COMPACTOS */
+    .phone-nav-button .w-12.h-12 {
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+        margin: 0 !important;
+        border-radius: 0.25rem !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+    
+    .phone-nav-button.active .w-12.h-12 {
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+    
+    /* SVG dentro del icono */
+    .phone-nav-button .w-12.h-12 svg {
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+        color: #4ECDC4 !important;
+    }
+    
+    .phone-nav-button.active .w-12.h-12 svg {
+        color: white !important;
+    }
+    
+    /* Ocultar todo el texto */
+    .phone-nav-button h3,
+    .phone-nav-button p {
+        display: none !important;
+    }
+}
+
+/* Área de descripción gaming */
+@media (max-width: 767px) {
+    .description-area {
+        background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.98) 100%) !important;
+        border-radius: 1.25rem !important;
+        padding: 1.5rem !important;
+        margin-top: 2rem !important;
+        border: 2px solid rgba(78, 205, 196, 0.4) !important;
+        min-height: 90px !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.15) !important;
+        backdrop-filter: blur(12px) !important;
+    }
+    
+    .description-area:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 30px rgba(78, 205, 196, 0.25) !important;
+        border-color: rgba(78, 205, 196, 0.6) !important;
+    }
+}

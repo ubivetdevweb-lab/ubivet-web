@@ -14,6 +14,126 @@
     margin-bottom: 0 !important;
 }
 
+/* LAYOUT MÓVIL: CELULAR ARRIBA, BOTONES ABAJO */
+@media (max-width: 767px) {
+    /* Reorganizar grid principal */
+    .grid.lg\\:grid-cols-3 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    
+    /* Celular primero */
+    .order-1.lg\\:order-2 {
+        order: 1 !important;
+    }
+    
+    /* Botones todos abajo en una sola botonera */
+    .order-2.lg\\:order-1,
+    .order-3 {
+        order: 2 !important;
+    }
+    
+    /* Ocultar botones de la derecha en móvil */
+    .order-3.responsive-button-grid {
+        display: none !important;
+    }
+    
+    /* Unificar todos los botones en la botonera izquierda */
+    .responsive-button-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.5rem !important;
+        margin-bottom: 1rem !important;
+        width: 100% !important;
+    }
+    
+    /* BOTONES ESTILO STEAM DECK/GAMING */
+    .phone-nav-button {
+        min-height: 70px !important;
+        padding: 0.75rem 0.5rem !important;
+        text-align: center !important;
+        border-radius: 1rem !important;
+        background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,250,252,0.9) 100%) !important;
+        border: 2px solid rgba(78, 205, 196, 0.2) !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        transition: all 0.2s ease !important;
+    }
+    
+    .phone-nav-button:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(78, 205, 196, 0.3) !important;
+        border-color: rgba(78, 205, 196, 0.5) !important;
+    }
+    
+    .phone-nav-button.active {
+        background: linear-gradient(135deg, #4ECDC4 0%, #2BB8B1 100%) !important;
+        border-color: #2BB8B1 !important;
+        transform: scale(0.98) !important;
+    }
+    
+    .phone-nav-button.active h3 {
+        color: white !important;
+    }
+    
+    .phone-nav-button .flex.items-center {
+        flex-direction: column !important;
+        margin-bottom: 0.25rem !important;
+        gap: 0.25rem !important;
+    }
+    
+    .phone-nav-button .w-12.h-12 {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        border-radius: 0.75rem !important;
+        background: linear-gradient(135deg, #4ECDC4 0%, #2BB8B1 100%) !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+    }
+    
+    .phone-nav-button.active .w-12.h-12 {
+        background: rgba(255,255,255,0.2) !important;
+    }
+    
+    .phone-nav-button h3 {
+        font-size: 0.75rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 0 !important;
+        font-weight: 600 !important;
+        color: #374151 !important;
+    }
+    
+    .phone-nav-button p {
+        display: none !important;
+    }
+}
+
+/* Área de descripción dinámica estilo gaming */
+.description-area {
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.98) 100%);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    margin-top: 1.5rem;
+    border: 2px solid rgba(78, 205, 196, 0.3);
+    min-height: 80px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+}
+
+.description-area:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.2);
+    border-color: rgba(78, 205, 196, 0.5);
+}
+
+@media (min-width: 768px) {
+    .description-area {
+        display: none !important;
+    }
+}
+
 /* Base mobile styles (320px+) - Móviles muy pequeños */
 .phone-mockup {
     width: 180px;

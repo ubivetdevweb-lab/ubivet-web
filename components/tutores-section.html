@@ -21,7 +21,7 @@
                 <div class="grid lg:grid-cols-3 gap-12 items-center">
                     
                     <!-- Botones Izquierda - TUTORES -->
-                    <div class="space-y-6 order-2 lg:order-1 responsive-button-grid" style="display: flex !important; flex-direction: column !important; gap: 1rem !important; width: 100% !important;">
+                    <div class="space-y-6 order-2 lg:order-1 responsive-button-grid">
                         <button id="click" data-destination="tutorItem1" class="phone-nav-button active w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
@@ -57,6 +57,43 @@
                                 <h3 class="text-lg font-bold text-gray-800">Agenda Citas</h3>
                             </div>
                             <p class="text-sm text-gray-600">Encuentra veterinarios a domicilio y programa citas con facilidad.</p>
+                        </button>
+                        
+                        <!-- Botones 4, 5, 6 - Solo en móvil (ocultos en desktop) -->
+                        <button data-destination="tutorItem4" class="phone-nav-button mobile-only w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800">Encuentra Clínicas</h3>
+                            </div>
+                            <p class="text-sm text-gray-600">Localiza clínicas veterinarias cercanas con horarios y servicios.</p>
+                        </button>
+                        
+                        <button data-destination="tutorItem5" class="phone-nav-button mobile-only w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800">Membresía Premium</h3>
+                            </div>
+                            <p class="text-sm text-gray-600">Accede a descuentos exclusivos y ayuda a fundaciones locales.</p>
+                        </button>
+
+                        <button data-destination="tutorItem6" class="phone-nav-button mobile-only w-full text-left p-6 bg-red-50 rounded-2xl border-2 border-transparent hover:border-red-500 transition-all duration-300 hover:scale-105">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.99-.833-2.498 0L4.268 18.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold text-red-600">SOS Emergencias</h3>
+                            </div>
+                            <p class="text-sm text-red-600">Encuentra clínicas abiertas para emergencias 24/7.</p>
                         </button>
                     </div>
                     
@@ -194,8 +231,8 @@
                         </div>
                     </div>
                     
-                    <!-- Botones Derecha - TUTORES -->
-                    <div class="space-y-6 order-3 responsive-button-grid" style="display: flex !important; flex-direction: column !important; gap: 1rem !important; width: 100% !important;">
+                    <!-- Botones Derecha - TUTORES (Solo Desktop) -->
+                    <div class="space-y-6 order-3 responsive-button-grid">
                         <button data-destination="tutorItem4" class="phone-nav-button w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
@@ -233,6 +270,22 @@
                         </button>
                     </div>
                     
+                </div>
+                
+                <!-- Área de descripción dinámica - Solo móvil -->
+                <div class="description-area md:hidden" id="tutores-description">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-vet-teal rounded-lg flex items-center justify-center flex-shrink-0" id="tutores-desc-icon">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v8z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11h8m-8 4h4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-1" id="tutores-desc-title">Pantalla Principal</h4>
+                            <p class="text-sm text-gray-600" id="tutores-desc-text">Vista general de la app UbiVet con acceso a todas las funciones.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
