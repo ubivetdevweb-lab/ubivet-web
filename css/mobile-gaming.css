@@ -144,13 +144,9 @@
     section .grid.lg\:grid-cols-3,
     div .grid.lg\:grid-cols-3 {
         display: grid !important;
-        grid-template-columns: 70px 1fr 70px !important;
+        grid-template-columns: 1fr 2fr 1fr !important;
         gap: 0.5rem !important;
         align-items: start !important;
-        justify-content: center !important;
-        place-items: center !important;
-        width: 100% !important;
-        margin: 0 auto !important;
     }
     
     /* FORZAR Botones izquierda */
@@ -174,14 +170,11 @@
     .order-3.responsive-button-grid {
         display: flex !important;
         flex-direction: column !important;
-        gap: 0.5rem !important;
+        gap: 0.4rem !important;
         width: 100% !important;
-        min-width: 60px !important;
-        max-width: 70px !important;
+        max-width: 80px !important;
         grid-column: 3 !important;
         order: 3 !important;
-        justify-self: center !important;
-        overflow: visible !important;
     }
     
     
@@ -191,14 +184,11 @@
     div .responsive-button-grid {
         display: flex !important;
         flex-direction: column !important;
-        gap: 0.5rem !important;
+        gap: 0.4rem !important;
         width: 100% !important;
         margin-bottom: 0 !important;
         margin-top: 0 !important;
-        min-width: 60px !important;
-        max-width: 70px !important;
-        justify-self: center !important;
-        overflow: visible !important;
+        max-width: 80px !important;
     }
     
     /* OVERRIDE cualquier space-y */
@@ -207,7 +197,7 @@
     div .space-y-6 {
         display: flex !important;
         flex-direction: column !important;
-        gap: 0.5rem !important;
+        gap: 0.4rem !important;
     }
     
     .space-y-6 > *,
@@ -232,8 +222,6 @@
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        margin: 0 auto !important;
-        overflow: visible !important;
     }
     
     .phone-nav-button:hover {
@@ -289,6 +277,72 @@
     .phone-nav-button h3,
     .phone-nav-button p {
         display: none !important;
+    }
+    
+    /* LAYOUT ESPECÍFICO PARA VETERINARIOS - Gaming Style */
+    section#veterinarios .grid.lg\:grid-cols-3 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 1rem !important;
+    }
+    
+    /* Botones superiores en veterinarios - Gaming cuadraditos */
+    section#veterinarios .order-2.lg\:order-1 {
+        order: 1 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 200px !important;
+    }
+    
+    /* Forzar botones gaming en veterinarios superiores */
+    section#veterinarios .order-2.lg\:order-1 .phone-nav-button {
+        min-height: 50px !important;
+        max-height: 50px !important;
+        width: 50px !important;
+        margin: 0 !important;
+    }
+    
+    /* MacBook centro en veterinarios - Centrado perfecto */
+    section#veterinarios .order-1.lg\:order-2 {
+        order: 2 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Centrar MacBook mockup */
+    section#veterinarios .order-1.lg\:order-2 .laptop-mockup {
+        margin: 0 auto !important;
+        transform: scale(0.9) !important;
+    }
+    
+    /* Botones inferiores en veterinarios - Gaming cuadraditos */
+    section#veterinarios .order-3 {
+        order: 3 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 150px !important;
+    }
+    
+    /* Forzar botones gaming en veterinarios inferiores */
+    section#veterinarios .order-3 .phone-nav-button {
+        min-height: 50px !important;
+        max-height: 50px !important;
+        width: 50px !important;
+        margin: 0 !important;
     }
 }
 

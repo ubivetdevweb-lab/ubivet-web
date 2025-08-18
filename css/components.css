@@ -119,13 +119,13 @@ section#veterinarios .laptop {
     50% { transform: rotateX(5deg) translateY(-8px); }
 }
 
-/* MacBook Air Style Screen - Con bisagra realista */
+/* MacBook Air Style Screen - Natural */
 .laptop__screen {
     position: relative;
     z-index: 3;
-    padding: 1.8%;
-    border-radius: 0.7rem 0.7rem 0.3rem 0.3rem;
-    margin-bottom: 2px;
+    padding: 2%;
+    border-radius: 0.7rem;
+    margin: 0 3% 2px 1%;
     background: 
         linear-gradient(145deg, 
             #f8fafc 0%, 
@@ -148,8 +148,8 @@ section#veterinarios .laptop {
         inset 0 -0.5px 0 rgba(0,0,0,0.05);
     border: 0.5px solid rgba(226, 232, 240, 0.9);
     aspect-ratio: 16/10;
-    min-height: 280px;
-    max-height: 320px;
+    min-height: 260px;
+    max-height: 300px;
 }
 
 /* Bisagra MacBook Air */
@@ -190,12 +190,12 @@ section#veterinarios .laptop {
         0 0 0 2px rgba(0,0,0,0.05);
 }
 
-/* Base MacBook Air - Unión perfecta con pantalla */
+/* Base MacBook Air - Más ancha que pantalla */
 .laptop__bottom {
     position: relative;
     z-index: 2;
     margin: 0 -5% 0 -5%;
-    height: 1.6rem;
+    height: 1.7rem;
     background: 
         linear-gradient(to bottom, 
             #e2e8f0 0%,
@@ -203,7 +203,7 @@ section#veterinarios .laptop {
             #94a3b8 70%,
             #64748b 100%
         );
-    border-radius: 0.2rem 0.2rem 0.8rem 0.8rem;
+    border-radius: 0.2rem 0.2rem 1rem 1rem;
     box-shadow: 
         /* Bordes de aluminio más sutiles */
         0 0 0 0.5px rgba(255,255,255,0.3),
@@ -281,7 +281,7 @@ section#veterinarios .laptop {
     opacity: 0.7;
 }
 
-/* MacBook Air Display - Pantalla Retina */
+/* MacBook Air Display - Pantalla natural */
 .laptop-content-area {
     width: 100%;
     height: 100%;
@@ -291,8 +291,8 @@ section#veterinarios .laptop {
         linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
     border-radius: 0.5rem;
     overflow: hidden;
-    min-height: 240px;
-    max-height: 280px;
+    min-height: 220px;
+    max-height: 260px;
     aspect-ratio: 16/10;
     box-shadow: 
         /* Pantalla Retina MacBook Air */
@@ -302,6 +302,8 @@ section#veterinarios .laptop {
         0 0 20px rgba(0,0,0,0.2);
     border: 0.5px solid rgba(255,255,255,0.08);
     z-index: 2;
+    display: flex;
+    align-items: stretch;
 }
 
 /* Efecto Retina MacBook Air */
@@ -346,12 +348,12 @@ section#veterinarios .laptop {
 .laptop-content-area .screen-content {
     width: 100%;
     height: 100%;
-    padding: 24px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    font-size: 15px;
-    line-height: 1.6;
+    justify-content: space-between;
+    font-size: 13px;
+    line-height: 1.4;
     border-radius: 0.8rem;
     position: relative;
     overflow: hidden;
@@ -359,6 +361,50 @@ section#veterinarios .laptop {
     box-shadow: 
         inset 0 0 80px rgba(0,0,0,0.2),
         inset 0 0 30px rgba(255,255,255,0.02);
+}
+
+.laptop-content-area .screen-content > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.laptop-content-area .screen-content .text-center {
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+}
+
+.laptop-content-area .screen-content .space-y-3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+
+.laptop-content-area .screen-content .space-y-3 > div {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+}
+
+.laptop-content-area .screen-content h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.laptop-content-area .screen-content .w-16.h-16 {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.75rem;
+    flex-shrink: 0;
+}
+
+.laptop-content-area .screen-content p {
+    font-size: 11px;
+    margin: 0;
 }
 
 /* Mejora de las pantallas con efecto glassmorphism para laptop */
@@ -382,26 +428,275 @@ section#veterinarios .laptop {
     z-index: 2;
 }
 
-/* Responsive adjustments for laptop - Similar al phone mockup */
-@media (max-width: 1200px) {
+/* SISTEMA COMPLETO DE RESPONSIVE DESIGN PARA MACBOOK */
+
+/* Ultra Wide Desktop - 1920px+ */
+@media (min-width: 1920px) {
     #veterinarios .laptop-mockup,
     #veterinarios .laptop {
-        max-width: 30rem !important;
+        max-width: 36rem !important;
+    }
+    
+    .laptop__screen {
+        margin: 0 3% 2px 1%;
+    }
+    
+    .laptop__bottom {
+        margin: 0 -7% 0 -7%;
+    }
+    
+    .laptop-content-area .screen-content {
+        padding: 24px;
+        font-size: 14px;
+        line-height: 1.5;
+        justify-content: space-between;
+    }
+    
+    .laptop-content-area .screen-content > div {
+        height: 100%;
+        justify-content: space-between;
+    }
+    
+    .laptop-content-area .screen-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .laptop-content-area .screen-content .w-16.h-16 {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 > div {
+        padding: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .laptop-content-area .screen-content p {
+        font-size: 12px;
     }
 }
 
-@media (max-width: 1024px) {
+/* Desktop Extra Large - 1600px to 1919px */
+@media (max-width: 1919px) and (min-width: 1601px) {
+    #veterinarios .laptop-mockup,
+    #veterinarios .laptop {
+        max-width: 35rem !important;
+    }
+    
+    .laptop__screen {
+        margin: 0 3% 2px 1%;
+    }
+    
+    .laptop__bottom {
+        margin: 0 -6.5% 0 -6.5%;
+    }
+    
+    .laptop-content-area .screen-content {
+        padding: 26px;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    
+    .laptop-content-area .screen-content h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Desktop Large Plus - 1440px to 1600px */
+@media (max-width: 1600px) and (min-width: 1441px) {
+    #veterinarios .laptop-mockup,
+    #veterinarios .laptop {
+        max-width: 34rem !important;
+    }
+    
+    .laptop__screen {
+        margin: 0 3% 2px 1%;
+    }
+    
+    .laptop__bottom {
+        margin: 0 -6% 0 -6%;
+    }
+}
+
+/* Desktop Large - 1200px to 1440px */
+@media (max-width: 1440px) and (min-width: 1201px) {
+    #veterinarios .laptop-mockup,
+    #veterinarios .laptop {
+        max-width: 32rem !important;
+    }
+    
+    .laptop__screen {
+        margin: 0 3% 2px 1%;
+    }
+    
+    .laptop__bottom {
+        margin: 0 -5% 0 -5%;
+    }
+    
+    .laptop-content-area .screen-content {
+        padding: 20px;
+        font-size: 13px;
+        line-height: 1.4;
+        justify-content: space-between;
+    }
+    
+    .laptop-content-area .screen-content > div {
+        height: 100%;
+        justify-content: space-between;
+    }
+    
+    .laptop-content-area .screen-content h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .laptop-content-area .screen-content .w-16.h-16 {
+        width: 3rem;
+        height: 3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 > div {
+        padding: 0.6rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .laptop-content-area .screen-content p {
+        font-size: 11px;
+    }
+}
+
+/* Desktop Medium - 1024px to 1200px */
+@media (max-width: 1200px) and (min-width: 1025px) {
     #veterinarios .laptop-mockup,
     #veterinarios .laptop {
         max-width: 28rem !important;
     }
     
     .laptop__screen {
+        margin: 0 2% 2px 2%;
         min-height: 240px;
+    }
+    
+    .laptop__bottom {
+        margin: 0 -4% 0 -4%;
+    }
+    
+    .laptop-content-area .screen-content {
+        padding: 18px;
+        font-size: 12px;
+        line-height: 1.4;
+        justify-content: space-between;
+    }
+    
+    .laptop-content-area .screen-content > div {
+        height: 100%;
+        justify-content: space-between;
+    }
+    
+    .laptop-content-area .screen-content h2 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .laptop-content-area .screen-content .w-16.h-16 {
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 > div {
+        padding: 0.5rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .laptop-content-area .screen-content p {
+        font-size: 10px;
+    }
+}
+
+/* Tablet Landscape - 900px to 1024px */
+@media (max-width: 1024px) and (min-width: 901px) {
+    #veterinarios .laptop-mockup,
+    #veterinarios .laptop {
+        max-width: 26rem !important;
+        transform: scale(0.95) rotateX(4deg);
+    }
+    
+    .laptop__screen {
+        min-height: 220px;
+        margin: 0 3% 2px 2%;
+    }
+    
+    .laptop__bottom {
+        margin: 0 -3% 0 -3%;
     }
     
     .laptop-content-area {
         min-height: 200px;
+    }
+}
+
+/* Tablet Portrait - 768px to 900px */
+@media (max-width: 900px) and (min-width: 769px) {
+    #veterinarios .laptop-mockup,
+    #veterinarios .laptop {
+        max-width: 24rem !important;
+        transform: scale(0.9) rotateX(3deg);
+    }
+    
+    .laptop__screen {
+        margin: 0 4% 2px 3%;
+        min-height: 200px;
+    }
+    
+    .laptop__bottom {
+        margin: 0 -2% 0 -2%;
+    }
+    
+    .laptop-content-area {
+        min-height: 180px;
+    }
+    
+    .laptop-content-area .screen-content {
+        padding: 18px;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    
+    .laptop-content-area .screen-content h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .laptop-content-area .screen-content .w-16.h-16 {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 > div {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Small Tablet - 600px to 768px */
+@media (max-width: 768px) and (min-width: 601px) {
+    #veterinarios .laptop-mockup,
+    #veterinarios .laptop {
+        max-width: 22rem !important;
+        transform: scale(0.85) rotateX(3deg);
+    }
+    
+    .laptop__screen {
+        margin: 0 5% 2px 4%;
+        min-height: 180px;
+    }
+    
+    .laptop__bottom {
+        margin: 0 -1% 0 -1%;
     }
 }
 
@@ -420,6 +715,8 @@ section#veterinarios .laptop {
         padding: 2%;
         border-radius: 1rem;
         min-height: 240px;
+        margin: 0 -17% 2px -13%;
+        width: 130%;
         box-shadow: 
             /* Marco exterior metálico móvil */
             0 0 0 1px rgba(255,255,255,0.7),
@@ -457,7 +754,7 @@ section#veterinarios .laptop {
     
     .laptop__bottom {
         height: 1.4rem;
-        margin: 0 -4% 0 -4%;
+        margin: 0 -20% 0 -20%;
         border-radius: 0.2rem 0.2rem 0.6rem 0.6rem;
     }
     
@@ -502,25 +799,164 @@ section#veterinarios .laptop {
     }
 }
 
-/* Móviles muy pequeños (hasta 374px) */
-@media (max-width: 374px) {
-    .laptop-mockup,
-    .laptop {
-        max-width: 350px;
-        transform: scale(0.8);
+/* Large Mobile - 480px to 600px */
+@media (max-width: 600px) and (min-width: 481px) {
+    #veterinarios .laptop-mockup,
+    #veterinarios .laptop {
+        max-width: 380px;
+        transform: scale(0.9) rotateX(3deg);
     }
     
     .laptop__screen {
-        min-height: 230px;
-    }
-    
-    .laptop-content-area {
+        margin: 0 -15% 2px -13%;
+        width: 128%;
         min-height: 200px;
     }
     
+    .laptop__bottom {
+        margin: 0 -18% 0 -18%;
+    }
+}
+
+/* Standard Mobile - 375px to 480px */
+@media (max-width: 480px) and (min-width: 376px) {
+    #veterinarios .laptop-mockup,
+    #veterinarios .laptop {
+        max-width: 360px;
+        transform: scale(0.85) rotateX(3deg);
+    }
+    
+    .laptop__screen {
+        margin: 0 -16% 2px -14%;
+        width: 130%;
+        min-height: 190px;
+    }
+    
+    .laptop__bottom {
+        margin: 0 -19% 0 -19%;
+    }
+    
     .laptop-content-area .screen-content {
-        padding: 10px;
-        font-size: 10px;
+        padding: 8px;
+        font-size: 9px;
+        line-height: 1.2;
+        justify-content: flex-start;
+    }
+    
+    .laptop-content-area .screen-content > div {
+        height: auto;
+        gap: 0.3rem;
+    }
+    
+    .laptop-content-area .screen-content .text-center {
+        margin-bottom: 0.5rem;
+    }
+    
+    .laptop-content-area .screen-content h2 {
+        font-size: 0.7rem;
+        margin-bottom: 0.25rem;
+        line-height: 1.1;
+    }
+    
+    .laptop-content-area .screen-content .w-16.h-16 {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 {
+        gap: 0.25rem;
+        flex: none;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 > div {
+        padding: 0.25rem;
+        border-radius: 0.3rem;
+    }
+    
+    .laptop-content-area .screen-content p {
+        font-size: 7px;
+        line-height: 1.1;
+        margin: 0;
+    }
+    
+    .laptop-content-area .screen-content .opacity-90 {
+        font-size: 6px;
+    }
+}
+
+/* Small Mobile - 320px to 375px */
+@media (max-width: 375px) and (min-width: 321px) {
+    #veterinarios .laptop-mockup,
+    #veterinarios .laptop {
+        max-width: 340px;
+        transform: scale(0.8) rotateX(3deg);
+    }
+    
+    .laptop__screen {
+        margin: 0 -17% 2px -13%;
+        width: 130%;
+        min-height: 180px;
+    }
+    
+    .laptop__bottom {
+        margin: 0 -20% 0 -20%;
+    }
+    
+    .laptop-content-area .screen-content {
+        padding: 12px;
+        font-size: 11px;
+    }
+}
+
+/* Extra Small Mobile - hasta 320px */
+@media (max-width: 320px) {
+    #veterinarios .laptop-mockup,
+    #veterinarios .laptop {
+        max-width: 300px;
+        transform: scale(0.75) rotateX(3deg);
+    }
+    
+    .laptop__screen {
+        margin: 0 -18% 2px -12%;
+        width: 130%;
+        min-height: 170px;
+    }
+    
+    .laptop__bottom {
+        margin: 0 -21% 0 -21%;
+    }
+    
+    .laptop-content-area .screen-content {
+        padding: 8px;
+        font-size: 9px;
+        line-height: 1.2;
+    }
+    
+    .laptop-content-area .screen-content h2 {
+        font-size: 0.8rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .laptop-content-area .screen-content .w-16.h-16 {
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 > div {
+        padding: 0.3rem;
+        margin-bottom: 0.2rem;
+        border-radius: 0.4rem;
+    }
+    
+    .laptop-content-area .screen-content p {
+        font-size: 8px;
+        line-height: 1.1;
+    }
+    
+    .laptop-content-area .screen-content .text-center {
+        margin-bottom: 0.5rem;
     }
 }
 
