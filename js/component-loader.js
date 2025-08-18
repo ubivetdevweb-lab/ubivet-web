@@ -155,6 +155,7 @@ const UBIVET_COMPONENTS = {
     tutores: 'components/tutores-section.html',
     veterinarios: 'components/vets-section.html',
     clinicas: 'components/clinicas-section.html',
+    about: 'components/about-section.html',
     contact: 'components/contact-section.html'
 };
 
@@ -166,6 +167,7 @@ function loadUbivetComponents() {
         { path: UBIVET_COMPONENTS.tutores, target: '#tutores-placeholder' },
         { path: UBIVET_COMPONENTS.veterinarios, target: '#veterinarios-placeholder' },
         { path: UBIVET_COMPONENTS.clinicas, target: '#clinicas-placeholder' },
+        { path: UBIVET_COMPONENTS.about, target: '#about-placeholder' },
         { path: UBIVET_COMPONENTS.contact, target: '#contact-placeholder' }
     ]);
 }

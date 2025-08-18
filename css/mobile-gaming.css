@@ -2,7 +2,7 @@
 
 /* RESET DESKTOP - Layout original */
 @media (min-width: 768px) {
-    /* FORZAR que Veterinarios y Clínicas se vean como Tutores */
+    /* FORZAR que Veterinarios y Clínicas se vean EXACTAMENTE como Tutores */
     #veterinarios .phone-nav-button,
     #clinicas .phone-nav-button {
         min-height: auto !important;
@@ -12,9 +12,16 @@
         text-align: left !important;
         background: rgba(255, 255, 255, 0.9) !important;
         border: 2px solid transparent !important;
-        border-radius: 1rem !important;
+        border-radius: 1.5rem !important;
         box-shadow: none !important;
         display: block !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    #veterinarios .phone-nav-button:hover,
+    #clinicas .phone-nav-button:hover {
+        border-color: #4ECDC4 !important;
+        transform: scale(1.05) !important;
     }
     
     #veterinarios .phone-nav-button h3,
@@ -101,6 +108,28 @@
 }
 
 @media (max-width: 767px) {
+    /* Mejoras para el logo en móvil */
+    nav .flex.items-center img[alt="UbiVet Logo"] {
+        height: 2.75rem !important; /* h-11 equivalente */
+        max-width: none !important;
+        object-fit: contain !important;
+        margin-left: 0.25rem !important;
+    }
+    
+    /* Ajustar altura del navbar en móvil */
+    nav .flex.justify-between.items-center {
+        height: 4.25rem !important; /* h-17 equivalente */
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    
+    /* Logo en sidebar móvil */
+    aside img[alt="UbiVet Logo"] {
+        height: 2.75rem !important;
+        max-width: none !important;
+        object-fit: contain !important;
+    }
+    
     /* Reducir espaciado general en móvil */
     .mb-20 {
         margin-bottom: 3rem !important;
@@ -115,9 +144,13 @@
     section .grid.lg\:grid-cols-3,
     div .grid.lg\:grid-cols-3 {
         display: grid !important;
-        grid-template-columns: 1fr 2fr 1fr !important;
+        grid-template-columns: 70px 1fr 70px !important;
         gap: 0.5rem !important;
         align-items: start !important;
+        justify-content: center !important;
+        place-items: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
     }
     
     /* FORZAR Botones izquierda */
@@ -141,11 +174,14 @@
     .order-3.responsive-button-grid {
         display: flex !important;
         flex-direction: column !important;
-        gap: 0.4rem !important;
+        gap: 0.5rem !important;
         width: 100% !important;
-        max-width: 80px !important;
+        min-width: 60px !important;
+        max-width: 70px !important;
         grid-column: 3 !important;
         order: 3 !important;
+        justify-self: center !important;
+        overflow: visible !important;
     }
     
     
@@ -155,11 +191,14 @@
     div .responsive-button-grid {
         display: flex !important;
         flex-direction: column !important;
-        gap: 0.4rem !important;
+        gap: 0.5rem !important;
         width: 100% !important;
         margin-bottom: 0 !important;
         margin-top: 0 !important;
-        max-width: 80px !important;
+        min-width: 60px !important;
+        max-width: 70px !important;
+        justify-self: center !important;
+        overflow: visible !important;
     }
     
     /* OVERRIDE cualquier space-y */
@@ -168,7 +207,7 @@
     div .space-y-6 {
         display: flex !important;
         flex-direction: column !important;
-        gap: 0.4rem !important;
+        gap: 0.5rem !important;
     }
     
     .space-y-6 > *,
@@ -193,6 +232,8 @@
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        margin: 0 auto !important;
+        overflow: visible !important;
     }
     
     .phone-nav-button:hover {

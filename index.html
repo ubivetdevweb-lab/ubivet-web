@@ -72,6 +72,39 @@
                     fallbackLink.rel = 'stylesheet';
                     fallbackLink.href = 'https://use.fontawesome.com/releases/v6.5.1/css/all.css';
                     document.head.appendChild(fallbackLink);
+                    
+                    // Font Awesome icons fallback
+                    setTimeout(() => {
+                        // WhatsApp icons fallback
+                        document.querySelectorAll('.fa-whatsapp').forEach(function(icon) {
+                            if (!window.getComputedStyle(icon, ':before').content || window.getComputedStyle(icon, ':before').content === 'none') {
+                                icon.style.fontFamily = 'initial';
+                                icon.textContent = '💬';
+                                icon.style.fontSize = icon.style.fontSize || '1em';
+                            }
+                        });
+                        
+                        // Navigation icons fallback
+                        const iconFallbacks = {
+                            'fa-home': '🏠',
+                            'fa-heart': '🐾',
+                            'fa-user-md': '👩‍⚕️',
+                            'fa-clinic-medical': '🏥',
+                            'fa-users': '👥',
+                            'fa-envelope': '📧'
+                        };
+                        
+                        Object.keys(iconFallbacks).forEach(iconClass => {
+                            document.querySelectorAll(`.${iconClass}`).forEach(function(icon) {
+                                if (!window.getComputedStyle(icon, ':before').content || window.getComputedStyle(icon, ':before').content === 'none') {
+                                    icon.style.fontFamily = 'initial';
+                                    icon.textContent = iconFallbacks[iconClass];
+                                    icon.style.fontSize = icon.style.fontSize || '1em';
+                                    icon.style.color = '#4ECDC4'; // Mantener color vet-teal
+                                }
+                            });
+                        });
+                    }, 1000);
                 }
                 document.body.removeChild(testIcon);
             }, 500);
@@ -96,9 +129,18 @@
         <!-- Clínicas section placeholder -->
         <div id="clinicas-placeholder"></div>
 
+        <!-- About section placeholder -->
+        <div id="about-placeholder"></div>
+
         <!-- Contact section placeholder -->
         <div id="contact-placeholder"></div>
     </main>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/56988108227" target="_blank" aria-label="WhatsApp" class="fixed z-50 bottom-6 right-6 md:bottom-8 md:right-8 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg flex items-center justify-center w-16 h-16 md:w-20 md:h-20 transition-all duration-300 group">
+        <i class="fab fa-whatsapp text-4xl md:text-5xl"></i>
+        <span class="absolute opacity-0 group-hover:opacity-100 bg-green-600 text-white text-xs rounded px-2 py-1 bottom-20 right-0 transition-all duration-300 pointer-events-none">¡Escríbenos!</span>
+    </a>
 
     <!-- Component Loader -->
     <script src="js/component-loader.js"></script>
@@ -127,7 +169,7 @@
 
         // Monitorear carga de componentes
         let loadedComponents = 0;
-        const totalComponents = 6;
+        const totalComponents = 7;
 
         document.addEventListener('componentLoaded', () => {
             loadedComponents++;
