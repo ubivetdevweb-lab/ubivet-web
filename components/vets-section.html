@@ -6,7 +6,7 @@
     <!-- Blob superpuesto más sutil -->
     <div class="absolute top-1/4 -right-44 w-[32rem] h-[32rem] bg-white/10 z-0" style="border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;"></div>
     
-    <div class="max-w-7xl mx-auto px-6 relative">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
         <!-- Título principal -->
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -17,34 +17,35 @@
             </p>
         </div>
 
-        <!-- Sistema de carrusel interactivo para veterinarios -->
-        <div class="relative">
-            <div class="grid lg:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
+        <!-- App Showcase con Frame de Celular -->
+        <div class="mb-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-3 gap-12 items-center">
                 
                 <!-- Botones Izquierda - VETERINARIOS -->
-                <div class="space-y-6 order-2 lg:order-1 responsive-button-grid" style="display: flex !important; flex-direction: column !important; gap: 1rem !important; width: 100% !important;">
-                    <button id="vet-click" data-destination="vetItem1" class="phone-nav-button active on-dark-bg w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                <div class="space-y-6 order-2 lg:order-1 responsive-button-grid">
+                    <button id="vet-click" data-destination="vetItem1" class="phone-nav-button active w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
                         <div class="flex items-center mb-3">
                             <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                 </svg>
                             </div>
-                            <h3 class="text-lg font-bold text-gray-800">Agenda Digital</h3>
+                            <h3 class="text-lg font-bold text-gray-800">Agenda citas de forma sencilla</h3>
                         </div>
-                        <p class="text-sm text-gray-600">Gestiona citas, horarios y disponibilidad desde cualquier lugar.</p>
+                        <p class="text-sm text-gray-600">Con nuestra app, puedes gestionar tus citas de manera fácil y eficiente.</p>
                     </button>
                     
-                    <button data-destination="vetItem2" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                    <button data-destination="vetItem2" class="phone-nav-button w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
                         <div class="flex items-center mb-3">
                             <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                 </svg>
                             </div>
-                            <h3 class="text-lg font-bold text-gray-800">Historiales Médicos</h3>
+                            <h3 class="text-lg font-bold text-gray-800">Accede al perfil completo</h3>
                         </div>
-                        <p class="text-sm text-gray-600">Acceso completo a expedientes, vacunas y tratamientos previos.</p>
+                        <p class="text-sm text-gray-600">De tus pacientes con todo su historial médico y tratamientos.</p>
                     </button>
                 </div>
 
@@ -177,33 +178,50 @@
                 </div>
 
                 <!-- Botones Derecha - VETERINARIOS -->
-                <div class="space-y-6 order-3 responsive-button-grid" style="display: flex !important; flex-direction: column !important; gap: 1rem !important; width: 100% !important;">
-                    <button data-destination="vetItem3" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                <div class="space-y-6 order-3 responsive-button-grid">
+                    <button data-destination="vetItem3" class="phone-nav-button w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
                         <div class="flex items-center mb-3">
                             <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                                 </svg>
                             </div>
-                            <h3 class="text-lg font-bold text-gray-800">Gestión de Pacientes</h3>
+                            <h3 class="text-lg font-bold text-gray-800">Servicios a domicilio</h3>
                         </div>
-                        <p class="text-sm text-gray-600">Organiza y da seguimiento inteligente a todos tus pacientes.</p>
+                        <p class="text-sm text-gray-600">Presta servicios a domicilio, cuando estés disponible.</p>
                     </button>
                     
-                    <button data-destination="vetItem4" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                    <button data-destination="vetItem4" class="phone-nav-button w-full text-left p-6 bg-white/90 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
                         <div class="flex items-center mb-3">
                             <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                                 </svg>
                             </div>
-                            <h3 class="text-lg font-bold text-gray-800">Reportes y Análisis</h3>
+                            <h3 class="text-lg font-bold text-gray-800">Red de profesionales</h3>
                         </div>
-                        <p class="text-sm text-gray-600">Analíticas profesionales para optimizar tu práctica veterinaria.</p>
+                        <p class="text-sm text-gray-600">Forma parte de nuestra red de veterinarios a domicilio acreditados.</p>
                     </button>
                 </div>
                 
+                
+            </div>
+            
+            <!-- Área de descripción dinámica - Solo móvil -->
+            <div class="description-area md:hidden" id="veterinarios-description">
+                <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 bg-vet-teal rounded-lg flex items-center justify-center flex-shrink-0" id="veterinarios-desc-icon">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-1" id="veterinarios-desc-title">Agenda citas de forma sencilla</h4>
+                        <p class="text-sm text-gray-600" id="veterinarios-desc-text">Con nuestra app, puedes gestionar tus citas de manera fácil y eficiente.</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
