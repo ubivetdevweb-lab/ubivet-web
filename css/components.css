@@ -954,8 +954,9 @@
     /* Mantener altura natural pero prevenir overflow */
     .laptop-content-area {
         overflow: hidden !important;
-        /* Quitamos max-height fijo, usamos min-height en su lugar */
-        min-height: 200px !important;
+        /* Ajuste sutil para eliminar overflow mínimo */
+        min-height: 195px !important;
+        max-height: 200px !important;
     }
     
     .laptop-content-area .content {
@@ -1010,7 +1011,8 @@
 /* Ajustes más conservadores para móviles pequeños */
 @media (max-width: 480px) {
     .laptop-content-area {
-        min-height: 190px !important;
+        min-height: 185px !important;
+        max-height: 190px !important;
     }
     
     .laptop-content-area .screen-content .space-y-3 {
@@ -1028,7 +1030,8 @@
 /* Ajustes para móviles extra pequeños - más espacio */
 @media (max-width: 375px) {
     .laptop-content-area {
-        min-height: 180px !important;
+        min-height: 175px !important;
+        max-height: 180px !important;
     }
     
     .laptop-content-area .screen-content {
