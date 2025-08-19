@@ -955,8 +955,8 @@
     .laptop-content-area {
         overflow: hidden !important;
         /* Más altura para mejor visualización */
-        min-height: 210px !important;
-        max-height: 215px !important;
+        min-height: 225px !important;
+        max-height: 230px !important;
     }
     
     .laptop-content-area .content {
@@ -1011,8 +1011,8 @@
 /* Ajustes más conservadores para móviles pequeños */
 @media (max-width: 480px) {
     .laptop-content-area {
-        min-height: 200px !important;
-        max-height: 205px !important;
+        min-height: 210px !important;
+        max-height: 215px !important;
     }
     
     .laptop-content-area .screen-content .space-y-3 {
@@ -1030,8 +1030,8 @@
 /* Ajustes para móviles extra pequeños - más espacio */
 @media (max-width: 375px) {
     .laptop-content-area {
-        min-height: 190px !important;
-        max-height: 195px !important;
+        min-height: 200px !important;
+        max-height: 205px !important;
     }
     
     .laptop-content-area .screen-content {
