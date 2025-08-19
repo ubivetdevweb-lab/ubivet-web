@@ -129,6 +129,9 @@
         <!-- Clínicas section placeholder -->
         <div id="clinicas-placeholder"></div>
 
+        <!-- Empresas section placeholder -->
+        <div id="empresas-placeholder"></div>
+
         <!-- About section placeholder -->
         <div id="about-placeholder"></div>
 
@@ -185,7 +188,7 @@
                         
                         // Auto-click del primer botón de cada sección
                         setTimeout(() => {
-                            const firstButtons = ['click', 'vet-click', 'clinic-click'];
+                            const firstButtons = ['click', 'vet-click', 'clinic-click', 'emp-click'];
                             firstButtons.forEach(buttonId => {
                                 const button = document.getElementById(buttonId);
                                 if (button) {

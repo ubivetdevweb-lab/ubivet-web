@@ -299,6 +299,7 @@
         justify-content: center !important;
         width: 100% !important;
         max-width: 200px !important;
+        transition: all 0.3s ease !important;
     }
     
     /* Forzar botones gaming en veterinarios superiores */
@@ -317,12 +318,14 @@
         align-items: center !important;
         width: 100% !important;
         margin: 0 auto !important;
+        transition: all 0.3s ease !important;
     }
     
     /* Centrar MacBook mockup */
     section#veterinarios .order-1.lg\:order-2 .laptop-mockup {
         margin: 0 auto !important;
         transform: scale(0.9) !important;
+        transition: transform 0.3s ease !important;
     }
     
     /* Botones inferiores en veterinarios - Gaming cuadraditos */
@@ -334,11 +337,148 @@
         gap: 0.5rem !important;
         justify-content: center !important;
         width: 100% !important;
-        max-width: 150px !important;
+        max-width: 200px !important;
+        transition: all 0.3s ease !important;
     }
     
     /* Forzar botones gaming en veterinarios inferiores */
     section#veterinarios .order-3 .phone-nav-button {
+        min-height: 50px !important;
+        max-height: 50px !important;
+        width: 50px !important;
+        margin: 0 !important;
+    }
+
+    /* ===== SECCIÓN CLÍNICAS - Layout laptop móvil ===== */
+    
+    /* Grid principal de clínicas */
+    section#clinicas .grid.lg\:grid-cols-3 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 1rem !important;
+    }
+    
+    /* Botones superiores en clínicas - Gaming cuadraditos */
+    section#clinicas .order-2.lg\:order-1 {
+        order: 1 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 200px !important;
+    }
+    
+    /* Forzar botones gaming en clínicas superiores */
+    section#clinicas .order-2.lg\:order-1 .phone-nav-button {
+        min-height: 50px !important;
+        max-height: 50px !important;
+        width: 50px !important;
+        margin: 0 !important;
+    }
+    
+    /* MacBook centro en clínicas - Centrado perfecto */
+    section#clinicas .order-1.lg\:order-2 {
+        order: 2 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Centrar MacBook mockup */
+    section#clinicas .order-1.lg\:order-2 .laptop-mockup {
+        margin: 0 auto !important;
+        transform: scale(0.9) !important;
+    }
+    
+    /* Botones inferiores en clínicas - Gaming cuadraditos */
+    section#clinicas .order-3 {
+        order: 3 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 200px !important;
+    }
+    
+    /* Forzar botones gaming en clínicas inferiores */
+    section#clinicas .order-3 .phone-nav-button {
+        min-height: 50px !important;
+        max-height: 50px !important;
+        width: 50px !important;
+        margin: 0 !important;
+    }
+
+    /* ===== SECCIÓN EMPRESAS - Layout laptop móvil ===== */
+    
+    /* Grid principal de empresas */
+    section#empresas .grid.lg\:grid-cols-3 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 1rem !important;
+    }
+    
+    /* Botones superiores en empresas - Gaming cuadraditos */
+    section#empresas .order-2.lg\:order-1 {
+        order: 1 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 200px !important;
+    }
+    
+    /* Forzar botones gaming en empresas superiores */
+    section#empresas .order-2.lg\:order-1 .phone-nav-button {
+        min-height: 50px !important;
+        max-height: 50px !important;
+        width: 50px !important;
+        margin: 0 !important;
+    }
+    
+    /* MacBook centro en empresas - Centrado perfecto */
+    section#empresas .order-1.lg\:order-2 {
+        order: 2 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Centrar MacBook mockup */
+    section#empresas .order-1.lg\:order-2 .laptop-mockup {
+        margin: 0 auto !important;
+        transform: scale(0.9) !important;
+    }
+    
+    /* Botones inferiores en empresas - Gaming cuadraditos */
+    section#empresas .order-3 {
+        order: 3 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 200px !important;
+    }
+    
+    /* Forzar botones gaming en empresas inferiores */
+    section#empresas .order-3 .phone-nav-button {
         min-height: 50px !important;
         max-height: 50px !important;
         width: 50px !important;
@@ -364,5 +504,29 @@
         transform: translateY(-2px) !important;
         box-shadow: 0 8px 30px rgba(78, 205, 196, 0.25) !important;
         border-color: rgba(78, 205, 196, 0.6) !important;
+    }
+
+    /* Descripción específica para empresas - fondo teal */
+    section#empresas .description-area {
+        background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.98) 100%) !important;
+        color: #1f2937 !important;
+        border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    }
+    
+    section#empresas .description-area h4 {
+        color: #1f2937 !important;
+    }
+    
+    section#empresas .description-area p {
+        color: #4b5563 !important;
+    }
+    
+    section#empresas .description-area .w-10.h-10 {
+        background: rgba(78, 205, 196, 0.9) !important;
+    }
+    
+    section#empresas .description-area:hover {
+        box-shadow: 0 8px 30px rgba(255, 255, 255, 0.25) !important;
+        border-color: rgba(255, 255, 255, 0.6) !important;
     }
 }

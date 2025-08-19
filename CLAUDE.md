@@ -9,13 +9,29 @@ This is a veterinary clinic website for "Clínica Veterinaria Tarapacá" built a
 ## Project Structure
 
 ```
-veterinaria tarapaca/
+ubivet-web/
 ├── index.html                      # Main HTML file (single-page application)
+├── components/                     # Modular HTML components
+│   ├── navigation.html             # Site navigation
+│   ├── hero-section.html          # Hero section with app downloads
+│   ├── tutores-section.html       # Tutors section with phone mockup
+│   ├── vets-section.html          # Veterinarians section with MacBook mockup
+│   ├── clinicas-section.html      # Clinics section with MacBook mockup
+│   ├── empresas-section.html      # Enterprises section with MacBook mockup
+│   ├── about-section.html         # About section
+│   └── contact-section.html       # Contact section
 ├── css/
-│   └── styles.css                 # Custom CSS styles and animations
+│   ├── styles.css                 # Custom CSS styles and animations
+│   ├── components.css             # Component-specific styles (MacBook, phone mockups)
+│   ├── responsive.css             # Responsive design rules
+│   ├── mobile-gaming.css          # Mobile layout with gaming-style buttons
+│   └── safari-fix.css             # Safari browser fixes
 ├── js/
-│   ├── script.js                  # Main JavaScript for navigation and interactions
-│   ├── social-feed.js             # Social media feed integration (TikTok/Instagram)
+│   ├── script.js                  # Main JavaScript with description system
+│   ├── component-loader.js        # Modular component loading system
+│   ├── components/
+│   │   └── carousel.js            # Interactive carousel controller
+│   ├── social-feed.js             # Social media feed integration
 │   ├── booking-simple.js          # Complete booking system
 │   ├── apps-script-api.js         # Google Apps Script API client
 │   └── security.js                # Security management system
@@ -63,16 +79,17 @@ To run locally, simply open `index.html` in a browser or serve it using any stat
 
 ## Architecture
 
-### Single Page Application with Booking System
+### Single Page Application with Modular Architecture
 The website is structured as a single-page application with the following main sections:
-- Header with navigation
-- Hero section (#inicio) with clinic front photo
-- Services section (#servicios)
-- Team section (#equipo) 
-- **Booking section (#agenda)** - Complete appointment system
-- TikTok feed (#tiktok)
-- Instagram feed (#instagram)
-- Contact section (#contacto)
+- **Navigation**: Fixed header with smooth scrolling and mobile hamburger menu
+- **Hero section** (#inicio): App download buttons and floating phone mockups
+- **Tutores section** (#tutores): Phone mockup with interactive carousel
+- **Veterinarios section** (#veterinarios): MacBook Air mockup with professional interface
+- **Clínicas section** (#clinicas): MacBook Air mockup with business features
+- **Empresas section** (#empresas): MacBook Air mockup with corporate solutions
+- **About section** (#about): Team and company information
+- **Contact section** (#contacto): Contact forms and information
+- **Booking section** (#agenda): Complete appointment system (legacy)
 
 ### Booking System Features
 - **Multi-step form**: Tutor info → Service selection → Date/time selection
@@ -90,8 +107,10 @@ The website is structured as a single-page application with the following main s
 - Security-optimized scrollbars and interactions
 
 ### JavaScript Modules
-- `script.js`: Handles mobile navigation, menu toggles, and smooth scrolling
-- `social-feed.js`: Manages TikTok and Instagram feed integration using embeds
+- `script.js`: Main navigation, smooth scrolling, and **mobile description system**
+- `component-loader.js`: **Modular component loading system** with caching and auto-initialization
+- `components/carousel.js`: **Interactive carousel controller** for mockup sections
+- `social-feed.js`: TikTok and Instagram feed integration using embeds
 - `booking-simple.js`: Complete booking system with calendar integration
 - `apps-script-api.js`: Google Apps Script communication with rate limiting
 - `security.js`: Comprehensive security management system
@@ -106,12 +125,169 @@ The website is structured as a single-page application with the following main s
 - **Secure Logging**: Sensitive data masked in logs
 
 ### Key Components
+- **Modular Component System**: HTML components loaded dynamically with `component-loader.js`
+- **Interactive Mockups**: MacBook Air and phone mockups with realistic 3D effects
+- **Carousel System**: Interactive content switching with button navigation
+- **Mobile Description System**: Dynamic content updates for mobile users
+- **Gaming-Style Mobile Layout**: Compact square buttons (50x50px) for mobile interaction
+- **Responsive MacBook Design**: Consistent scaling and proportions across all sections
 - **Navigation**: Fixed header with smooth scrolling navigation and mobile hamburger menu
 - **Booking System**: Multi-step appointment scheduling with Google Calendar
 - **Email System**: Professional confirmation emails with clinic branding
 - **Social Feed Manager**: Class-based approach for managing social media embeds
 - **Security Manager**: Comprehensive protection against common attacks
-- **Responsive Design**: Mobile-first with custom breakpoints
+
+## Modern UI/UX Features (Recent Updates)
+
+### MacBook Air Mockups
+**Professional Design System:**
+- **Realistic proportions**: 16:10 aspect ratio matching real MacBook Air
+- **Aluminum styling**: Gradient backgrounds and metallic effects
+- **3D transforms**: Subtle rotation (rotateX 5deg) and floating animations
+- **Consistent sizing**: Max-width 32rem with responsive scaling
+- **Performance optimized**: CSS transforms and GPU acceleration
+
+**Implementation:**
+- Used in veterinarios, clínicas, and empresas sections
+- `.laptop-mockup` and `.laptop` CSS classes
+- Responsive behavior across all screen sizes
+- `aspect-ratio: 16/10` prevents stretching
+
+### Gaming-Style Mobile Layout
+**Mobile-First Button Design:**
+- **Compact navigation**: 50x50px square buttons arranged around MacBook
+- **Button positioning**: Above and below mockup for optimal thumb reach
+- **Gaming aesthetic**: Modern, touch-friendly interface
+- **Responsive grid**: Flexbox layout adapting to screen sizes
+
+**CSS Implementation:**
+```css
+section#veterinarios .order-2.lg\:order-1 .phone-nav-button {
+    min-height: 50px !important;
+    max-height: 50px !important;
+    width: 50px !important;
+}
+```
+
+### Interactive Carousel System
+**Dynamic Content Switching:**
+- **Button-driven navigation**: Click buttons to change mockup content
+- **Smooth transitions**: CSS transitions between content states
+- **Auto-initialization**: Automatic setup when components load
+- **Cross-section support**: Works in tutores, veterinarios, clínicas, empresas
+
+**JavaScript Controller:**
+- `CarouselController` class in `carousel.js`
+- Automatic detection of content areas and navigation buttons
+- Event delegation for performance
+- Debug utilities for development
+
+### Mobile Description System
+**Context-Aware Content:**
+- **Dynamic updates**: Description changes based on selected button
+- **Icon synchronization**: SVG icons update with content
+- **Smooth animations**: Scale effects during transitions
+- **Section detection**: Automatic section identification (tutores, vets, clinics, empresas)
+
+**Data Structure:**
+```javascript
+const descriptions = {
+    'empItem1': {
+        title: 'Convenios corporativos',
+        description: 'Ofrece atención veterinaria...',
+        icon: `<path stroke-linecap="round"...>`
+    }
+};
+```
+
+### Section-Specific Design Systems
+
+#### Tutores Section (Light Background)
+- **Phone mockup**: Realistic iPhone-style design
+- **Button style**: Standard light theme with teal accents
+- **Content**: Real app interface screenshots
+- **Target audience**: Pet owners and individual users
+
+#### Veterinarios Section (Teal Background)
+- **MacBook mockup**: Professional laptop interface
+- **Button style**: White background with `on-dark-bg` class for contrast
+- **Content**: Professional tools and scheduling features
+- **Target audience**: Individual veterinarians and professionals
+
+#### Clínicas Section (White Background) 
+- **MacBook mockup**: Business-focused interface
+- **Button style**: Standard light theme
+- **Content**: Business management and client acquisition tools
+- **Target audience**: Clinic owners and veterinary businesses
+
+#### Empresas Section (Teal Background)
+- **MacBook mockup**: Corporate interface design
+- **Button style**: White background with `on-dark-bg` class for contrast
+- **Content**: Corporate benefits and HR solutions
+- **Target audience**: Companies and HR departments
+
+### Responsive Design Philosophy
+
+**Mobile-First Approach:**
+- Gaming-style compact buttons for touch interfaces
+- Optimized thumb zones for one-handed use
+- Simplified layouts with clear hierarchy
+- Performance-optimized interactions
+
+**Desktop Enhancement:**
+- Full feature sets with detailed descriptions
+- Hover effects and micro-interactions
+- Professional business aesthetics
+- High-fidelity mockup presentations
+
+**Cross-Platform Consistency:**
+- Identical content across all devices
+- Consistent branding and color schemes
+- Unified component architecture
+- Seamless responsive transitions
+
+## Accessibility & Contrast Standards
+
+### Button States System
+**Active Button Styling:**
+- **Light backgrounds**: `background: rgba(78, 205, 196, 0.1)` with teal border
+- **Dark backgrounds**: `background: rgba(255, 255, 255, 0.95)` with white background
+- **Controlled by**: `.on-dark-bg` class for proper contrast
+
+**Implementation Example:**
+```css
+.phone-nav-button.active {
+    background: rgba(78, 205, 196, 0.1);
+    border-color: #4ECDC4 !important;
+}
+
+.phone-nav-button.active.on-dark-bg {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: #4ECDC4 !important;
+}
+```
+
+### Mobile Description Contrast
+**Section-Specific Styling:**
+- **Standard sections**: White background with dark text
+- **Teal sections** (empresas): Enhanced contrast with white background over teal
+- **Icon backgrounds**: Teal with white icons for optimal visibility
+
+**Critical CSS:**
+```css
+section#empresas .description-area {
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.98) 100%) !important;
+    color: #1f2937 !important;
+}
+
+section#empresas .description-area h4 {
+    color: #1f2937 !important;
+}
+
+section#empresas .description-area p {
+    color: #4b5563 !important;
+}
+```
 
 ## Email Confirmation System
 
@@ -313,14 +489,91 @@ This project has been heavily optimized for local search in Iquique, Chile:
 - **booking-simple.js**: Core booking logic, test thoroughly after changes
 - **apps-script-api.js**: Calendar integration, changes affect booking
 - **security.js**: Production security, modifications need careful testing
+- **component-loader.js**: Core modular loading system, affects entire site
+- **carousel.js**: Interactive functionality across multiple sections
 
 ### ✅ Safe to Modify
-- Templates and styling in CSS/HTML
+- Component HTML files in `/components/` directory
+- CSS styling in all CSS files (with testing)
+- Mobile responsive rules in `mobile-gaming.css`
 - Email templates (following provided structure)
 - Documentation and configuration examples
 
 ### 🔧 Development vs Production
 - Use templates (.example files) for development
+- Production URLs and configurations are functional
+- Security system adapts based on environment detection
+- Component loading optimized for production caching
+
+## Development Best Practices (Updated)
+
+### Component Architecture
+**Modular HTML Components:**
+- Each section is a separate HTML file in `/components/`
+- Use `component-loader.js` for dynamic loading
+- Consistent naming: `section-name.html`
+- Auto-initialization with `loadUbivetComponents()`
+
+### CSS Organization
+**File Structure:**
+- `styles.css`: Base styles and animations
+- `components.css`: Component-specific styles (mockups, carousels)
+- `responsive.css`: General responsive rules
+- `mobile-gaming.css`: Mobile-specific gaming layout
+- `safari-fix.css`: Browser compatibility fixes
+
+### JavaScript Architecture
+**Event-Driven System:**
+- Use event delegation for performance
+- Component loading triggers automatic carousel setup
+- Description system auto-detects section context
+- Debug utilities available for development
+
+### Mobile-First Responsive Design
+**Key Principles:**
+1. **Gaming-style mobile layout**: 50x50px compact buttons
+2. **Section-specific responsive rules**: Each section has custom mobile behavior
+3. **Contrast-aware styling**: Automatic light/dark theme detection
+4. **Performance optimization**: CSS transforms and GPU acceleration
+
+### MacBook Mockup System
+**Implementation Standards:**
+- **Aspect ratio**: Always maintain 16:10 ratio
+- **Max-width**: 32rem for consistent sizing
+- **Transform origin**: Center for proper scaling
+- **Animation**: Subtle floating effect with `laptopFloat` keyframes
+
+**CSS Pattern:**
+```css
+.laptop-mockup {
+    max-width: 32rem !important;
+    perspective: 1200px;
+}
+
+.laptop {
+    transform: rotateX(5deg);
+    animation: laptopFloat 6s ease-in-out infinite;
+}
+
+.laptop__screen {
+    aspect-ratio: 16/10;
+    margin: 0 3% 2px 1%;
+}
+```
+
+### Button State Management
+**Contrast System:**
+- Use `.on-dark-bg` class for teal background sections
+- Automatic JavaScript section detection
+- Consistent active states across all sections
+- Mobile and desktop compatibility
+
+**Testing Checklist:**
+1. ✅ Button contrast on all backgrounds
+2. ✅ Mobile description updates correctly  
+3. ✅ Carousel navigation functional
+4. ✅ Responsive layouts work across devices
+5. ✅ Component loading completes successfully
 - Production URLs and configurations are functional
 - Security system adapts based on environment detection
 

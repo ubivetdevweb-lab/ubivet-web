@@ -313,6 +313,31 @@ function initializeDynamicDescription() {
             title: 'Panel de Control',
             description: 'Monitorea estadísticas y gestiona tu clínica integralmente.',
             icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>`
+        },
+        'empItem1': {
+            title: 'Convenios corporativos',
+            description: 'Ofrece atención veterinaria como beneficio corporativo para las mascotas de tus empleados.',
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>`
+        },
+        'empItem2': {
+            title: 'Reportes y estadísticas',
+            description: 'Obtén métricas detalladas del uso y satisfacción del beneficio en tiempo real.',
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>`
+        },
+        'empItem3': {
+            title: 'Planes flexibles',
+            description: 'Tarifas preferenciales y opciones de pago adaptadas a las necesidades de tu empresa.',
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>`
+        },
+        'empItem4': {
+            title: 'Bienestar corporativo',
+            description: 'Mejora el clima laboral ofreciendo cuidado veterinario como beneficio único y diferenciador.',
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>`
+        },
+        'empItem5': {
+            title: 'Soporte dedicado',
+            description: 'Account manager exclusivo y soporte 24/7 para implementación y gestión del programa.',
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>`
         }
     };
 
@@ -356,6 +381,7 @@ function initializeDynamicDescription() {
                 let section = 'tutores';
                 if (destination.includes('vet')) section = 'veterinarios';
                 if (destination.includes('clinic')) section = 'clinicas';
+                if (destination.includes('emp')) section = 'empresas';
                 
                 // Remover clase active de otros botones en la misma sección
                 const sectionButtons = button.closest('.responsive-button-grid').querySelectorAll('.phone-nav-button');

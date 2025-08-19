@@ -1,66 +1,66 @@
-<!-- Sección VETERINARIOS -->
-<section id="veterinarios" class="relative py-20 bg-gradient-to-br from-vet-teal to-vet-teal-dark overflow-hidden">
-    <!-- Blobs siguiendo lógica del hero - variante izquierda, sin interferir con texto -->
-    <div class="absolute top-1/2 -right-80 w-[30rem] h-[30rem] bg-vet-teal/40 z-0" style="border-radius: 70% 30% 60% 40% / 50% 70% 30% 50%;"></div>
-    <div class="absolute bottom-20 -left-50 w-[28rem] h-[28rem] bg-vet-teal-light/30 z-0" style="border-radius: 40% 60% 30% 70% / 70% 30% 60% 40%;"></div>
+<!-- Sección EMPRESAS -->
+<section id="empresas" class="relative py-20 bg-gradient-to-br from-vet-teal to-vet-teal-dark overflow-hidden">
+    <!-- Blobs siguiendo lógica del hero - variante derecha, sin interferir con texto -->
+    <div class="absolute top-1/2 -left-80 w-[30rem] h-[30rem] bg-vet-orange/40 z-0" style="border-radius: 30% 70% 40% 60% / 70% 30% 50% 50%;"></div>
+    <div class="absolute bottom-20 -right-50 w-[28rem] h-[28rem] bg-vet-orange-light/30 z-0" style="border-radius: 60% 40% 70% 30% / 30% 70% 40% 60%;"></div>
     <!-- Blob superpuesto más sutil -->
-    <div class="absolute top-1/4 -left-44 w-[32rem] h-[32rem] bg-white/15 z-0" style="border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;"></div>
+    <div class="absolute top-1/4 -right-44 w-[32rem] h-[32rem] bg-white/15 z-0" style="border-radius: 40% 60% 30% 70% / 60% 40% 70% 30%;"></div>
     <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-                Si eres Veterinario...
+                Si eres Empresa...
             </h2>
             <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
-                La plataforma profesional que moderniza tu práctica veterinaria. Con UbiVet puedes:
+                La solución completa para el bienestar animal de tu equipo. Con UbiVet tu empresa puede:
             </p>
         </div>
         
-        <!-- App Showcase con Frame de Celular -->
+        <!-- App Showcase con Frame de Laptop -->
         <div class="mb-20">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid lg:grid-cols-3 gap-12 items-center">
                     
-                    <!-- Botones Izquierda - VETERINARIOS -->
+                    <!-- Botones Izquierda - EMPRESAS -->
                     <div class="space-y-6 order-2 lg:order-1 responsive-button-grid">
-                        <button id="vet-click" data-destination="vetItem1" class="phone-nav-button active on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
+                        <button id="emp-click" data-destination="empItem1" class="phone-nav-button active on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                                     </svg>
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Agenda citas de forma sencilla</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Convenios corporativos</h3>
                             </div>
-                            <p class="text-sm text-gray-600">Con nuestra app, puedes gestionar tus citas de manera fácil y eficiente.</p>
+                            <p class="text-sm text-gray-600">Ofrece atención veterinaria como beneficio corporativo para las mascotas de tus empleados.</p>
                         </button>
                         
-                        <button data-destination="vetItem2" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
+                        <button data-destination="empItem2" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                                     </svg>
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Accede al perfil completo</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Reportes y estadísticas</h3>
                             </div>
-                            <p class="text-sm text-gray-600">De tus pacientes con todo su historial médico y tratamientos.</p>
+                            <p class="text-sm text-gray-600">Obtén métricas detalladas del uso y satisfacción del beneficio en tiempo real.</p>
                         </button>
                         
-                        <button data-destination="vetItem3" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
+                        <button data-destination="empItem3" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
                                     </svg>
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Gestiona pacientes</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Planes flexibles</h3>
                             </div>
-                            <p class="text-sm text-gray-600">Organiza y administra toda la información de tus pacientes de forma inteligente.</p>
+                            <p class="text-sm text-gray-600">Tarifas preferenciales y opciones de pago adaptadas a las necesidades de tu empresa.</p>
                         </button>
                         
                     </div>
                     
-                    <!-- Frame de Notebook Central -->
+                    <!-- Frame de Laptop Central -->
                     <div class="order-1 lg:order-2 flex justify-center">
                         <div class="laptop-mockup relative">
                             <!-- Frame del laptop -->
@@ -68,116 +68,35 @@
                                 <div class="laptop__screen">
                                     <!-- Pantallas del carrusel -->
                                     <div class="laptop-content-area">
-                                        <div class="content show" id="vetItem1">
-                                            <div class="screen-content bg-gradient-to-br from-vet-teal to-vet-teal-dark text-white">
+                                        <div class="content show" id="empItem1">
+                                            <div class="screen-content bg-gradient-to-br from-vet-orange to-orange-600 text-white">
                                                 <div class="p-6 h-full flex flex-col justify-center">
                                                     <div class="text-center mb-6">
                                                         <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                                                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                                                             </svg>
                                                         </div>
-                                                        <h2 class="text-xl font-bold mb-2">Agenda Digital</h2>
-                                                        <p class="text-sm opacity-90">Gestión profesional de citas</p>
+                                                        <h2 class="text-xl font-bold mb-2">Convenios Corporativos</h2>
+                                                        <p class="text-sm opacity-90">Beneficios para tu equipo</p>
                                                     </div>
                                                     <div class="space-y-3">
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">📅 Horarios y disponibilidad</p>
+                                                            <p class="text-sm">🏢 Cobertura empresarial</p>
                                                         </div>
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">⏰ Sincronización automática</p>
+                                                            <p class="text-sm">👥 Para todo el equipo</p>
                                                         </div>
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">📱 Acceso desde cualquier lugar</p>
+                                                            <p class="text-sm">💰 Tarifas preferenciales</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         
-                                        <div class="content" id="vetItem2">
+                                        <div class="content" id="empItem2">
                                             <div class="screen-content bg-gradient-to-br from-blue-500 to-blue-600 text-white">
-                                                <div class="p-6 h-full flex flex-col justify-center">
-                                                    <div class="text-center mb-6">
-                                                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                                            </svg>
-                                                        </div>
-                                                        <h2 class="text-xl font-bold mb-2">Historiales Médicos</h2>
-                                                        <p class="text-sm opacity-90">Información completa al instante</p>
-                                                    </div>
-                                                    <div class="space-y-3">
-                                                        <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">📋 Expedientes completos</p>
-                                                        </div>
-                                                        <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">💉 Vacunas y tratamientos</p>
-                                                        </div>
-                                                        <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">📊 Datos en tiempo real</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="content" id="vetItem3">
-                                            <div class="screen-content bg-gradient-to-br from-purple-500 to-purple-600 text-white">
-                                                <div class="p-6 h-full flex flex-col justify-center">
-                                                    <div class="text-center mb-6">
-                                                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                                            </svg>
-                                                        </div>
-                                                        <h2 class="text-xl font-bold mb-2">Gestión de Pacientes</h2>
-                                                        <p class="text-sm opacity-90">Organización inteligente</p>
-                                                    </div>
-                                                    <div class="space-y-3">
-                                                        <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">🗂️ Seguimiento completo</p>
-                                                        </div>
-                                                        <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">🔔 Recordatorios automáticos</p>
-                                                        </div>
-                                                        <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">📈 Estadísticas detalladas</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="content" id="vetItem4">
-                                            <div class="screen-content bg-gradient-to-br from-green-500 to-green-600 text-white">
-                                                <div class="p-6 h-full flex flex-col justify-center">
-                                                    <div class="text-center mb-6">
-                                                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
-                                                            </svg>
-                                                        </div>
-                                                        <h2 class="text-xl font-bold mb-2">Servicios a Domicilio</h2>
-                                                        <p class="text-sm opacity-90">Amplía tu práctica</p>
-                                                    </div>
-                                                    <div class="space-y-3">
-                                                        <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">🏠 Atención a domicilio</p>
-                                                        </div>
-                                                        <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">📍 Gestión de rutas</p>
-                                                        </div>
-                                                        <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">💰 Nuevos ingresos</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="content" id="vetItem5">
-                                            <div class="screen-content bg-gradient-to-br from-orange-500 to-orange-600 text-white">
                                                 <div class="p-6 h-full flex flex-col justify-center">
                                                     <div class="text-center mb-6">
                                                         <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -185,18 +104,99 @@
                                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                                                             </svg>
                                                         </div>
-                                                        <h2 class="text-xl font-bold mb-2">Red de Profesionales</h2>
-                                                        <p class="text-sm opacity-90">Conecta y colabora</p>
+                                                        <h2 class="text-xl font-bold mb-2">Reportes y Analytics</h2>
+                                                        <p class="text-sm opacity-90">Métricas en tiempo real</p>
                                                     </div>
                                                     <div class="space-y-3">
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">🤝 Network profesional</p>
+                                                            <p class="text-sm">📊 Dashboard completo</p>
                                                         </div>
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">📊 Análisis y reportes</p>
+                                                            <p class="text-sm">📈 Uso del beneficio</p>
                                                         </div>
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">💎 Certificación UbiVet</p>
+                                                            <p class="text-sm">⭐ Satisfacción empleados</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="content" id="empItem3">
+                                            <div class="screen-content bg-gradient-to-br from-purple-500 to-purple-600 text-white">
+                                                <div class="p-6 h-full flex flex-col justify-center">
+                                                    <div class="text-center mb-6">
+                                                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <h2 class="text-xl font-bold mb-2">Planes Flexibles</h2>
+                                                        <p class="text-sm opacity-90">Adaptados a tu empresa</p>
+                                                    </div>
+                                                    <div class="space-y-3">
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">🎯 Planes personalizados</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">💳 Facturación centralizada</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">📋 Gestión simplificada</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="content" id="empItem4">
+                                            <div class="screen-content bg-gradient-to-br from-green-500 to-green-600 text-white">
+                                                <div class="p-6 h-full flex flex-col justify-center">
+                                                    <div class="text-center mb-6">
+                                                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <h2 class="text-xl font-bold mb-2">Bienestar Corporativo</h2>
+                                                        <p class="text-sm opacity-90">Cuidado integral</p>
+                                                    </div>
+                                                    <div class="space-y-3">
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">❤️ Mejora clima laboral</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">🎁 Beneficio diferenciador</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">🏆 Employer branding</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="content" id="empItem5">
+                                            <div class="screen-content bg-gradient-to-br from-indigo-500 to-indigo-600 text-white">
+                                                <div class="p-6 h-full flex flex-col justify-center">
+                                                    <div class="text-center mb-6">
+                                                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <h2 class="text-xl font-bold mb-2">Soporte Dedicado</h2>
+                                                        <p class="text-sm opacity-90">Atención personalizada</p>
+                                                    </div>
+                                                    <div class="space-y-3">
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">👨‍💼 Account manager</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">📞 Soporte 24/7</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">🚀 Implementación rápida</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -210,46 +210,46 @@
                         </div>
                     </div>
                     
-                    <!-- Botones Derecha - VETERINARIOS (Solo Desktop) -->
+                    <!-- Botones Derecha - EMPRESAS (Solo Desktop) -->
                     <div class="space-y-6 order-3 responsive-button-grid">
-                        <button data-destination="vetItem4" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
+                        <button data-destination="empItem4" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                                     </svg>
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Servicios a domicilio</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Bienestar corporativo</h3>
                             </div>
-                            <p class="text-sm text-gray-600">Presta servicios a domicilio, cuando estés disponible. Amplía tu práctica y genera nuevos ingresos.</p>
+                            <p class="text-sm text-gray-600">Mejora el clima laboral ofreciendo cuidado veterinario como beneficio único y diferenciador.</p>
                         </button>
                         
-                        <button data-destination="vetItem5" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
+                        <button data-destination="empItem5" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
                                     </svg>
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Red de profesionales</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Soporte dedicado</h3>
                             </div>
-                            <p class="text-sm text-gray-600">Forma parte de nuestra red de veterinarios acreditados y accede a beneficios exclusivos.</p>
+                            <p class="text-sm text-gray-600">Account manager exclusivo y soporte 24/7 para implementación y gestión del programa.</p>
                         </button>
                     </div>
                     
                 </div>
                 
                 <!-- Área de descripción dinámica - Solo móvil -->
-                <div class="description-area md:hidden" id="veterinarios-description">
+                <div class="description-area md:hidden" id="empresas-description">
                     <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 bg-vet-teal rounded-lg flex items-center justify-center flex-shrink-0" id="veterinarios-desc-icon">
+                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0" id="empresas-desc-icon">
                             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-800 mb-1" id="veterinarios-desc-title">Agenda citas de forma sencilla</h4>
-                            <p class="text-sm text-gray-600" id="veterinarios-desc-text">Con nuestra app, puedes gestionar tus citas de manera fácil y eficiente.</p>
+                            <h4 class="font-bold text-white mb-1" id="empresas-desc-title">Convenios corporativos</h4>
+                            <p class="text-sm text-white/90" id="empresas-desc-text">Ofrece atención veterinaria como beneficio corporativo para las mascotas de tus empleados.</p>
                         </div>
                     </div>
                 </div>

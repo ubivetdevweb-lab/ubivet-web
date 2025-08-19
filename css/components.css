@@ -95,8 +95,7 @@
 }
 
 /* Modern Laptop Mockup - Diseño elegante y profesional */
-#veterinarios .laptop-mockup,
-section#veterinarios .laptop-mockup {
+.laptop-mockup {
     position: relative;
     margin: 0 auto;
     max-width: 32rem !important;
@@ -104,8 +103,7 @@ section#veterinarios .laptop-mockup {
     perspective: 1200px;
 }
 
-#veterinarios .laptop,
-section#veterinarios .laptop {
+.laptop {
     position: relative;
     margin: auto;
     max-width: 32rem !important;
@@ -432,8 +430,8 @@ section#veterinarios .laptop {
 
 /* Ultra Wide Desktop - 1920px+ */
 @media (min-width: 1920px) {
-    #veterinarios .laptop-mockup,
-    #veterinarios .laptop {
+    .laptop-mockup,
+    .laptop {
         max-width: 36rem !important;
     }
     
@@ -480,8 +478,8 @@ section#veterinarios .laptop {
 
 /* Desktop Extra Large - 1600px to 1919px */
 @media (max-width: 1919px) and (min-width: 1601px) {
-    #veterinarios .laptop-mockup,
-    #veterinarios .laptop {
+    .laptop-mockup,
+    .laptop {
         max-width: 35rem !important;
     }
     
@@ -506,8 +504,8 @@ section#veterinarios .laptop {
 
 /* Desktop Large Plus - 1440px to 1600px */
 @media (max-width: 1600px) and (min-width: 1441px) {
-    #veterinarios .laptop-mockup,
-    #veterinarios .laptop {
+    .laptop-mockup,
+    .laptop {
         max-width: 34rem !important;
     }
     
@@ -522,8 +520,8 @@ section#veterinarios .laptop {
 
 /* Desktop Large - 1200px to 1440px */
 @media (max-width: 1440px) and (min-width: 1201px) {
-    #veterinarios .laptop-mockup,
-    #veterinarios .laptop {
+    .laptop-mockup,
+    .laptop {
         max-width: 32rem !important;
     }
     
@@ -570,8 +568,8 @@ section#veterinarios .laptop {
 
 /* Desktop Medium - 1024px to 1200px */
 @media (max-width: 1200px) and (min-width: 1025px) {
-    #veterinarios .laptop-mockup,
-    #veterinarios .laptop {
+    .laptop-mockup,
+    .laptop {
         max-width: 28rem !important;
     }
     
@@ -619,8 +617,8 @@ section#veterinarios .laptop {
 
 /* Tablet Landscape - 900px to 1024px */
 @media (max-width: 1024px) and (min-width: 901px) {
-    #veterinarios .laptop-mockup,
-    #veterinarios .laptop {
+    .laptop-mockup,
+    .laptop {
         max-width: 26rem !important;
         transform: scale(0.95) rotateX(4deg);
     }
@@ -641,8 +639,8 @@ section#veterinarios .laptop {
 
 /* Tablet Portrait - 768px to 900px */
 @media (max-width: 900px) and (min-width: 769px) {
-    #veterinarios .laptop-mockup,
-    #veterinarios .laptop {
+    .laptop-mockup,
+    .laptop {
         max-width: 24rem !important;
         transform: scale(0.9) rotateX(3deg);
     }
@@ -684,8 +682,8 @@ section#veterinarios .laptop {
 
 /* Small Tablet - 600px to 768px */
 @media (max-width: 768px) and (min-width: 601px) {
-    #veterinarios .laptop-mockup,
-    #veterinarios .laptop {
+    .laptop-mockup,
+    .laptop {
         max-width: 22rem !important;
         transform: scale(0.85) rotateX(3deg);
     }
@@ -702,8 +700,8 @@ section#veterinarios .laptop {
 
 /* Base mobile styles para laptop - Diseño optimizado */
 @media (max-width: 767px) {
-    #veterinarios .laptop-mockup,
-    #veterinarios .laptop {
+    .laptop-mockup,
+    .laptop {
         max-width: 380px;
         width: 100%;
         margin: 0 auto;
@@ -801,8 +799,8 @@ section#veterinarios .laptop {
 
 /* Large Mobile - 480px to 600px */
 @media (max-width: 600px) and (min-width: 481px) {
-    #veterinarios .laptop-mockup,
-    #veterinarios .laptop {
+    .laptop-mockup,
+    .laptop {
         max-width: 380px;
         transform: scale(0.9) rotateX(3deg);
     }
@@ -820,8 +818,8 @@ section#veterinarios .laptop {
 
 /* Standard Mobile - 375px to 480px */
 @media (max-width: 480px) and (min-width: 376px) {
-    #veterinarios .laptop-mockup,
-    #veterinarios .laptop {
+    .laptop-mockup,
+    .laptop {
         max-width: 360px;
         transform: scale(0.85) rotateX(3deg);
     }
@@ -887,8 +885,8 @@ section#veterinarios .laptop {
 
 /* Small Mobile - 320px to 375px */
 @media (max-width: 375px) and (min-width: 321px) {
-    #veterinarios .laptop-mockup,
-    #veterinarios .laptop {
+    .laptop-mockup,
+    .laptop {
         max-width: 340px;
         transform: scale(0.8) rotateX(3deg);
     }
@@ -911,8 +909,8 @@ section#veterinarios .laptop {
 
 /* Extra Small Mobile - hasta 320px */
 @media (max-width: 320px) {
-    #veterinarios .laptop-mockup,
-    #veterinarios .laptop {
+    .laptop-mockup,
+    .laptop {
         max-width: 300px;
         transform: scale(0.75) rotateX(3deg);
     }
