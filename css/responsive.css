@@ -14,7 +14,7 @@
     margin-bottom: 0 !important;
 }
 
-/* LAYOUT MÓVIL: CELULAR ARRIBA, BOTONES ABAJO */
+/* LAYOUT MÓVIL: MOCKUP ARRIBA, BOTONES ABAJO EN GRID 2x2 */
 @media (max-width: 767px) {
     /* Reorganizar grid principal */
     .grid.lg\\:grid-cols-3 {
@@ -23,34 +23,33 @@
         gap: 2rem !important;
     }
     
-    /* Celular primero */
+    /* Mockup primero */
     .order-1.lg\\:order-2 {
         order: 1 !important;
     }
     
-    /* Botones todos abajo en una sola botonera */
-    .order-2.lg\\:order-1,
-    .order-3 {
+    /* Botones izquierdos segundo */
+    .order-2.lg\\:order-1 {
         order: 2 !important;
     }
     
-    /* Ocultar botones de la derecha en móvil */
+    /* Ocultar botones de la derecha SOLO en móvil */
     .order-3.responsive-button-grid {
         display: none !important;
     }
     
-    /* Unificar todos los botones en la botonera izquierda */
-    .responsive-button-grid {
+    /* Grid 2x2 para botones SOLO en mobile */
+    .order-2.lg\\:order-1.responsive-button-grid {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
-        gap: 0.5rem !important;
-        margin-bottom: 1rem !important;
+        gap: 0.75rem !important;
+        margin-bottom: 1.5rem !important;
         width: 100% !important;
     }
     
-    /* BOTONES ESTILO STEAM DECK/GAMING */
+    /* BOTONES ESTILO GAMING COMPACTOS */
     .phone-nav-button {
-        min-height: 70px !important;
+        min-height: 85px !important;
         padding: 0.75rem 0.5rem !important;
         text-align: center !important;
         border-radius: 1rem !important;
@@ -58,6 +57,10 @@
         border: 2px solid rgba(78, 205, 196, 0.2) !important;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
         transition: all 0.2s ease !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
     
     .phone-nav-button:hover {
@@ -76,10 +79,17 @@
         color: white !important;
     }
     
+    /* Fix para texto en botones on-dark-bg activos - texto teal oscuro sobre fondo blanco */
+    .phone-nav-button.active.on-dark-bg h3 {
+        color: #0f766e !important;
+        font-weight: 700 !important;
+    }
+    
     .phone-nav-button .flex.items-center {
         flex-direction: column !important;
-        margin-bottom: 0.25rem !important;
-        gap: 0.25rem !important;
+        margin-bottom: 0.5rem !important;
+        gap: 0.375rem !important;
+        width: 100% !important;
     }
     
     .phone-nav-button .w-12.h-12 {
@@ -90,18 +100,26 @@
         border-radius: 0.75rem !important;
         background: linear-gradient(135deg, #4ECDC4 0%, #2BB8B1 100%) !important;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+        flex-shrink: 0 !important;
     }
     
     .phone-nav-button.active .w-12.h-12 {
         background: rgba(255,255,255,0.2) !important;
     }
     
+    /* Fix para botones on-dark-bg en móvil - icono con fondo teal oscuro */
+    .phone-nav-button.active.on-dark-bg .w-12.h-12 {
+        background: #2BB8B1 !important;
+    }
+    
     .phone-nav-button h3 {
-        font-size: 0.75rem !important;
-        line-height: 1.2 !important;
+        font-size: 0.8rem !important;
+        line-height: 1.1 !important;
         margin-bottom: 0 !important;
         font-weight: 600 !important;
         color: #374151 !important;
+        text-align: center !important;
+        max-width: 100% !important;
     }
     
     .phone-nav-button p {
@@ -136,9 +154,11 @@
 
 /* Base mobile styles (320px+) - Móviles muy pequeños */
 .phone-mockup {
-    width: 180px;
-    height: 360px;
+    width: 260px;
+    height: 520px;
     margin: 0 auto;
+    /* Mantener el filtro drop-shadow de desktop */
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.4));
 }
 
 /* Ajustes especiales para móviles muy pequeños */
@@ -209,39 +229,93 @@
     gap: 0.5rem;
 }
 
-/* Responsive button grid para componentes - FORZAR CAMBIOS */
-.responsive-button-grid,
-section .responsive-button-grid,
-div .responsive-button-grid {
-    /* Mobile: apilado vertical completo, ancho completo */
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1rem !important;
-    width: 100% !important;
-    grid-template-columns: none !important;
-}
-
-.responsive-button-grid > *,
-section .responsive-button-grid > *,
-div .responsive-button-grid > * {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    width: 100% !important;
-    flex: none !important;
-}
-
-/* Desktop (768px+): mantener vertical stack pero con espaciado desktop */
+/* DESKTOP: Layout vertical por columnas */
 @media (min-width: 768px) {
     .responsive-button-grid {
+        display: flex !important;
+        flex-direction: column !important;
         gap: 1.5rem !important;
+        width: 100% !important;
+    }
+    
+    .responsive-button-grid > * {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        width: 100% !important;
+        flex: none !important;
+    }
+    
+    /* Grid principal: mantener 3 columnas como veterinarios */
+    .grid.lg\\:grid-cols-3 {
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 3rem !important;
+    }
+    
+    /* Asegurar orden correcto en todas las secciones */
+    .order-2.lg\\:order-1 {
+        order: 1 !important;
+    }
+    
+    .order-1.lg\\:order-2 {
+        order: 2 !important;
+    }
+    
+    .order-3 {
+        order: 3 !important;
+    }
+    
+    /* Mostrar botones de la derecha en desktop */
+    .order-3.responsive-button-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Botones desktop - estilo completo */
+    .phone-nav-button {
+        padding: 1.5rem !important;
+        text-align: left !important;
+        border-radius: 1rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        min-height: auto !important;
+    }
+    
+    .phone-nav-button .flex.items-center {
+        flex-direction: row !important;
+        margin-bottom: 0.75rem !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .phone-nav-button .w-12.h-12 {
+        width: 3rem !important;
+        height: 3rem !important;
+        margin-right: 1rem !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .phone-nav-button h3 {
+        font-size: 1.125rem !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+        max-width: none !important;
+    }
+    
+    .phone-nav-button p {
+        display: block !important;
+        font-size: 0.875rem !important;
+        color: #6b7280 !important;
+        line-height: 1.4 !important;
     }
 }
 
 /* Phablets (375px+) */
 @media (min-width: 375px) {
     .phone-mockup {
-        width: 220px;
-        height: 440px;
+        width: 250px;
+        height: 500px;
     }
     
     .phone-nav-button {
@@ -261,8 +335,8 @@ div .responsive-button-grid > * {
 /* Small tablets (480px+) */
 @media (min-width: 480px) {
     .phone-mockup {
-        width: 260px;
-        height: 520px;
+        width: 280px;
+        height: 560px;
     }
     
     .phone-nav-button {
@@ -421,72 +495,118 @@ div .responsive-button-grid > * {
         margin-bottom: 0 !important;
     }
     
-    /* Phone frame simplificado */
+    /* Phone frame - mantener calidad de desktop */
     .phone-frame {
-        padding: 4px;
-        border-radius: 25px;
+        padding: 6px;
+        border-radius: 40px;
+        /* Mantener gradientes y sombras de calidad */
+        background: 
+            linear-gradient(145deg, #3a3a3a 0%, #2a2a2a 25%, #1a1a1a 50%, #0f0f0f 75%, #000 100%);
         box-shadow: 
+            /* Bordes metálicos */
             inset 0 0 0 1px rgba(255,255,255,0.1),
-            0 8px 25px rgba(0,0,0,0.25);
+            inset 0 0 0 2px rgba(0,0,0,0.8),
+            inset 0 0 0 3px rgba(255,255,255,0.05),
+            /* Sombras externas */
+            0 0 15px rgba(0,0,0,0.6),
+            0 3px 25px rgba(0,0,0,0.4);
     }
     
-    /* Dynamic Island simplificado */
+    /* Dynamic Island - mantener calidad */
     .phone-frame::before {
-        width: 60px;
-        height: 20px;
-        top: 12px;
-        border-radius: 12px;
+        width: 90px;
+        height: 25px;
+        top: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 18px;
+        background: 
+            linear-gradient(145deg, #000 0%, #1a1a1a 50%, #000 100%);
+        box-shadow: 
+            inset 0 1px 3px rgba(255,255,255,0.1),
+            inset 0 -1px 3px rgba(0,0,0,0.9);
     }
     
+    /* Cámara frontal */
     .phone-frame::after {
-        width: 6px;
-        height: 6px;
-        top: 19px;
-        left: calc(50% - 12px);
+        width: 8px;
+        height: 8px;
+        top: 25px;
+        left: calc(50% - 10px);
+        background: 
+            radial-gradient(circle at 30% 30%, rgba(100,100,255,0.3) 0%, #000 70%);
+        border-radius: 50%;
+        box-shadow: 
+            inset 0 1px 2px rgba(255,255,255,0.2),
+            0 0 3px rgba(0,0,0,0.8);
     }
     
     .phone-sensor {
-        top: 20px;
-        left: calc(50% + 6px);
-        width: 4px;
-        height: 4px;
+        top: 28px;
+        left: calc(50% + 8px);
+        width: 5px;
+        height: 5px;
     }
     
-    /* Botones físicos más pequeños */
+    /* Botones físicos - mantener calidad */
     .volume-up {
-        top: 80px;
-        height: 15px;
-        width: 2px;
-        left: -1px;
+        top: 120px;
+        height: 25px;
+        width: 3px;
+        left: -2px;
+        background: linear-gradient(90deg, #666 0%, #333 50%, #111 100%);
+        border-radius: 0 2px 2px 0;
+        box-shadow: inset 0 1px 2px rgba(255,255,255,0.1);
     }
     
     .volume-down {
-        top: 100px;
-        height: 15px;
-        width: 2px;
-        left: -1px;
+        top: 150px;
+        height: 25px;
+        width: 3px;
+        left: -2px;
+        background: linear-gradient(90deg, #666 0%, #333 50%, #111 100%);
+        border-radius: 0 2px 2px 0;
+        box-shadow: inset 0 1px 2px rgba(255,255,255,0.1);
     }
     
     .power-button {
-        top: 90px;
-        height: 20px;
-        width: 2px;
-        right: -1px;
+        top: 135px;
+        height: 35px;
+        width: 3px;
+        right: -2px;
+        background: linear-gradient(90deg, #111 0%, #333 50%, #666 100%);
+        border-radius: 2px 0 0 2px;
+        box-shadow: inset 0 1px 2px rgba(255,255,255,0.1);
     }
     
     .speaker-grill {
-        width: 30px;
-        height: 2px;
-        bottom: 12px;
+        width: 40px;
+        height: 3px;
+        bottom: 15px;
+        background: 
+            linear-gradient(90deg, transparent 0%, #333 20%, #111 50%, #333 80%, transparent 100%);
+        border-radius: 2px;
     }
     
     .phone-screen {
-        border-radius: 20px;
-        margin-top: 4px;
+        border-radius: 35px;
+        margin-top: 6px;
+        /* Mantener gradientes y efectos de pantalla */
+        background: 
+            radial-gradient(circle at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 50%),
+            linear-gradient(180deg, #000 0%, #111  100%);
+        box-shadow: 
+            inset 0 2px 8px rgba(0,0,0,0.5),
+            inset 0 -2px 8px rgba(0,0,0,0.3);
     }
     
-    .phone-content-area, .screen-content {
-        border-radius: 20px;
+    .phone-content-area {
+        border-radius: 32px;
+        overflow: hidden;
+    }
+    
+    .screen-content {
+        border-radius: 0;
     }
     
     /* Contenido pantalla optimizado */
@@ -607,9 +727,9 @@ div .responsive-button-grid > * {
     }
     
     .phone-nav-button.active.on-dark-bg {
-        background: rgba(255, 255, 255, 0.95) !important;
-        border-color: #4ECDC4 !important;
-        box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4) !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        border-color: #2BB8B1 !important;
+        box-shadow: 0 8px 25px rgba(43, 184, 177, 0.5) !important;
     }
     
     /* Colores de acento */
@@ -790,14 +910,135 @@ div .responsive-button-grid > * {
     .phone-content-area, .screen-content {
         border-radius: 30px;
     }
+    
+    /* IMPORTANTE: Estilos para botones en rango tablet - evitar círculos blancos */
+    section#veterinarios .phone-nav-button,
+    section#clinicas .phone-nav-button,
+    section#empresas .phone-nav-button,
+    section#tutores .phone-nav-button,
+    .responsive-button-grid .phone-nav-button,
+    .space-y-6 .phone-nav-button {
+        min-height: auto !important;
+        max-height: none !important;
+        width: 100% !important;
+        padding: 1.25rem !important;
+        text-align: left !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        border: 2px solid transparent !important;
+        border-radius: 1.25rem !important;
+        box-shadow: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    section#veterinarios .phone-nav-button:hover,
+    section#clinicas .phone-nav-button:hover,
+    section#empresas .phone-nav-button:hover,
+    section#tutores .phone-nav-button:hover,
+    .responsive-button-grid .phone-nav-button:hover,
+    .space-y-6 .phone-nav-button:hover {
+        border-color: #4ECDC4 !important;
+        transform: scale(1.03) !important;
+    }
+    
+    section#veterinarios .phone-nav-button .w-12.h-12,
+    section#clinicas .phone-nav-button .w-12.h-12,
+    section#empresas .phone-nav-button .w-12.h-12,
+    section#tutores .phone-nav-button .w-12.h-12,
+    .responsive-button-grid .phone-nav-button .w-12.h-12,
+    .space-y-6 .phone-nav-button .w-12.h-12 {
+        width: 2.75rem !important;
+        height: 2.75rem !important;
+        margin-right: 1rem !important;
+        background: #4ECDC4 !important;
+        border-radius: 0.75rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    section#veterinarios .phone-nav-button h3,
+    section#clinicas .phone-nav-button h3,
+    section#empresas .phone-nav-button h3,
+    section#tutores .phone-nav-button h3,
+    .responsive-button-grid .phone-nav-button h3,
+    .space-y-6 .phone-nav-button h3,
+    section#veterinarios .phone-nav-button p,
+    section#clinicas .phone-nav-button p,
+    section#empresas .phone-nav-button p,
+    section#tutores .phone-nav-button p,
+    .responsive-button-grid .phone-nav-button p,
+    .space-y-6 .phone-nav-button p {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    section#veterinarios .phone-nav-button h3,
+    section#clinicas .phone-nav-button h3,
+    section#empresas .phone-nav-button h3,
+    section#tutores .phone-nav-button h3,
+    .responsive-button-grid .phone-nav-button h3,
+    .space-y-6 .phone-nav-button h3 {
+        font-size: 1rem !important;
+        font-weight: bold !important;
+        color: #1f2937 !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    section#veterinarios .phone-nav-button p,
+    section#clinicas .phone-nav-button p,
+    section#empresas .phone-nav-button p,
+    section#tutores .phone-nav-button p,
+    .responsive-button-grid .phone-nav-button p,
+    .space-y-6 .phone-nav-button p {
+        font-size: 0.875rem !important;
+        color: #4b5563 !important;
+        line-height: 1.4 !important;
+    }
+    
+    section#veterinarios .phone-nav-button .flex.items-center,
+    section#clinicas .phone-nav-button .flex.items-center,
+    section#empresas .phone-nav-button .flex.items-center,
+    section#tutores .phone-nav-button .flex.items-center,
+    .responsive-button-grid .phone-nav-button .flex.items-center,
+    .space-y-6 .phone-nav-button .flex.items-center {
+        flex-direction: row !important;
+        margin-bottom: 0.75rem !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    section#veterinarios .phone-nav-button .w-12.h-12 svg,
+    section#clinicas .phone-nav-button .w-12.h-12 svg,
+    section#empresas .phone-nav-button .w-12.h-12 svg,
+    section#tutores .phone-nav-button .w-12.h-12 svg,
+    .responsive-button-grid .phone-nav-button .w-12.h-12 svg,
+    .space-y-6 .phone-nav-button .w-12.h-12 svg {
+        width: 1.375rem !important;
+        height: 1.375rem !important;
+        color: white !important;
+        display: block !important;
+    }
+    
+    /* Contraste específico para secciones con fondo oscuro en tablets */
+    section#veterinarios .phone-nav-button.active,
+    section#empresas .phone-nav-button.active {
+        background: rgba(255, 255, 255, 0.98) !important;
+        border-color: #4ECDC4 !important;
+        box-shadow: 0 6px 20px rgba(78, 205, 196, 0.3) !important;
+    }
 }
 
 /* Mobile muy pequeño (hasta 374px) */
 @media (max-width: 374px) {
     /* Teléfonos muy pequeños - layout ultra compacto */
     .phone-mockup {
-        width: 180px !important;
-        height: 360px !important;
+        width: 220px;
+        height: 440px;
     }
     
     .phone-frame {

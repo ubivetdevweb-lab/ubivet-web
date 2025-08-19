@@ -79,6 +79,50 @@ To run locally, simply open `index.html` in a browser or serve it using any stat
 
 ## Architecture
 
+### CSS Architecture - Código Organizado ✅
+
+El CSS ha sido completamente reorganizado y optimizado:
+
+#### **📁 Estructura de Archivos CSS**
+- **`css/styles.css`** - Estilos base, animaciones, variables CSS (320 líneas)
+- **`css/components.css`** - Sistemas completos: MacBook + Phone + Notebook (1,341 líneas) 
+- **`css/mobile-gaming.css`** - Sistema gaming móvil y landscape (700 líneas)
+- **`css/responsive.css`** - Responsive general del sitio (974 líneas)
+- **`css/safari-fix.css`** - Fixes específicos Safari (64 líneas)
+
+#### **🧹 Limpieza Realizada**
+- **Eliminado código duplicado** - Se removieron +500 líneas redundantes
+- **Reorganizada estructura** - Tabla de contenidos clara en cada archivo
+- **Comentarios descriptivos** - Secciones bien documentadas
+- **Media queries consolidadas** - Mejor organización responsive
+- **Backups creados** - `components-backup.css` y `mobile-gaming-backup.css`
+
+#### **📋 Tabla de Contenidos CSS**
+
+**components.css:**
+1. Variables y Configuración Base
+2. Estilos Base del MacBook
+3. Sistema de Contenido del MacBook
+4. Sistema Responsive - Desktop
+5. Sistema Responsive - Tablet
+6. Sistema Responsive - Móvil Portrait
+7. Sistema Responsive - Móvil Landscape
+8. Animaciones y Efectos (floating phones, breathing, etc.)
+9. Sistema Phone Mockup (Dynamic Island, botones físicos)
+9.1. Estilos de Botones Críticos (on-dark-bg, efectos hover)
+10. Sistema Notebook Legacy (frame PNG, posicionamiento)
+11. Utilidades y Helpers (optimización rendimiento)
+
+**mobile-gaming.css:**
+1. Reset Desktop - Layout Original
+2. Sistema Mobile Gaming - Layout Compacto
+3. Secciones Específicas - Veterinarios
+4. Secciones Específicas - Clínicas
+5. Secciones Específicas - Empresas
+6. Área de Descripción Gaming
+7. Optimizaciones Landscape Móvil
+8. Utilidades y Helpers
+
 ### Single Page Application with Modular Architecture
 The website is structured as a single-page application with the following main sections:
 - **Navigation**: Fixed header with smooth scrolling and mobile hamburger menu

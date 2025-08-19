@@ -273,46 +273,36 @@ function initializeDynamicDescription() {
         
         // Veterinarios section
         'vetItem1': {
-            title: 'Agenda citas de forma sencilla',
+            title: 'Agendar citas de forma sencilla',
             description: 'Con nuestra app, puedes gestionar tus citas de manera fácil y eficiente.',
             icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>`
         },
         'vetItem2': {
-            title: 'Accede al perfil completo',
-            description: 'De tus pacientes con todo su historial médico y tratamientos.',
+            title: 'Acceder al perfil completo',
+            description: 'de tus pacientes con todo su historial médico y tratamientos.',
             icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>`
         },
         'vetItem3': {
-            title: 'Servicios a domicilio',
-            description: 'Presta servicios a domicilio, cuando estés disponible.',
+            title: 'Presta servicios a domicilio,',
+            description: 'cuando estés disponible. Amplía tu práctica y genera nuevos ingresos.',
             icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>`
-        },
-        'vetItem4': {
-            title: 'Red de profesionales',
-            description: 'Forma parte de nuestra red de veterinarios a domicilio acreditados.',
-            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>`
         },
         
         // Clínicas section
         'clinicItem1': {
             title: 'Atrae más clientes',
-            description: 'Ya que los tutores de mascotas podrán encontrar tu clínica fácilmente con nuestra funcionalidad de mapas.',
+            description: 'ya que los tutores de mascotas podrán encontrar tu clínica fácilmente con nuestra funcionalidad de mapas.',
             icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>`
         },
         'clinicItem2': {
             title: 'Crea un perfil completo',
-            description: 'Donde podrás mostrar toda tu información, desde los servicios que ofreces hasta tus horarios de atención.',
+            description: 'donde podrás mostrar toda tu información, desde los servicios que ofreces hasta tus horarios de atención.',
             icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>`
         },
         'clinicItem3': {
-            title: 'Plan de Marketing',
-            description: 'Contrata nuestro plan de marketing y publica promociones y beneficios para nuestros suscriptores.',
+            title: 'Contrata nuestro plan de marketing',
+            description: 'y publica promociones y beneficios para nuestros suscriptores.',
             icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>`
-        },
-        'clinicItem4': {
-            title: 'Panel de Control',
-            description: 'Monitorea estadísticas y gestiona tu clínica integralmente.',
-            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>`
         },
         'empItem1': {
             title: 'Convenios corporativos',

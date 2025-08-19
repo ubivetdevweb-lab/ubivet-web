@@ -35,7 +35,6 @@ class CarouselController {
         // Buscar todos los contenedores de contenido de carrusel
         const phoneContainers = document.querySelectorAll('.phone-content-area');
         const laptopContainers = document.querySelectorAll('.laptop-content-area');
-        const notebookContainers = document.querySelectorAll('.notebook-content-area');
         
         phoneContainers.forEach((container, index) => {
             this.setupCarousel(container, `phone-carousel-${index}`);
@@ -43,10 +42,6 @@ class CarouselController {
         
         laptopContainers.forEach((container, index) => {
             this.setupCarousel(container, `laptop-carousel-${index}`);
-        });
-        
-        notebookContainers.forEach((container, index) => {
-            this.setupCarousel(container, `notebook-carousel-${index}`);
         });
 
         console.log(`Carruseles inicializados: ${this.carousels.size}`);

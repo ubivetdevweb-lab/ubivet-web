@@ -1,189 +1,324 @@
-/* ===============================================
-   UBIVET COMPONENTS CSS - VERSIÓN ORGANIZADA
-   =============================================== */
+/* UbiVet Components CSS */
 
-/* ===== TABLA DE CONTENIDOS =====
-   1. Variables y Configuración Base
-   2. Estilos Base del MacBook
-   3. Sistema de Contenido del MacBook
-   4. Sistema Responsive - Desktop
-   5. Sistema Responsive - Tablet
-   6. Sistema Responsive - Móvil Portrait
-   7. Sistema Responsive - Móvil Landscape
-   8. Animaciones y Efectos
-   9. Utilidades y Helpers
-*/
-
-/* ===== 1. VARIABLES Y CONFIGURACIÓN BASE ===== */
-:root {
-    --laptop-primary-color: #f8fafc;
-    --laptop-secondary-color: #f1f5f9;
-    --laptop-tertiary-color: #e2e8f0;
-    --laptop-border-color: #cbd5e1;
-    --laptop-shadow-color: rgba(0, 0, 0, 0.15);
-    --laptop-screen-ratio: 16/10;
+/* Notebook Mockup - Using SVG Frame */
+.notebook-mockup {
+    width: 480px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto;
+    background-image: url('/escritos/frame-nb.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 15px 35px rgba(0,0,0,0.15));
 }
 
-/* Gradientes personalizados para Tailwind */
-.bg-gradient-to-br.from-vet-teal.to-vet-teal-dark {
-    background: linear-gradient(to bottom right, #4ECDC4, #2BB8B1) !important;
+/* Contenedor para posicionar el contenido dentro de la pantalla del notebook */
+.notebook-screen {
+    position: absolute;
+    top: 12%;
+    left: 12%;
+    width: 76%;
+    height: 58%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* ===== 2. SISTEMA LAPTOP FLOWBITE ===== */
+/* Marco de la pantalla - ahora solo es un contenedor */
+.notebook-bezel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Display interno */
+.notebook-display {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Área de contenido */
+.notebook-content-area {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.notebook-content-area .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.notebook-content-area .content.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notebook-content-area .content.prev {
+    transform: translateX(-100%);
+}
+
+.notebook-content-area .screen-content {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Elementos que ya no necesitamos con el SVG */
+.notebook-webcam,
+.notebook-base,
+.notebook-hinge {
+    display: none;
+}
+
+/* Modern Laptop Mockup - Diseño elegante y profesional */
 .laptop-mockup {
     position: relative;
     margin: 0 auto;
-    animation: laptopFloat 6s ease-in-out infinite;
-    max-width: 100%;
+    max-width: 32rem !important;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    perspective: 1200px;
 }
 
-/* Asegurar responsive del mockup */
-@media (max-width: 767px) {
-    .laptop-mockup {
-        transform: scale(0.9);
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .laptop-mockup {
-        transform: scale(0.8);
-    }
-}
-
-/* ✅ MOCKUP FLOWBITE - ESTRUCTURA DEFINITIVA
-   Pantalla: relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]
-   Contenido: rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800
-   Base: relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]
-   Trackpad: absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800
-*/
-
-/* Compatibilidad con clases legacy si se usan */
-.laptop-screen {
+.laptop {
     position: relative;
-    margin: 0 auto;
-    border: 8px solid #1f2937;
-    background: #1f2937;
-    border-radius: 0.75rem 0.75rem 0 0;
-    height: 172px;
-    max-width: 301px;
+    margin: auto;
+    max-width: 32rem !important;
+    width: 100%;
+    transform: rotateX(5deg);
+    animation: laptopFloat 6s ease-in-out infinite;
 }
 
-@media (min-width: 768px) {
-    .laptop-screen {
-        height: 294px;
-        max-width: 512px;
-    }
+@keyframes laptopFloat {
+    0%, 100% { transform: rotateX(5deg) translateY(0px); }
+    50% { transform: rotateX(5deg) translateY(-8px); }
 }
 
-.laptop-content {
+/* MacBook Air Style Screen - Natural */
+.laptop__screen {
+    position: relative;
+    z-index: 3;
+    padding: 2%;
+    border-radius: 0.7rem;
+    margin: 0 3% 2px 1%;
+    background: 
+        linear-gradient(145deg, 
+            #f8fafc 0%, 
+            #f1f5f9 25%, 
+            #e2e8f0 50%, 
+            #cbd5e1 75%, 
+            #b8c5d1 100%
+        );
+    box-shadow: 
+        /* Marco exterior aluminio */
+        0 0 0 0.5px rgba(255,255,255,0.9),
+        0 0 0 1px #e2e8f0,
+        0 0 0 1.5px rgba(0,0,0,0.08),
+        /* Sombras MacBook Air */
+        0 8px 25px rgba(0,0,0,0.12),
+        0 16px 40px rgba(0,0,0,0.08),
+        0 24px 60px rgba(0,0,0,0.04),
+        /* Brillo metálico */
+        inset 0 1px 0 rgba(255,255,255,0.95),
+        inset 0 -0.5px 0 rgba(0,0,0,0.05);
+    border: 0.5px solid rgba(226, 232, 240, 0.9);
+    aspect-ratio: 16/10;
+    min-height: 260px;
+    max-height: 300px;
+}
+
+/* Bisagra MacBook Air */
+.laptop__screen::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 5%;
+    right: 5%;
+    height: 3px;
+    background: 
+        linear-gradient(to right,
+            transparent 0%,
+            rgba(148, 163, 184, 0.6) 15%,
+            rgba(100, 116, 139, 0.8) 50%,
+            rgba(148, 163, 184, 0.6) 85%,
+            transparent 100%
+        );
+    border-radius: 1.5px;
+    z-index: 4;
+}
+
+/* Cámara MacBook Air estilo */
+.laptop__screen::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background: 
+        radial-gradient(circle, #0f0f0f 20%, #2a2a2a 60%, #1a1a1a 100%);
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 
+        0 0 0 1px rgba(255,255,255,0.2),
+        0 0 0 2px rgba(0,0,0,0.05);
+}
+
+/* Base MacBook Air - Más ancha que pantalla */
+.laptop__bottom {
+    position: relative;
+    z-index: 2;
+    margin: 0 -5% 0 -5%;
+    height: 1.7rem;
+    background: 
+        linear-gradient(to bottom, 
+            #e2e8f0 0%,
+            #cbd5e1 30%,
+            #94a3b8 70%,
+            #64748b 100%
+        );
+    border-radius: 0.2rem 0.2rem 1rem 1rem;
+    box-shadow: 
+        /* Bordes de aluminio más sutiles */
+        0 0 0 0.5px rgba(255,255,255,0.3),
+        /* Sombras MacBook Air */
+        0 2px 10px rgba(0,0,0,0.06),
+        0 4px 20px rgba(0,0,0,0.04),
+        /* Brillo interno sutil */
+        inset 0 0.5px 0 rgba(255,255,255,0.4),
+        inset 0 -0.5px 0 rgba(0,0,0,0.04);
+}
+
+/* Trackpad MacBook Air */
+.laptop__bottom::before {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22%;
+    height: 10px;
+    background: 
+        linear-gradient(to bottom,
+            rgba(148, 163, 184, 0.4) 0%,
+            rgba(100, 116, 139, 0.6) 50%,
+            rgba(71, 85, 105, 0.8) 100%
+        );
+    border-radius: 4px;
+    border: 0.5px solid rgba(0,0,0,0.15);
+    box-shadow: 
+        inset 0 0.5px 2px rgba(0,0,0,0.2),
+        0 0.5px 0 rgba(255,255,255,0.3);
+}
+
+/* Teclado MacBook Air minimalista */
+.laptop__bottom::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 8%;
+    right: 8%;
+    height: 10px;
+    background: 
+        repeating-linear-gradient(90deg,
+            transparent 0px,
+            transparent 6px,
+            rgba(255,255,255,0.08) 6px,
+            rgba(255,255,255,0.08) 6.5px,
+            transparent 6.5px,
+            transparent 12.5px
+        );
+    border-radius: 1px;
+    opacity: 0.7;
+}
+
+/* Eliminamos laptop__under - MacBook Air no lo necesita */
+.laptop__under {
+    display: none;
+}
+
+/* Sombra MacBook Air - Más realista */
+.laptop__shadow {
+    position: absolute;
+    top: 100%;
+    left: -10%;
+    right: -10%;
+    height: 2.5rem;
+    background: 
+        radial-gradient(ellipse 60% 40%, 
+            rgba(0,0,0,0.15) 0%, 
+            rgba(0,0,0,0.08) 50%, 
+            transparent 80%
+        );
+    z-index: 0;
+    filter: blur(1.5px);
+    opacity: 0.7;
+}
+
+/* MacBook Air Display - Pantalla natural */
+.laptop-content-area {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: 
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,0.02) 0%, transparent 40%),
+        linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
     border-radius: 0.5rem;
     overflow: hidden;
-    height: 156px;
-    background: #ffffff;
-}
-
-@media (min-width: 768px) {
-    .laptop-content {
-        height: 278px;
-    }
-}
-
-.laptop-base {
-    position: relative;
-    margin: 0 auto;
-    background: #111827;
-    border-radius: 0 0 0.75rem 0.75rem;
-    border-top-left-radius: 0.125rem;
-    border-top-right-radius: 0.125rem;
-    height: 17px;
-    max-width: 351px;
-}
-
-@media (min-width: 768px) {
-    .laptop-base {
-        height: 21px;
-        max-width: 597px;
-    }
-}
-
-.laptop-notch {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    border-radius: 0 0 0.75rem 0.75rem;
-    width: 56px;
-    height: 5px;
-    background: #1f2937;
-}
-
-@media (min-width: 768px) {
-    .laptop-notch {
-        width: 96px;
-        height: 8px;
-    }
-}
-
-/* ===== 3. SISTEMA DE CONTENIDO DEL LAPTOP ===== */
-.laptop-content-area {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    background: transparent;
+    min-height: 220px;
+    max-height: 260px;
+    aspect-ratio: 16/10;
+    box-shadow: 
+        /* Pantalla Retina MacBook Air */
+        inset 0 0 0 0.5px rgba(255,255,255,0.08),
+        inset 0 0 40px rgba(0,0,0,0.9),
+        inset 0 0.5px 0 rgba(255,255,255,0.15),
+        0 0 20px rgba(0,0,0,0.2);
+    border: 0.5px solid rgba(255,255,255,0.08);
+    z-index: 2;
     display: flex;
     align-items: stretch;
-    overflow: hidden;
 }
 
-/* Asegurar que el contenedor del mockup no se desborde */
-.order-1.lg\\:order-2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
-    min-height: 200px;
-}
-
-@media (min-width: 768px) {
-    .order-1.lg\\:order-2 {
-        min-height: 320px;
-    }
-}
-
-/* ARREGLAR DISTRIBUCIÓN DE BOTONES */
-@media (min-width: 1024px) {
-    /* En desktop: botones en columna vertical con buen espaciado */
-    .responsive-button-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1.5rem !important;
-        width: 100% !important;
-    }
-    
-    .phone-nav-button {
-        width: 100% !important;
-        min-height: auto !important;
-        padding: 1.5rem !important;
-    }
-}
-
-@media (max-width: 1023px) {
-    /* En móvil/tablet: mantener grid de 2 columnas pero con mejor espaciado */
-    .responsive-button-grid {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 1rem !important;
-        margin-bottom: 2rem !important;
-    }
+/* Efecto Retina MacBook Air */
+.laptop-content-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 25% 15%, rgba(255,255,255,0.04) 0%, transparent 35%),
+        radial-gradient(circle at 75% 85%, rgba(78, 205, 196,0.02) 0%, transparent 35%),
+        linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 40%);
+    border-radius: 0.5rem;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .laptop-content-area .content {
@@ -211,47 +346,16 @@
 .laptop-content-area .screen-content {
     width: 100%;
     height: 100%;
-    padding: 12px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-/* Ajustar tamaños para el mockup simple */
-.laptop-content-area .screen-content h2 {
-    font-size: 1.1rem !important;
-    margin-bottom: 0.5rem !important;
-}
-
-.laptop-content-area .screen-content p {
-    font-size: 0.8rem !important;
-    margin-bottom: 0.75rem !important;
-}
-
-.laptop-content-area .screen-content .w-16.h-16 {
-    width: 3rem !important;
-    height: 3rem !important;
-    margin-bottom: 0.75rem !important;
-}
-
-.laptop-content-area .screen-content .space-y-3 {
-    gap: 0.5rem !important;
-}
-
-.laptop-content-area .screen-content .bg-white\\/10 {
-    padding: 0.5rem !important;
-}
-
-.laptop-content-area .screen-content .bg-white\\/10 p {
-    font-size: 0.7rem !important;
-}
     justify-content: space-between;
     font-size: 13px;
     line-height: 1.4;
     border-radius: 0.8rem;
     position: relative;
     overflow: hidden;
+    /* Efecto de pantalla OLED para laptop */
     box-shadow: 
         inset 0 0 80px rgba(0,0,0,0.2),
         inset 0 0 30px rgba(255,255,255,0.02);
@@ -262,8 +366,6 @@
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
-    position: relative;
-    z-index: 2;
 }
 
 .laptop-content-area .screen-content .text-center {
@@ -303,6 +405,7 @@
     margin: 0;
 }
 
+/* Mejora de las pantallas con efecto glassmorphism para laptop */
 .laptop-content-area .screen-content::before {
     content: '';
     position: absolute;
@@ -310,13 +413,21 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 50%);
+    background: 
+        linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 50%);
     z-index: 1;
     pointer-events: none;
     border-radius: 0.8rem;
 }
 
-/* ===== 4. SISTEMA RESPONSIVE - DESKTOP ===== */
+/* Asegurar que el texto esté por encima */
+.laptop-content-area .screen-content > div {
+    position: relative;
+    z-index: 2;
+}
+
+/* SISTEMA COMPLETO DE RESPONSIVE DESIGN PARA MACBOOK */
+
 /* Ultra Wide Desktop - 1920px+ */
 @media (min-width: 1920px) {
     .laptop-mockup,
@@ -336,6 +447,12 @@
         padding: 24px;
         font-size: 14px;
         line-height: 1.5;
+        justify-content: space-between;
+    }
+    
+    .laptop-content-area .screen-content > div {
+        height: 100%;
+        justify-content: space-between;
     }
     
     .laptop-content-area .screen-content h2 {
@@ -430,7 +547,56 @@
     
     .laptop-content-area .screen-content h2 {
         font-size: 1.1rem;
-        margin-bottom: 0.6rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .laptop-content-area .screen-content .w-16.h-16 {
+        width: 3rem;
+        height: 3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 > div {
+        padding: 0.6rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .laptop-content-area .screen-content p {
+        font-size: 11px;
+    }
+}
+
+/* Desktop Medium - 1024px to 1200px */
+@media (max-width: 1200px) and (min-width: 1025px) {
+    .laptop-mockup,
+    .laptop {
+        max-width: 28rem !important;
+    }
+    
+    .laptop__screen {
+        margin: 0 2% 2px 2%;
+        min-height: 240px;
+    }
+    
+    .laptop__bottom {
+        margin: 0 -4% 0 -4%;
+    }
+    
+    .laptop-content-area .screen-content {
+        padding: 18px;
+        font-size: 12px;
+        line-height: 1.4;
+        justify-content: space-between;
+    }
+    
+    .laptop-content-area .screen-content > div {
+        height: 100%;
+        justify-content: space-between;
+    }
+    
+    .laptop-content-area .screen-content h2 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
     }
     
     .laptop-content-area .screen-content .w-16.h-16 {
@@ -449,7 +615,6 @@
     }
 }
 
-/* ===== 5. SISTEMA RESPONSIVE - TABLET ===== */
 /* Tablet Landscape - 900px to 1024px */
 @media (max-width: 1024px) and (min-width: 901px) {
     .laptop-mockup,
@@ -533,8 +698,7 @@
     }
 }
 
-/* ===== 6. SISTEMA RESPONSIVE - MÓVIL PORTRAIT ===== */
-/* Base mobile styles - Diseño optimizado */
+/* Base mobile styles para laptop - Diseño optimizado */
 @media (max-width: 767px) {
     .laptop-mockup,
     .laptop {
@@ -552,12 +716,15 @@
         margin: 0 -17% 2px -13%;
         width: 130%;
         box-shadow: 
+            /* Marco exterior metálico móvil */
             0 0 0 1px rgba(255,255,255,0.7),
             0 0 0 2px #cbd5e1,
             0 0 0 3px rgba(0,0,0,0.08),
+            /* Sombras optimizadas */
             0 3px 15px rgba(0,0,0,0.12),
             0 8px 25px rgba(0,0,0,0.08),
             0 15px 35px rgba(0,0,0,0.04),
+            /* Luz interior */
             inset 0 1px 0 rgba(255,255,255,0.8),
             inset 0 -1px 0 rgba(0,0,0,0.08);
     }
@@ -573,60 +740,14 @@
     }
     
     .laptop-content-area {
-        min-height: 225px;
-        max-height: 230px;
+        min-height: 200px;
         border-radius: 0.6rem;
-        overflow: hidden !important;
-    }
-    
-    .laptop-content-area .content {
-        overflow: hidden !important;
-        height: 100% !important;
     }
     
     .laptop-content-area .screen-content {
         padding: 16px;
         font-size: 12px;
         line-height: 1.4;
-        overflow: hidden !important;
-        height: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: space-between !important;
-        box-sizing: border-box !important;
-    }
-    
-    .laptop-content-area .screen-content > div {
-        overflow: hidden !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: space-between !important;
-        height: 100% !important;
-        box-sizing: border-box !important;
-    }
-    
-    .laptop-content-area .screen-content .text-center {
-        flex-shrink: 0 !important;
-        overflow: hidden !important;
-        margin-bottom: 0.75rem !important;
-    }
-    
-    .laptop-content-area .screen-content .space-y-3 {
-        flex: 1 !important;
-        overflow: hidden !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: space-around !important;
-        gap: 0.4rem !important;
-    }
-    
-    .laptop-content-area .screen-content .space-y-3 > div {
-        flex-shrink: 0 !important;
-        overflow: hidden !important;
-        white-space: normal !important;
-        text-overflow: ellipsis !important;
-        max-height: 2.5em !important;
-        line-height: 1.2 !important;
     }
     
     .laptop__bottom {
@@ -652,9 +773,14 @@
         left: -15%;
         right: -15%;
     }
+    
+    @keyframes laptopFloat {
+        0%, 100% { transform: scale(0.85) rotateX(3deg) translateY(0px); }
+        50% { transform: scale(0.85) rotateX(3deg) translateY(-6px); }
+    }
 }
 
-/* Phablets - 375px+ */
+/* Phablets (375px+) */
 @media (min-width: 375px) and (max-width: 767px) {
     .laptop-mockup,
     .laptop {
@@ -708,11 +834,6 @@
         margin: 0 -19% 0 -19%;
     }
     
-    .laptop-content-area {
-        min-height: 210px !important;
-        max-height: 215px !important;
-    }
-    
     .laptop-content-area .screen-content {
         padding: 8px;
         font-size: 9px;
@@ -742,15 +863,12 @@
     }
     
     .laptop-content-area .screen-content .space-y-3 {
-        gap: 0.3rem !important;
+        gap: 0.25rem;
         flex: none;
     }
     
     .laptop-content-area .screen-content .space-y-3 > div {
-        padding: 0.4rem !important;
-        font-size: 9px !important;
-        line-height: 1.3 !important;
-        max-height: 2.2em !important;
+        padding: 0.25rem;
         border-radius: 0.3rem;
     }
     
@@ -783,18 +901,9 @@
         margin: 0 -20% 0 -20%;
     }
     
-    .laptop-content-area {
-        min-height: 200px !important;
-        max-height: 205px !important;
-    }
-    
     .laptop-content-area .screen-content {
-        padding: 10px !important;
-        font-size: 10px !important;
-    }
-    
-    .laptop-content-area .screen-content .space-y-3 > div {
-        max-height: 2em !important;
+        padding: 12px;
+        font-size: 11px;
     }
 }
 
@@ -840,8 +949,104 @@
     }
 }
 
-/* ===== 7. SISTEMA RESPONSIVE - MÓVIL LANDSCAPE ===== */
+/* FIXES ESPECÍFICOS PARA MÓVILES REALES - Prevenir overflow manteniendo tamaño apropiado */
+@media (max-width: 767px) {
+    /* Mantener altura natural pero prevenir overflow */
+    .laptop-content-area {
+        overflow: hidden !important;
+        /* Más altura para mejor visualización */
+        min-height: 225px !important;
+        max-height: 230px !important;
+    }
+    
+    .laptop-content-area .content {
+        overflow: hidden !important;
+        height: 100% !important;
+    }
+    
+    .laptop-content-area .screen-content {
+        overflow: hidden !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        box-sizing: border-box !important;
+    }
+    
+    .laptop-content-area .screen-content > div {
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        height: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .laptop-content-area .screen-content .text-center {
+        flex-shrink: 0 !important;
+        overflow: hidden !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 {
+        flex: 1 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-around !important;
+        gap: 0.4rem !important;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 > div {
+        flex-shrink: 0 !important;
+        overflow: hidden !important;
+        /* Permitir wrap de texto pero controlar altura */
+        white-space: normal !important;
+        text-overflow: ellipsis !important;
+        max-height: 2.5em !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* Ajustes más conservadores para móviles pequeños */
+@media (max-width: 480px) {
+    .laptop-content-area {
+        min-height: 210px !important;
+        max-height: 215px !important;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 {
+        gap: 0.3rem !important;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 > div {
+        padding: 0.4rem !important;
+        font-size: 9px !important;
+        line-height: 1.3 !important;
+        max-height: 2.2em !important;
+    }
+}
+
+/* Ajustes para móviles extra pequeños - más espacio */
+@media (max-width: 375px) {
+    .laptop-content-area {
+        min-height: 200px !important;
+        max-height: 205px !important;
+    }
+    
+    .laptop-content-area .screen-content {
+        padding: 10px !important;
+        font-size: 10px !important;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 > div {
+        max-height: 2em !important;
+    }
+}
+
+/* ===== OPTIMIZACIONES LAPTOP PARA LANDSCAPE MÓVIL ===== */
 @media (max-width: 926px) and (orientation: landscape) {
+    /* Ajustar altura del laptop para landscape */
     .laptop-content-area {
         min-height: 160px !important;
         max-height: 170px !important;
@@ -884,7 +1089,7 @@
     }
 }
 
-/* Landscape para teléfonos pequeños */
+/* Landscape para teléfonos pequeños - laptop aún más compacto */
 @media (max-width: 740px) and (orientation: landscape) {
     .laptop-content-area {
         min-height: 140px !important;
@@ -915,17 +1120,9 @@
     }
 }
 
-/* ===== 8. ANIMACIONES Y EFECTOS ===== */
-@keyframes laptopFloat {
-    0%, 100% { 
-        transform: translateY(0px); 
-    }
-    50% { 
-        transform: translateY(-10px); 
-    }
-}
+/* ===== CÓDIGO LEGACY NOTEBOOK - MANTENIDO PARA COMPATIBILIDAD ===== */
 
-/* Animaciones para teléfonos flotantes del hero */
+/* Animaciones elegantes para los celulares */
 @keyframes float-gentle {
     0%, 100% { transform: translateY(0px) rotate(-12deg) scale(0.9); }
     50% { transform: translateY(-8px) rotate(-12deg) scale(0.9); }
@@ -942,12 +1139,6 @@
     50% { transform: scale(1.02); }
 }
 
-@keyframes phoneFloat {
-    0%, 100% { transform: translateY(0px) rotateX(0deg); }
-    50% { transform: translateY(-10px) rotateX(2deg); }
-}
-
-/* Clases de animación para teléfonos */
 .phone-float-left {
     transform: translateY(0px) rotate(-12deg) scale(0.9);
     animation: float-gentle 3s ease-in-out infinite;
@@ -965,11 +1156,7 @@
     animation: breathe-main 4s ease-in-out infinite;
 }
 
-.phone-floating {
-    animation: phoneFloat 6s ease-in-out infinite;
-}
-
-/* ===== 9. SISTEMA PHONE MOCKUP ===== */
+/* Phone Mockup Mejorado - Ultra Realista */
 .phone-mockup {
     width: 320px;
     height: 640px;
@@ -991,12 +1178,23 @@
         inset 0 0 0 1px rgba(255,255,255,0.1),
         inset 0 0 0 2px rgba(0,0,0,0.8),
         inset 0 0 0 3px rgba(255,255,255,0.05),
-        /* Sombras externas */
-        0 0 20px rgba(0,0,0,0.6),
-        0 5px 40px rgba(0,0,0,0.4);
+        /* Sombras de profundidad */
+        0 0 0 1px #1a1a1a,
+        0 2px 10px rgba(0,0,0,0.3),
+        0 10px 40px rgba(0,0,0,0.4),
+        0 30px 60px rgba(0,0,0,0.3),
+        /* Reflejo de luz */
+        inset -2px -2px 5px rgba(255,255,255,0.1),
+        inset 2px 2px 5px rgba(0,0,0,0.4);
+    animation: phoneFloat 6s ease-in-out infinite;
 }
 
-/* Dynamic Island */
+@keyframes phoneFloat {
+    0%, 100% { transform: translateY(0px) rotateX(0deg); }
+    50% { transform: translateY(-10px) rotateX(2deg); }
+}
+
+/* Dynamic Island (como iPhone 14 Pro) */
 .phone-frame::before {
     content: '';
     position: absolute;
@@ -1010,11 +1208,12 @@
     border-radius: 25px;
     z-index: 15;
     box-shadow: 
-        inset 0 1px 3px rgba(255,255,255,0.1),
-        inset 0 -1px 3px rgba(0,0,0,0.9);
+        inset 0 2px 8px rgba(0,0,0,0.8),
+        inset 0 -1px 3px rgba(255,255,255,0.1),
+        0 0 20px rgba(0,0,0,0.5);
 }
 
-/* Cámara frontal */
+/* Cámara principal en Dynamic Island */
 .phone-frame::after {
     content: '';
     position: absolute;
@@ -1028,10 +1227,10 @@
     z-index: 16;
     box-shadow: 
         inset 0 0 3px rgba(0,0,0,0.8),
-        0 0 2px rgba(255,255,255,0.1);
+        0 0 5px rgba(0,0,0,0.5);
 }
 
-/* Sensor de proximidad */
+/* Sensor secundario */
 .phone-sensor {
     position: absolute;
     top: 37px;
@@ -1045,7 +1244,7 @@
     box-shadow: inset 0 0 2px rgba(0,0,0,0.9);
 }
 
-/* Botón subir volumen */
+/* Botones laterales mejorados */
 .volume-up {
     position: absolute;
     left: -3px;
@@ -1059,7 +1258,6 @@
         inset -1px 0 2px rgba(0,0,0,0.3);
 }
 
-/* Botón bajar volumen */
 .volume-down {
     position: absolute;
     left: -3px;
@@ -1073,7 +1271,6 @@
         inset -1px 0 2px rgba(0,0,0,0.3);
 }
 
-/* Botón de encendido */
 .power-button {
     position: absolute;
     right: -3px;
@@ -1087,7 +1284,7 @@
         inset 1px 0 2px rgba(0,0,0,0.3);
 }
 
-/* Rejilla del altavoz */
+/* Speaker mejorado */
 .speaker-grill {
     position: absolute;
     bottom: 25px;
@@ -1099,9 +1296,11 @@
         linear-gradient(90deg, transparent 0%, #333 20%, #555 50%, #333 80%, transparent 100%);
     border-radius: 2px;
     z-index: 15;
+    box-shadow: 
+        inset 0 1px 1px rgba(0,0,0,0.8),
+        0 1px 0 rgba(255,255,255,0.1);
 }
 
-/* Pantalla del teléfono */
 .phone-screen {
     width: 100%;
     height: calc(100% - 16px);
@@ -1114,11 +1313,12 @@
     margin-top: 8px;
     border: 1px solid rgba(255,255,255,0.1);
     box-shadow: 
-        inset 0 2px 10px rgba(0,0,0,0.5),
-        inset 0 -2px 10px rgba(0,0,0,0.3);
+        inset 0 0 30px rgba(0,0,0,0.8),
+        inset 0 1px 0 rgba(255,255,255,0.2),
+        0 0 50px rgba(0,0,0,0.5);
 }
 
-/* Reflejos de la pantalla */
+/* Efecto de pantalla encendida */
 .phone-screen::before {
     content: '';
     position: absolute;
@@ -1133,7 +1333,7 @@
     pointer-events: none;
 }
 
-/* Barra de estado simulada */
+/* Status bar simulado */
 .phone-screen::after {
     content: '';
     position: absolute;
@@ -1145,14 +1345,15 @@
         linear-gradient(90deg, 
             transparent 0%, 
             rgba(255,255,255,0.1) 20%, 
-            rgba(255,255,255,0.05) 50%, 
-            rgba(255,255,255,0.1) 80%, 
-            transparent 100%);
+            transparent 40%,
+            transparent 60%,
+            rgba(255,255,255,0.1) 80%,
+            transparent 100%
+        );
     border-radius: 10px;
-    z-index: 2;
+    z-index: 5;
 }
 
-/* Área de contenido del teléfono */
 .phone-content-area {
     width: 100%;
     height: 100%;
@@ -1162,54 +1363,87 @@
     z-index: 2;
 }
 
-.phone-content-area .content {
+.content {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
     opacity: 0;
     transform: translateX(100%) scale(0.95);
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 100%;
+    height: 100%;
     z-index: 2;
 }
 
-.phone-content-area .content.show {
+.content.show {
     opacity: 1;
     transform: translateX(0) scale(1);
 }
 
-.phone-content-area .content.hide {
+.content.hide {
     opacity: 0;
     transform: translateX(-100%) scale(0.95);
 }
 
-.phone-content-area .screen-content {
+.screen-content {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    line-height: 1.5;
     border-radius: 35px;
     position: relative;
-    z-index: 3;
+    overflow: hidden;
+    /* Efecto de pantalla OLED */
+    box-shadow: 
+        inset 0 0 100px rgba(0,0,0,0.3),
+        inset 0 0 50px rgba(255,255,255,0.05);
+}
+
+/* Mejora de las pantallas con efecto glassmorphism */
+.screen-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Asegurar que el texto esté por encima */
+.screen-content > div {
+    position: relative;
+    z-index: 2;
+}
+
+/* Navigation Buttons */
+.phone-nav-button {
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: relative;
     overflow: hidden;
 }
 
-/* ===== 9.1. ESTILOS DE BOTONES CRÍTICOS ===== */
-/* Estilos para botones en fondos oscuros */
+.phone-nav-button:hover {
+    box-shadow: 0 10px 30px rgba(78, 205, 196, 0.2);
+}
+
+.phone-nav-button.active {
+    background: rgba(78, 205, 196, 0.1);
+    border-color: #4ECDC4 !important;
+    box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+}
+
+/* Botones en fondos oscuros (sección veterinarios) */
 .phone-nav-button.active.on-dark-bg {
     background: rgba(255, 255, 255, 0.95) !important;
     border-color: #4ECDC4 !important;
     box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
-}
-
-.phone-nav-button.on-dark-bg:hover {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3);
 }
 
 /* Reglas específicas para desktop en secciones con fondo teal */
@@ -1232,94 +1466,22 @@
     }
 }
 
-/* Efectos de botones adicionales - Solo Desktop */
-@media (min-width: 768px) {
-    .phone-nav-button {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .phone-nav-button::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.08), transparent);
-        transition: left 0.4s ease;
-        border-radius: inherit;
-        pointer-events: none;
-        z-index: 1;
-        opacity: 0;
-    }
-
-    .phone-nav-button:hover::before {
-        left: 100%;
-        opacity: 1;
-    }
+.phone-nav-button.on-dark-bg:hover {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3);
 }
 
-/* Asegurar que el contenido esté encima del efecto - Solo Desktop */
-@media (min-width: 768px) {
-    .phone-nav-button h3,
-    .phone-nav-button p,
-    .phone-nav-button .w-12,
-    .phone-nav-button svg,
-    .phone-nav-button .flex {
-        position: relative;
-        z-index: 2;
-    }
+.phone-nav-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.1), transparent);
+    transition: left 0.5s;
 }
 
-/* Reset de focus y outline para botones */
-.phone-nav-button:focus {
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-.phone-nav-button:focus-visible {
-    outline: 2px solid rgba(78, 205, 196, 0.6);
-    outline-offset: 2px;
-}
-
-/* ===== 10. SISTEMA NOTEBOOK LEGACY ===== */
-/* El notebook usa el mismo sistema que laptop-mockup para coherencia visual */
-.notebook-mockup {
-    /* Redirigir al sistema laptop existente */
-}
-
-/* ===== 11. UTILIDADES Y HELPERS ===== */
-/* Optimización de rendimiento */
-.laptop-mockup,
-.phone-mockup {
-    will-change: transform;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-}
-
-/* GPU acceleration */
-.laptop,
-.laptop__screen,
-.laptop-content-area,
-.phone-frame,
-.phone-screen,
-.phone-content-area {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-}
-
-/* Reducir efectos en móviles para mejor rendimiento */
-@media (max-width: 768px) {
-    .laptop,
-    .phone-frame,
-    .notebook-mockup {
-        will-change: auto;
-    }
-    
-    .laptop-mockup,
-    .phone-mockup,
-    .notebook-mockup {
-        animation: none;
-    }
+.phone-nav-button:hover::before {
+    left: 100%;
 }

@@ -22,7 +22,7 @@
                     
                     <!-- Botones Izquierda - EMPRESAS -->
                     <div class="space-y-6 order-2 lg:order-1 responsive-button-grid">
-                        <button id="emp-click" data-destination="empItem1" class="phone-nav-button active on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
+                        <button id="emp-click" data-destination="empItem1" class="phone-nav-button active w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,7 +34,7 @@
                             <p class="text-sm text-gray-600">Ofrece atención veterinaria como beneficio corporativo para las mascotas de tus empleados.</p>
                         </button>
                         
-                        <button data-destination="empItem2" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
+                        <button data-destination="empItem2" class="phone-nav-button w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -46,7 +46,7 @@
                             <p class="text-sm text-gray-600">Obtén métricas detalladas del uso y satisfacción del beneficio en tiempo real.</p>
                         </button>
                         
-                        <button data-destination="empItem3" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
+                        <button data-destination="empItem3" class="phone-nav-button w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,14 +60,16 @@
                         
                     </div>
                     
-                    <!-- Frame de Laptop Central -->
+                    <!-- Frame de Notebook Central -->
                     <div class="order-1 lg:order-2 flex justify-center">
-                        <div class="laptop-mockup relative">
-                            <!-- Frame del laptop -->
-                            <div class="laptop">
-                                <div class="laptop__screen">
-                                    <!-- Pantallas del carrusel -->
-                                    <div class="laptop-content-area">
+                        <div class="laptop-mockup">
+                            <!-- FLOWBITE MOCKUP MEJORADO CON CARRUSEL -->
+                            <div class="w-full max-w-2xl mx-auto">
+                                <!-- Pantalla del laptop - Aspect Ratio 16:9 Moderno -->
+                                <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[3px] rounded-t-xl w-full max-w-[500px] md:max-w-[750px]" style="aspect-ratio: 16/9;">
+                                    <div class="rounded-lg overflow-hidden bg-white dark:bg-gray-800 relative m-1 h-[calc(100%-0.5rem)]">
+                                        <!-- Pantallas del carrusel -->
+                                        <div class="laptop-content-area absolute inset-0">
                                         <div class="content show" id="empItem1">
                                             <div class="screen-content bg-gradient-to-br from-vet-orange to-orange-600 text-white">
                                                 <div class="p-6 h-full flex flex-col justify-center">
@@ -202,17 +204,20 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="laptop__bottom"></div>
-                                <div class="laptop__shadow"></div>
+                                <!-- Base del laptop - Moderadamente ancha y centrada -->
+                                <div class="relative bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[18px]" style="width: 115%; max-width: 115%; margin: 0 auto; transform: translateX(-6.5%);">
+                                    <div class="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[60px] h-[6px] md:w-[80px] md:h-[8px] bg-gray-800"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Botones Derecha - EMPRESAS (Solo Desktop) -->
                     <div class="space-y-6 order-3 responsive-button-grid">
-                        <button data-destination="empItem4" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
+                        <button data-destination="empItem4" class="phone-nav-button w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -224,7 +229,7 @@
                             <p class="text-sm text-gray-600">Mejora el clima laboral ofreciendo cuidado veterinario como beneficio único y diferenciador.</p>
                         </button>
                         
-                        <button data-destination="empItem5" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-white transition-all duration-300 hover:scale-105">
+                        <button data-destination="empItem5" class="phone-nav-button w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -242,14 +247,14 @@
                 <!-- Área de descripción dinámica - Solo móvil -->
                 <div class="description-area md:hidden" id="empresas-description">
                     <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0" id="empresas-desc-icon">
+                        <div class="w-10 h-10 bg-vet-teal rounded-lg flex items-center justify-center flex-shrink-0" id="empresas-desc-icon">
                             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-white mb-1" id="empresas-desc-title">Convenios corporativos</h4>
-                            <p class="text-sm text-white/90" id="empresas-desc-text">Ofrece atención veterinaria como beneficio corporativo para las mascotas de tus empleados.</p>
+                            <h4 class="font-bold text-gray-800 mb-1" id="empresas-desc-title">Convenios corporativos</h4>
+                            <p class="text-sm text-gray-600" id="empresas-desc-text">Ofrece atención veterinaria como beneficio corporativo para las mascotas de tus empleados.</p>
                         </div>
                     </div>
                 </div>

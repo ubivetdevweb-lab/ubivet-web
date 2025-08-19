@@ -1,20 +1,50 @@
-/* ===============================================
-   UBIVET MOBILE GAMING CSS - VERSIÓN ORGANIZADA
-   =============================================== */
+/* CSS Gaming Mobile - Forzado */
 
-/* ===== TABLA DE CONTENIDOS =====
-   1. Reset Desktop - Layout Original
-   2. Sistema Mobile Gaming - Layout Compacto
-   3. Secciones Específicas - Veterinarios
-   4. Secciones Específicas - Clínicas  
-   5. Secciones Específicas - Empresas
-   6. Área de Descripción Gaming
-   7. Optimizaciones Landscape Móvil
-   8. Utilidades y Helpers
-*/
-
-/* ===== 1. RESET DESKTOP - LAYOUT ORIGINAL ===== */
+/* RESET DESKTOP - Layout original */
 @media (min-width: 768px) {
+    /* FORZAR que Veterinarios y Clínicas se vean EXACTAMENTE como Tutores */
+    #veterinarios .phone-nav-button,
+    #clinicas .phone-nav-button {
+        min-height: auto !important;
+        max-height: none !important;
+        width: 100% !important;
+        padding: 1.5rem !important;
+        text-align: left !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        border: 2px solid transparent !important;
+        border-radius: 1.5rem !important;
+        box-shadow: none !important;
+        display: block !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    #veterinarios .phone-nav-button:hover,
+    #clinicas .phone-nav-button:hover {
+        border-color: #4ECDC4 !important;
+        transform: scale(1.05) !important;
+    }
+    
+    #veterinarios .phone-nav-button h3,
+    #veterinarios .phone-nav-button p,
+    #clinicas .phone-nav-button h3,
+    #clinicas .phone-nav-button p {
+        display: block !important;
+    }
+    
+    #veterinarios .phone-nav-button .flex.items-center,
+    #clinicas .phone-nav-button .flex.items-center {
+        flex-direction: row !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    #veterinarios .phone-nav-button .w-12.h-12,
+    #clinicas .phone-nav-button .w-12.h-12 {
+        width: 3rem !important;
+        height: 3rem !important;
+        margin-right: 1rem !important;
+        background: #4ECDC4 !important;
+        border-radius: 0.75rem !important;
+    }
     /* Restaurar grid desktop */
     .grid.lg\:grid-cols-3,
     section .grid.lg\:grid-cols-3,
@@ -57,79 +87,30 @@
         width: 100% !important;
         padding: 1.5rem !important;
         text-align: left !important;
-        background: rgba(255, 255, 255, 0.9) !important;
-        border: 2px solid transparent !important;
-        border-radius: 1.5rem !important;
-        box-shadow: none !important;
-        display: block !important;
-        transition: all 0.3s ease !important;
-    }
-    
-    .phone-nav-button:hover {
-        border-color: #4ECDC4 !important;
-        transform: scale(1.05) !important;
     }
     
     .phone-nav-button .w-12.h-12 {
         width: 3rem !important;
         height: 3rem !important;
         margin-right: 1rem !important;
-        background: #4ECDC4 !important;
-        border-radius: 0.75rem !important;
     }
     
     .phone-nav-button h3,
     .phone-nav-button p {
         display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
     }
     
     .phone-nav-button .flex.items-center {
         flex-direction: row !important;
         margin-bottom: 0.75rem !important;
-        display: flex !important;
     }
     
-    /* Asegurar que los iconos se muestren correctamente en desktop */
-    .phone-nav-button .w-12.h-12 svg {
-        width: 1.5rem !important;
-        height: 1.5rem !important;
-        color: white !important;
-        display: block !important;
-    }
-    
-    /* Forzar layout desktop en todas las resoluciones >= 768px */
-    section#veterinarios .phone-nav-button,
-    section#clinicas .phone-nav-button,
-    section#empresas .phone-nav-button {
-        min-height: auto !important;
-        max-height: none !important;
-        width: 100% !important;
-        padding: 1.5rem !important;
-        text-align: left !important;
-        background: rgba(255, 255, 255, 0.95) !important;
-        border-radius: 1.5rem !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        justify-content: flex-start !important;
-    }
-    
-    /* Contraste específico para secciones con fondo oscuro */
-    section#veterinarios .phone-nav-button.active,
-    section#empresas .phone-nav-button.active {
-        background: rgba(255, 255, 255, 0.95) !important;
-        border-color: #4ECDC4 !important;
-        box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4) !important;
-    }
 }
 
-/* ===== 2. SISTEMA MOBILE GAMING - LAYOUT COMPACTO ===== */
 @media (max-width: 767px) {
     /* Mejoras para el logo en móvil */
     nav .flex.items-center img[alt="UbiVet Logo"] {
-        height: 2.75rem !important;
+        height: 2.75rem !important; /* h-11 equivalente */
         max-width: none !important;
         object-fit: contain !important;
         margin-left: 0.25rem !important;
@@ -137,7 +118,7 @@
     
     /* Ajustar altura del navbar en móvil */
     nav .flex.justify-between.items-center {
-        height: 4.25rem !important;
+        height: 4.25rem !important; /* h-17 equivalente */
         padding-left: 0.75rem !important;
         padding-right: 0.75rem !important;
     }
@@ -158,64 +139,44 @@
         margin-bottom: 2rem !important;
     }
     
-    /* FORZAR Layout principal móvil - BOTONES A LOS LADOS - SOLO TUTORES */
-    section#tutores .grid.lg\:grid-cols-3 {
-        position: relative !important;
+    /* FORZAR Layout principal móvil - BOTONES A LOS LADOS */
+    .grid.lg\:grid-cols-3,
+    section .grid.lg\:grid-cols-3,
+    div .grid.lg\:grid-cols-3 {
+        display: grid !important;
+        grid-template-columns: 1fr 2fr 1fr !important;
+        gap: 0.5rem !important;
+        align-items: start !important;
+    }
+    
+    /* FORZAR Botones izquierda */
+    .order-2.lg\:order-1,
+    section .order-2.lg\:order-1,
+    div .order-2.lg\:order-1 {
+        order: 1 !important;
+        grid-column: 1 !important;
+    }
+    
+    /* FORZAR Celular centro */
+    .order-1.lg\:order-2,
+    section .order-1.lg\:order-2,
+    div .order-1.lg\:order-2 {
+        order: 2 !important;
+        grid-column: 2 !important;
+        justify-self: center !important;
+    }
+    
+    /* MOSTRAR columna derecha en móvil también */
+    .order-3.responsive-button-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.4rem !important;
         width: 100% !important;
-        min-height: 550px !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        display: block !important;
-        box-sizing: border-box !important;
+        max-width: 80px !important;
+        grid-column: 3 !important;
+        order: 3 !important;
     }
     
-    /* FORZAR Botones izquierda - posicionamiento absoluto - SOLO TUTORES */
-    section#tutores .order-2.lg\:order-1 {
-        position: absolute !important;
-        left: calc(50% - 200px) !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        width: 55px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0.5rem !important;
-        z-index: 3 !important;
-        align-items: center !important;
-    }
-    
-    /* FORZAR Celular centro - centrado absoluto - SOLO TUTORES */
-    section#tutores .order-1.lg\:order-2 {
-        position: absolute !important;
-        left: 50% !important;
-        top: 0 !important;
-        transform: translateX(-50%) !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        z-index: 1 !important;
-        width: auto !important;
-    }
-    
-    /* Asegurar centrado del phone mockup */
-    .phone-mockup {
-        margin: 0 auto !important;
-        display: block !important;
-        position: relative !important;
-    }
-    
-    /* MOSTRAR columna derecha en móvil también - posicionamiento absoluto - SOLO TUTORES */
-    section#tutores .order-3.responsive-button-grid {
-        position: absolute !important;
-        left: calc(50% + 145px) !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        width: 55px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0.5rem !important;
-        z-index: 3 !important;
-        align-items: center !important;
-    }
     
     /* FORZAR Grid de botones gaming - VERTICAL COMPACTO */
     .responsive-button-grid,
@@ -223,12 +184,11 @@
     div .responsive-button-grid {
         display: flex !important;
         flex-direction: column !important;
-        gap: 0.5rem !important;
-        width: 55px !important;
+        gap: 0.4rem !important;
+        width: 100% !important;
         margin-bottom: 0 !important;
         margin-top: 0 !important;
-        align-items: center !important;
-        justify-content: center !important;
+        max-width: 80px !important;
     }
     
     /* OVERRIDE cualquier space-y */
@@ -262,21 +222,19 @@
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        position: relative !important;
-        flex-shrink: 0 !important;
     }
     
     .phone-nav-button:hover {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3) !important;
-        border-color: rgba(78, 205, 196, 0.5) !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4) !important;
+        border-color: rgba(78, 205, 196, 0.6) !important;
     }
     
     .phone-nav-button.active {
         background: linear-gradient(135deg, #4ECDC4 0%, #2BB8B1 100%) !important;
         border-color: #2BB8B1 !important;
-        transform: scale(1) !important;
-        box-shadow: 0 2px 8px rgba(78, 205, 196, 0.4) !important;
+        transform: scale(0.97) !important;
+        box-shadow: 0 2px 8px rgba(78, 205, 196, 0.6) !important;
     }
     
     .phone-nav-button.active h3 {
@@ -320,41 +278,7 @@
     .phone-nav-button p {
         display: none !important;
     }
-}
-
-/* Ajustes para pantallas muy pequeñas - SOLO TUTORES */
-@media (max-width: 360px) {
-    section#tutores .order-2.lg\:order-1 {
-        left: calc(50% - 130px) !important;
-    }
     
-    section#tutores .order-3.responsive-button-grid {
-        left: calc(50% + 75px) !important;
-    }
-    
-    section#tutores .phone-mockup {
-        width: 200px !important;
-        height: 400px !important;
-    }
-}
-
-@media (max-width: 320px) {
-    section#tutores .order-2.lg\:order-1 {
-        left: calc(50% - 110px) !important;
-    }
-    
-    section#tutores .order-3.responsive-button-grid {
-        left: calc(50% + 55px) !important;
-    }
-    
-    section#tutores .phone-mockup {
-        width: 180px !important;
-        height: 360px !important;
-    }
-}
-
-/* ===== 3. SECCIONES ESPECÍFICAS - VETERINARIOS ===== */
-@media (max-width: 767px) {
     /* LAYOUT ESPECÍFICO PARA VETERINARIOS - Gaming Style */
     section#veterinarios .grid.lg\:grid-cols-3 {
         display: flex !important;
@@ -424,10 +348,9 @@
         width: 50px !important;
         margin: 0 !important;
     }
-}
 
-/* ===== 4. SECCIONES ESPECÍFICAS - CLÍNICAS ===== */
-@media (max-width: 767px) {
+    /* ===== SECCIÓN CLÍNICAS - Layout laptop móvil ===== */
+    
     /* Grid principal de clínicas */
     section#clinicas .grid.lg\:grid-cols-3 {
         display: flex !important;
@@ -493,10 +416,9 @@
         width: 50px !important;
         margin: 0 !important;
     }
-}
 
-/* ===== 5. SECCIONES ESPECÍFICAS - EMPRESAS ===== */
-@media (max-width: 767px) {
+    /* ===== SECCIÓN EMPRESAS - Layout laptop móvil ===== */
+    
     /* Grid principal de empresas */
     section#empresas .grid.lg\:grid-cols-3 {
         display: flex !important;
@@ -564,7 +486,7 @@
     }
 }
 
-/* ===== 6. ÁREA DE DESCRIPCIÓN GAMING ===== */
+/* Área de descripción gaming */
 @media (max-width: 767px) {
     .description-area {
         background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.98) 100%) !important;
@@ -582,30 +504,6 @@
         transform: translateY(-2px) !important;
         box-shadow: 0 8px 30px rgba(78, 205, 196, 0.25) !important;
         border-color: rgba(78, 205, 196, 0.6) !important;
-    }
-
-    /* Descripción específica para veterinarios - fondo teal */
-    section#veterinarios .description-area {
-        background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.98) 100%) !important;
-        color: #1f2937 !important;
-        border: 2px solid rgba(255, 255, 255, 0.3) !important;
-    }
-    
-    section#veterinarios .description-area h4 {
-        color: #1f2937 !important;
-    }
-    
-    section#veterinarios .description-area p {
-        color: #4b5563 !important;
-    }
-    
-    section#veterinarios .description-area .w-10.h-10 {
-        background: rgba(78, 205, 196, 0.9) !important;
-    }
-    
-    section#veterinarios .description-area:hover {
-        box-shadow: 0 8px 30px rgba(255, 255, 255, 0.25) !important;
-        border-color: rgba(255, 255, 255, 0.6) !important;
     }
 
     /* Descripción específica para empresas - fondo teal */
@@ -633,7 +531,7 @@
     }
 }
 
-/* ===== 7. OPTIMIZACIONES LANDSCAPE MÓVIL ===== */
+/* ===== OPTIMIZACIONES PARA MODO LANDSCAPE MÓVIL ===== */
 @media (max-width: 926px) and (orientation: landscape) {
     /* Reducir spacing vertical para aprovechar altura limitada */
     .py-20 {
@@ -661,9 +559,9 @@
     }
     
     /* Layout específico para secciones con laptop en landscape */
-    section#veterinarios .grid.lg\:grid-cols-3,
-    section#clinicas .grid.lg\:grid-cols-3,
-    section#empresas .grid.lg\:grid-cols-3 {
+    section#veterinarios .grid.lg\\:grid-cols-3,
+    section#clinicas .grid.lg\\:grid-cols-3,
+    section#empresas .grid.lg\\:grid-cols-3 {
         display: grid !important;
         grid-template-columns: 1fr 2fr 1fr !important;
         gap: 1rem !important;
@@ -672,9 +570,9 @@
     }
     
     /* Botones más compactos en landscape */
-    section#veterinarios .order-2.lg\:order-1,
-    section#clinicas .order-2.lg\:order-1,
-    section#empresas .order-2.lg\:order-1 {
+    section#veterinarios .order-2.lg\\:order-1,
+    section#clinicas .order-2.lg\\:order-1,
+    section#empresas .order-2.lg\\:order-1 {
         display: flex !important;
         flex-direction: column !important;
         gap: 0.3rem !important;
@@ -709,9 +607,9 @@
     }
     
     /* MacBook más compacto en landscape */
-    section#veterinarios .order-1.lg\:order-2 .laptop-mockup,
-    section#clinicas .order-1.lg\:order-2 .laptop-mockup,
-    section#empresas .order-1.lg\:order-2 .laptop-mockup {
+    section#veterinarios .order-1.lg\\:order-2 .laptop-mockup,
+    section#clinicas .order-1.lg\\:order-2 .laptop-mockup,
+    section#empresas .order-1.lg\\:order-2 .laptop-mockup {
         transform: scale(0.75) !important;
         margin: -1rem 0 !important;
     }
@@ -768,9 +666,9 @@
     }
     
     /* MacBook aún más pequeño */
-    section#veterinarios .order-1.lg\:order-2 .laptop-mockup,
-    section#clinicas .order-1.lg\:order-2 .laptop-mockup,
-    section#empresas .order-1.lg\:order-2 .laptop-mockup {
+    section#veterinarios .order-1.lg\\:order-2 .laptop-mockup,
+    section#clinicas .order-1.lg\\:order-2 .laptop-mockup,
+    section#empresas .order-1.lg\\:order-2 .laptop-mockup {
         transform: scale(0.65) !important;
         margin: -1.5rem 0 !important;
     }
@@ -790,19 +688,5 @@
     .phone-nav-button .w-12.h-12 svg {
         width: 1rem !important;
         height: 1rem !important;
-    }
-}
-
-/* ===== 8. UTILIDADES Y HELPERS ===== */
-/* Optimización de rendimiento para móviles */
-@media (max-width: 767px) {
-    .phone-nav-button {
-        will-change: transform;
-        backface-visibility: hidden;
-    }
-    
-    .description-area {
-        will-change: transform, box-shadow;
-        backface-visibility: hidden;
     }
 }
