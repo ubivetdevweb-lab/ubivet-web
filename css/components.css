@@ -947,14 +947,92 @@
         margin-bottom: 0.2rem;
         border-radius: 0.4rem;
     }
+}
+
+/* FIXES ESPECÍFICOS PARA MÓVILES REALES - Prevenir overflow de contenido */
+@media (max-width: 767px) {
+    /* Forzar que el contenido no se desborde verticalmente en navegadores móviles reales */
+    .laptop-content-area {
+        overflow: hidden !important;
+        max-height: 240px !important;
+    }
     
-    .laptop-content-area .screen-content p {
-        font-size: 8px;
-        line-height: 1.1;
+    .laptop-content-area .content {
+        overflow: hidden !important;
+        max-height: 100% !important;
+    }
+    
+    .laptop-content-area .screen-content {
+        overflow: hidden !important;
+        max-height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+    }
+    
+    .laptop-content-area .screen-content > div {
+        overflow: hidden !important;
+        max-height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        height: auto !important;
     }
     
     .laptop-content-area .screen-content .text-center {
-        margin-bottom: 0.5rem;
+        flex-shrink: 0 !important;
+        overflow: hidden !important;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 {
+        flex: 1 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        gap: 0.3rem !important;
+        max-height: calc(100% - 80px) !important;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 > div {
+        flex-shrink: 0 !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+}
+
+/* Ajustes adicionales para móviles pequeños */
+@media (max-width: 480px) {
+    .laptop-content-area {
+        max-height: 190px !important;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 {
+        max-height: calc(100% - 60px) !important;
+        gap: 0.2rem !important;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 > div {
+        padding: 0.2rem !important;
+        font-size: 7px !important;
+        line-height: 1.1 !important;
+    }
+}
+
+/* Ajustes para móviles extra pequeños */
+@media (max-width: 375px) {
+    .laptop-content-area {
+        max-height: 180px !important;
+    }
+    
+    .laptop-content-area .screen-content {
+        padding: 6px !important;
+        font-size: 8px !important;
+    }
+    
+    .laptop-content-area .screen-content .space-y-3 {
+        max-height: calc(100% - 50px) !important;
     }
 }
 
@@ -1319,6 +1397,26 @@
     background: rgba(255, 255, 255, 0.95) !important;
     border-color: #4ECDC4 !important;
     box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
+}
+
+/* Reglas específicas para desktop en secciones con fondo teal */
+@media (min-width: 768px) {
+    section#veterinarios .phone-nav-button.active,
+    section#empresas .phone-nav-button.active {
+        background: rgba(255, 255, 255, 0.95) !important;
+        border-color: #4ECDC4 !important;
+        box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4) !important;
+    }
+    
+    section#veterinarios .phone-nav-button.active .w-12.h-12,
+    section#empresas .phone-nav-button.active .w-12.h-12 {
+        background: #4ECDC4 !important;
+    }
+    
+    section#veterinarios .phone-nav-button.active .w-12.h-12 svg,
+    section#empresas .phone-nav-button.active .w-12.h-12 svg {
+        color: white !important;
+    }
 }
 
 .phone-nav-button.on-dark-bg:hover {
