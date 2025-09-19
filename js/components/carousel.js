@@ -13,18 +13,20 @@ class CarouselController {
      * Inicializa todos los carruseles en la página
      */
     init() {
-        if (this.initialized) return;
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            this.setupCarousels();
-            this.initialized = true;
-        });
+        if (this.initialized) {
+            console.log('Carruseles ya inicializados, saltando...');
+            return;
+        }
 
-        // También ejecutar si el DOM ya está cargado
+        // Solo una vez cuando el DOM esté listo
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.setupCarousels());
+            document.addEventListener('DOMContentLoaded', () => {
+                this.setupCarousels();
+                this.initialized = true;
+            });
         } else {
             this.setupCarousels();
+            this.initialized = true;
         }
     }
 
@@ -32,19 +34,30 @@ class CarouselController {
      * Configura todos los carruseles encontrados en la página
      */
     setupCarousels() {
+        // Limpiar carruseles existentes para evitar duplicaciones
+        this.carousels.clear();
+
         // Buscar todos los contenedores de contenido de carrusel
         const phoneContainers = document.querySelectorAll('.phone-content-area');
         const laptopContainers = document.querySelectorAll('.laptop-content-area');
-        
+
         phoneContainers.forEach((container, index) => {
-            this.setupCarousel(container, `phone-carousel-${index}`);
-        });
-        
-        laptopContainers.forEach((container, index) => {
-            this.setupCarousel(container, `laptop-carousel-${index}`);
+            const carouselId = `phone-carousel-${index}`;
+            // Solo configurar si no existe ya
+            if (!this.carousels.has(carouselId)) {
+                this.setupCarousel(container, carouselId);
+            }
         });
 
-        console.log(`Carruseles inicializados: ${this.carousels.size}`);
+        laptopContainers.forEach((container, index) => {
+            const carouselId = `laptop-carousel-${index}`;
+            // Solo configurar si no existe ya
+            if (!this.carousels.has(carouselId)) {
+                this.setupCarousel(container, carouselId);
+            }
+        });
+
+        console.log(`🎠 Carruseles configurados: ${this.carousels.size}`);
     }
 
     /**
@@ -182,9 +195,18 @@ class CarouselController {
      * Reinicializa todos los carruseles (útil después de cargar componentes)
      */
     reinitialize() {
-        this.carousels.clear();
-        this.initialized = false;
-        this.init();
+        // Debounce para evitar spam de reinicializaciones
+        if (this.reinitializeTimeout) {
+            clearTimeout(this.reinitializeTimeout);
+        }
+
+        this.reinitializeTimeout = setTimeout(() => {
+            console.log('🔄 Reinicializando carruseles...');
+            this.carousels.clear();
+            this.initialized = false;
+            this.setupCarousels();
+            this.initialized = true;
+        }, 100);
     }
 
     /**
