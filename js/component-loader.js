@@ -10,6 +10,34 @@ class ComponentLoader {
     }
 
     /**
+     * Detecta si estamos en entorno de desarrollo
+     */
+    isDevelopment() {
+        return window.location.hostname === 'localhost' ||
+               window.location.hostname === '127.0.0.1' ||
+               window.location.hostname.includes('vercel.app') ||
+               window.location.search.includes('debug=true');
+    }
+
+    /**
+     * Limpia el cache de componentes
+     */
+    clearCache() {
+        this.cache.clear();
+        this.loadedComponents.clear();
+        console.log('🔄 Component cache cleared');
+    }
+
+    /**
+     * Fuerza la recarga de un componente específico
+     */
+    async forceReload(componentPath, targetSelector) {
+        this.cache.delete(componentPath);
+        this.loadedComponents.delete(componentPath);
+        return this.loadComponent(componentPath, targetSelector);
+    }
+
+    /**
      * Carga un componente HTML desde un archivo
      * @param {string} componentPath - Ruta al archivo del componente
      * @param {string} targetSelector - Selector CSS del elemento donde insertar
@@ -17,14 +45,19 @@ class ComponentLoader {
      */
     async loadComponent(componentPath, targetSelector, replace = true) {
         try {
-            // Verificar si ya está en cache
-            if (!this.cache.has(componentPath)) {
-                const response = await fetch(componentPath);
+            // Cache busting para development y staging
+            const timestamp = this.isDevelopment() ? `?v=${Date.now()}` : '';
+            const fullPath = componentPath + timestamp;
+            const cacheKey = componentPath; // Use original path as cache key
+
+            // Verificar si ya está en cache (sin cache busting en key)
+            if (!this.cache.has(cacheKey)) {
+                const response = await fetch(fullPath);
                 if (!response.ok) {
                     throw new Error(`Error loading component: ${response.status}`);
                 }
                 const html = await response.text();
-                this.cache.set(componentPath, html);
+                this.cache.set(cacheKey, html);
             }
 
             const targetElement = document.querySelector(targetSelector);
@@ -32,7 +65,7 @@ class ComponentLoader {
                 throw new Error(`Target element not found: ${targetSelector}`);
             }
 
-            const componentHTML = this.cache.get(componentPath);
+            const componentHTML = this.cache.get(cacheKey);
             
             if (replace) {
                 targetElement.innerHTML = componentHTML;
@@ -147,6 +180,13 @@ class ComponentLoader {
 // Crear instancia global
 const componentLoader = new ComponentLoader();
 
+// Debug helpers para desarrollo
+if (componentLoader.isDevelopment()) {
+    window.clearComponentCache = () => componentLoader.clearCache();
+    window.reloadAllComponents = () => loadUbivetComponents();
+    console.log('🛠️ Cache debug helpers available: clearComponentCache(), reloadAllComponents()');
+}
+
 // Configuración para UbiVet
 const UBIVET_COMPONENTS = {
     meta: 'components/head-meta.html',
@@ -157,7 +197,8 @@ const UBIVET_COMPONENTS = {
     empresas: 'components/empresas-section.html',
     clinicas: 'components/clinicas-section.html',
     about: 'components/about-section.html',
-    contact: 'components/contact-section.html'
+    contact: 'components/contact-section.html',
+    footer: 'components/footer.html'
 };
 
 // Función de conveniencia para UbiVet
@@ -170,7 +211,8 @@ function loadUbivetComponents() {
         { path: UBIVET_COMPONENTS.clinicas, target: '#clinicas-placeholder' },
         { path: UBIVET_COMPONENTS.empresas, target: '#empresas-placeholder' },
         { path: UBIVET_COMPONENTS.about, target: '#about-placeholder' },
-        { path: UBIVET_COMPONENTS.contact, target: '#contact-placeholder' }
+        { path: UBIVET_COMPONENTS.contact, target: '#contact-placeholder' },
+        { path: UBIVET_COMPONENTS.footer, target: '#footer-placeholder' }
     ]);
 }
 
