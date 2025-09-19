@@ -1,5 +1,5 @@
 /**
- * UbiVet Component Loader
+ * Ubivet Component Loader
  * Sistema de carga modular para componentes HTML
  */
 
@@ -187,7 +187,7 @@ if (componentLoader.isDevelopment()) {
     console.log('🛠️ Cache debug helpers available: clearComponentCache(), reloadAllComponents()');
 }
 
-// Configuración para UbiVet
+// Configuración para Ubivet
 const UBIVET_COMPONENTS = {
     meta: 'components/head-meta.html',
     navigation: 'components/navigation.html',
@@ -201,7 +201,7 @@ const UBIVET_COMPONENTS = {
     footer: 'components/footer.html'
 };
 
-// Función de conveniencia para UbiVet
+// Función de conveniencia para Ubivet
 function loadUbivetComponents() {
     return componentLoader.loadComponents([
         { path: UBIVET_COMPONENTS.navigation, target: '#navigation-placeholder' },

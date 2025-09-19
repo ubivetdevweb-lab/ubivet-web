@@ -1,4 +1,4 @@
-// UbiVet Website JavaScript
+// Ubivet Website JavaScript
 // Mobile Navigation & General functionality
 
 // Mobile Navigation Toggle - Actualizado para componentes y Safari
@@ -257,7 +257,7 @@ function initializeDynamicDescription() {
         },
         'tutorItem4': {
             title: 'Tu veterinario de confianza',
-            description: 'Ahora más accesible que nunca! UbiVet te conecta directamente con veterinarios disponibles para atenderte en la comodidad de tu hogar.',
+            description: 'Ahora más accesible que nunca! Ubivet te conecta directamente con veterinarios disponibles para atenderte en la comodidad de tu hogar.',
             icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>`
         },
         'tutorItem5': {
@@ -397,4 +397,4 @@ document.addEventListener('componentLoaded', function(event) {
     setTimeout(initializeDynamicDescription, 100);
 });
 
-console.log('UbiVet JavaScript loaded successfully');
+console.log('Ubivet JavaScript loaded successfully');

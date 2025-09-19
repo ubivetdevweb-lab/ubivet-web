@@ -1,5 +1,5 @@
 /**
- * UbiVet Carousel Controller
+ * Ubivet Carousel Controller
  * Maneja las transiciones de los carruseles interactivos de mockups
  */
 
