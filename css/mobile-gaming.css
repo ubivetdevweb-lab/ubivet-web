@@ -888,25 +888,62 @@
     }
 }
 
-/* CRÍTICO: Asegurar que los botones flotantes sean siempre visibles */
-#floating-buttons {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 50 !important;
+/* CRÍTICO: Reposicionamiento de botones flotantes para evitar interferencias */
+@media (max-width: 767px) {
+    #floating-buttons {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 50 !important;
+        bottom: 24px !important;
+        right: 24px !important;
+    }
+
+    /* WhatsApp button - esquina inferior derecha */
+    #floating-buttons a[href*="wa.me"] {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 50 !important;
+        position: fixed !important;
+        bottom: 24px !important;
+        right: 24px !important;
+    }
+
+    /* Botón principal - más hacia la izquierda */
+    #main-floating-btn {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 50 !important;
+        position: fixed !important;
+        bottom: 24px !important;
+        right: 108px !important; /* WhatsApp width (64px) + gap (20px) + margin (24px) */
+    }
 }
 
-#floating-buttons a[href*="wa.me"] {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 50 !important;
-    position: relative !important;
-}
+/* Desktop - mantener posicionamiento original */
+@media (min-width: 768px) {
+    #floating-buttons {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 50 !important;
+    }
 
-#main-floating-btn {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 50 !important;
+    #floating-buttons a[href*="wa.me"] {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 50 !important;
+        position: relative !important;
+    }
+
+    #main-floating-btn {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 50 !important;
+        position: relative !important;
+    }
 }
