@@ -174,20 +174,44 @@
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- Floating Action Buttons -->
-    <div class="fixed z-50 bottom-6 right-6 md:bottom-8 md:right-8 flex flex-col gap-3">
-        <!-- Botón Registro Profesionales -->
-        <a href="https://app.ubivet.cl/" target="_blank" rel="noopener noreferrer" aria-label="Registro Profesionales"
-           class="bg-vet-teal hover:bg-vet-teal-dark text-white rounded-full shadow-lg flex items-center justify-center w-16 h-16 md:w-20 md:h-20 transition-all duration-300 group transform hover:scale-110">
-            <i class="fas fa-user-tie text-2xl md:text-3xl"></i>
-            <span class="absolute opacity-0 group-hover:opacity-100 bg-vet-teal-dark text-white text-xs rounded px-3 py-2 bottom-20 right-0 transition-all duration-300 pointer-events-none whitespace-nowrap font-medium">Registro Profesionales</span>
-        </a>
+    <!-- Floating Action Buttons Expandibles -->
+    <div id="floating-buttons" class="fixed z-50 bottom-6 right-6 md:bottom-8 md:right-8 flex flex-col items-end gap-3">
+        <!-- Botones Expandidos (inicialmente ocultos) -->
+        <div id="expanded-buttons" class="flex flex-col gap-3 transition-all duration-300 transform scale-0 opacity-0 origin-bottom">
+            <!-- Botón Profesionales -->
+            <a href="https://app.ubivet.cl/" target="_blank" rel="noopener noreferrer" aria-label="Registro Profesionales"
+               class="bg-vet-teal hover:bg-vet-teal-dark text-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 md:w-16 md:h-16 transition-all duration-300 group transform hover:scale-110">
+                <i class="fas fa-user-tie text-lg md:text-xl"></i>
+                <span class="absolute opacity-0 group-hover:opacity-100 bg-vet-teal-dark text-white text-xs rounded px-3 py-2 bottom-full right-0 mb-2 transition-all duration-300 pointer-events-none whitespace-nowrap font-medium">Profesionales</span>
+            </a>
+
+            <!-- Botón Android -->
+            <a href="https://play.google.com/store/apps/details?id=com.neering.ubivet&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" aria-label="Descargar para Android"
+               class="bg-gray-800 hover:bg-gray-900 text-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 md:w-16 md:h-16 transition-all duration-300 group transform hover:scale-110">
+                <i class="fab fa-android text-lg md:text-xl"></i>
+                <span class="absolute opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs rounded px-3 py-2 bottom-full right-0 mb-2 transition-all duration-300 pointer-events-none whitespace-nowrap font-medium">Android</span>
+            </a>
+
+            <!-- Botón iPhone -->
+            <a href="https://apps.apple.com/cl/app/ubivet/id6748315820" target="_blank" rel="noopener noreferrer" aria-label="Descargar para iPhone"
+               class="bg-gray-600 hover:bg-gray-700 text-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 md:w-16 md:h-16 transition-all duration-300 group transform hover:scale-110">
+                <i class="fab fa-apple text-lg md:text-xl"></i>
+                <span class="absolute opacity-0 group-hover:opacity-100 bg-gray-700 text-white text-xs rounded px-3 py-2 bottom-full right-0 mb-2 transition-all duration-300 pointer-events-none whitespace-nowrap font-medium">iPhone</span>
+            </a>
+        </div>
+
+        <!-- Botón Principal -->
+        <button id="main-floating-btn" type="button" aria-label="Registro y descarga"
+                class="bg-vet-teal hover:bg-vet-teal-dark text-white rounded-full shadow-lg flex items-center justify-center w-16 h-16 md:w-20 md:h-20 transition-all duration-300 transform hover:scale-110 relative group">
+            <i id="main-btn-icon" class="fas fa-user-plus text-2xl md:text-3xl transition-transform duration-300"></i>
+            <span class="absolute opacity-0 group-hover:opacity-100 bg-vet-teal-dark text-white text-xs rounded px-3 py-2 bottom-full right-0 mb-2 transition-all duration-300 pointer-events-none whitespace-nowrap font-medium">Regístrate</span>
+        </button>
 
         <!-- WhatsApp Float Button -->
         <a href="https://wa.me/56988108227" target="_blank" aria-label="WhatsApp"
            class="bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg flex items-center justify-center w-16 h-16 md:w-20 md:h-20 transition-all duration-300 group transform hover:scale-110">
             <i class="fab fa-whatsapp text-2xl md:text-3xl"></i>
-            <span class="absolute opacity-0 group-hover:opacity-100 bg-green-600 text-white text-xs rounded px-3 py-2 bottom-20 right-0 transition-all duration-300 pointer-events-none whitespace-nowrap font-medium">¡Escríbenos!</span>
+            <span class="absolute opacity-0 group-hover:opacity-100 bg-green-600 text-white text-xs rounded px-3 py-2 bottom-full right-0 mb-2 transition-all duration-300 pointer-events-none whitespace-nowrap font-medium">¡Escríbenos!</span>
         </a>
     </div>
 
@@ -260,6 +284,46 @@
                 });
             }
         };
+
+        // Floating Buttons Expandibles Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainBtn = document.getElementById('main-floating-btn');
+            const expandedButtons = document.getElementById('expanded-buttons');
+            const mainIcon = document.getElementById('main-btn-icon');
+            let isExpanded = false;
+
+            if (mainBtn && expandedButtons && mainIcon) {
+                mainBtn.addEventListener('click', function() {
+                    isExpanded = !isExpanded;
+
+                    if (isExpanded) {
+                        // Expandir
+                        expandedButtons.classList.remove('scale-0', 'opacity-0');
+                        expandedButtons.classList.add('scale-100', 'opacity-100');
+                        mainIcon.classList.remove('fa-user-plus');
+                        mainIcon.classList.add('fa-times');
+                    } else {
+                        // Contraer
+                        expandedButtons.classList.remove('scale-100', 'opacity-100');
+                        expandedButtons.classList.add('scale-0', 'opacity-0');
+                        mainIcon.classList.remove('fa-times');
+                        mainIcon.classList.add('fa-user-plus');
+                    }
+                });
+
+                // Cerrar al hacer click fuera
+                document.addEventListener('click', function(event) {
+                    const floatingContainer = document.getElementById('floating-buttons');
+                    if (isExpanded && floatingContainer && !floatingContainer.contains(event.target)) {
+                        isExpanded = false;
+                        expandedButtons.classList.remove('scale-100', 'opacity-100');
+                        expandedButtons.classList.add('scale-0', 'opacity-0');
+                        mainIcon.classList.remove('fa-times');
+                        mainIcon.classList.add('fa-user-plus');
+                    }
+                });
+            }
+        });
     </script>
 </body>
 </html>
