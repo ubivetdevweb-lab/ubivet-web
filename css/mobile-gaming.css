@@ -888,62 +888,176 @@
     }
 }
 
-/* CRÍTICO: Reposicionamiento de botones flotantes para evitar interferencias */
-@media (max-width: 767px) {
-    #floating-buttons {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        z-index: 50 !important;
-        bottom: 24px !important;
-        right: 24px !important;
-    }
+/* ===== 10. MENÚ INFERIOR GLASSMORPHISM MODERNO ===== */
 
-    /* WhatsApp button - esquina inferior derecha */
-    #floating-buttons a[href*="wa.me"] {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        z-index: 50 !important;
-        position: fixed !important;
-        bottom: 24px !important;
-        right: 24px !important;
-    }
-
-    /* Botón principal - más hacia la izquierda */
-    #main-floating-btn {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        z-index: 50 !important;
-        position: fixed !important;
-        bottom: 24px !important;
-        right: 108px !important; /* WhatsApp width (64px) + gap (20px) + margin (24px) */
+/* Solo mostrar en móvil */
+@media (min-width: 768px) {
+    #bottom-menu {
+        display: none !important;
     }
 }
 
-/* Desktop - mantener posicionamiento original */
-@media (min-width: 768px) {
-    #floating-buttons {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        z-index: 50 !important;
+@media (max-width: 767px) {
+    /* Contenedor principal del menú glass */
+    .glass-menu-container {
+        background: rgba(255, 255, 255, 0.08) !important;
+        backdrop-filter: blur(24px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+        box-shadow:
+            0 -20px 40px rgba(0, 0, 0, 0.08),
+            0 -1px 0 rgba(255, 255, 255, 0.3) inset !important;
+        padding-bottom: env(safe-area-inset-bottom, 12px) !important;
     }
 
-    #floating-buttons a[href*="wa.me"] {
+    /* Items del menú glassmorphism */
+    .glass-menu-item {
         display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        z-index: 50 !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 8px 4px !important;
+        border-radius: 16px !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
         position: relative !important;
+        overflow: hidden !important;
     }
 
-    #main-floating-btn {
+    .glass-menu-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .glass-menu-item:hover::before {
+        opacity: 1;
+    }
+
+    .glass-menu-item:hover {
+        transform: translateY(-4px) scale(1.02) !important;
+        background: rgba(255, 255, 255, 0.12) !important;
+        border-color: rgba(255, 255, 255, 0.2) !important;
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.12),
+            0 1px 0 rgba(255, 255, 255, 0.3) inset !important;
+    }
+
+    .glass-menu-item:active {
+        transform: translateY(-2px) scale(0.98) !important;
+    }
+
+    /* Contenedores de iconos con gradientes modernos */
+    .glass-icon-container {
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 12px !important;
         display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        z-index: 50 !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-bottom: 6px !important;
+        box-shadow:
+            0 8px 16px rgba(0, 0, 0, 0.15),
+            0 1px 0 rgba(255, 255, 255, 0.2) inset !important;
         position: relative !important;
+        overflow: hidden !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    .glass-icon-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+        transition: opacity 0.3s ease;
+    }
+
+    .glass-menu-item:hover .glass-icon-container {
+        transform: scale(1.1) rotate(2deg) !important;
+        box-shadow:
+            0 12px 24px rgba(0, 0, 0, 0.2),
+            0 1px 0 rgba(255, 255, 255, 0.3) inset !important;
+    }
+
+    /* Contenedor de texto con glassmorphism */
+    .glass-text-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .glass-label {
+        font-size: 10px !important;
+        font-weight: 600 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        line-height: 1.1 !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+        margin-bottom: 2px !important;
+        text-align: center !important;
+    }
+
+    .glass-sublabel {
+        font-size: 7px !important;
+        font-weight: 500 !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        line-height: 1.1 !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+        text-align: center !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        word-wrap: break-word !important;
+    }
+
+    /* Branding glassmorphism */
+    .glass-branding {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-top: 8px !important;
+        gap: 8px !important;
+    }
+
+    .glass-brand-line {
+        width: 32px !important;
+        height: 2px !important;
+        background: linear-gradient(90deg, transparent 0%, rgba(78, 205, 196, 0.6) 50%, transparent 100%) !important;
+        border-radius: 1px !important;
+    }
+
+    .glass-brand-dot {
+        width: 4px !important;
+        height: 4px !important;
+        background: rgba(78, 205, 196, 0.8) !important;
+        border-radius: 50% !important;
+        box-shadow: 0 0 8px rgba(78, 205, 196, 0.4) !important;
+    }
+
+    /* Efectos específicos por categoría */
+    .glass-menu-item[data-category="contact"]:hover {
+        border-color: rgba(34, 197, 94, 0.3) !important;
+    }
+
+    .glass-menu-item[data-category="tutor"]:hover {
+        border-color: rgba(107, 114, 128, 0.3) !important;
+    }
+
+    .glass-menu-item[data-category="professional"]:hover {
+        border-color: rgba(78, 205, 196, 0.3) !important;
+    }
+
+    /* Asegurar que el menú no interfiera con botones interactivos */
+    #bottom-menu {
+        z-index: 40 !important; /* Menor que botones interactivos (9998) */
     }
 }
