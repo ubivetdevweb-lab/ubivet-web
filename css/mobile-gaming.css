@@ -898,149 +898,131 @@
 }
 
 @media (max-width: 767px) {
-    /* Contenedor principal del menú glass */
+    /* Contenedor principal del menú glass - COMPACTO */
     .glass-menu-container {
-        background: rgba(255, 255, 255, 0.08) !important;
-        backdrop-filter: blur(24px) saturate(180%) !important;
-        -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-        border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+        background: rgba(255, 255, 255, 0.12) !important;
+        backdrop-filter: blur(16px) saturate(150%) !important;
+        -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 12px 12px 0 0 !important;
         box-shadow:
-            0 -20px 40px rgba(0, 0, 0, 0.08),
+            0 -8px 20px rgba(0, 0, 0, 0.06),
             0 -1px 0 rgba(255, 255, 255, 0.3) inset !important;
-        padding-bottom: env(safe-area-inset-bottom, 12px) !important;
+        padding-bottom: max(env(safe-area-inset-bottom, 8px), 8px) !important;
     }
 
-    /* Items del menú glassmorphism */
+    /* Items del menú glassmorphism - MÁS COMPACTOS */
     .glass-menu-item {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        padding: 8px 4px !important;
-        border-radius: 16px !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        background: rgba(255, 255, 255, 0.05) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        padding: 6px 3px 4px 3px !important;
+        border-radius: 10px !important;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
         position: relative !important;
         overflow: hidden !important;
-    }
-
-    .glass-menu-item::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .glass-menu-item:hover::before {
-        opacity: 1;
+        min-height: 50px !important;
+        max-height: 50px !important;
+        text-decoration: none !important;
     }
 
     .glass-menu-item:hover {
-        transform: translateY(-4px) scale(1.02) !important;
-        background: rgba(255, 255, 255, 0.12) !important;
-        border-color: rgba(255, 255, 255, 0.2) !important;
+        transform: translateY(-1px) !important;
+        background: rgba(255, 255, 255, 0.15) !important;
+        border-color: rgba(255, 255, 255, 0.25) !important;
         box-shadow:
-            0 8px 32px rgba(0, 0, 0, 0.12),
+            0 4px 15px rgba(0, 0, 0, 0.08),
             0 1px 0 rgba(255, 255, 255, 0.3) inset !important;
     }
 
     .glass-menu-item:active {
-        transform: translateY(-2px) scale(0.98) !important;
+        transform: translateY(0px) scale(0.98) !important;
     }
 
-    /* Contenedores de iconos con gradientes modernos */
+    /* Contenedores de iconos - MÁS PEQUEÑOS */
     .glass-icon-container {
-        width: 40px !important;
-        height: 40px !important;
-        border-radius: 12px !important;
+        width: 26px !important;
+        height: 26px !important;
+        border-radius: 8px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        margin-bottom: 6px !important;
+        margin-bottom: 3px !important;
         box-shadow:
-            0 8px 16px rgba(0, 0, 0, 0.15),
+            0 3px 8px rgba(0, 0, 0, 0.12),
             0 1px 0 rgba(255, 255, 255, 0.2) inset !important;
         position: relative !important;
         overflow: hidden !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 
-    .glass-icon-container::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
-        transition: opacity 0.3s ease;
+    .glass-icon-container i {
+        font-size: 11px !important;
     }
 
     .glass-menu-item:hover .glass-icon-container {
-        transform: scale(1.1) rotate(2deg) !important;
+        transform: scale(1.05) !important;
         box-shadow:
-            0 12px 24px rgba(0, 0, 0, 0.2),
+            0 4px 12px rgba(0, 0, 0, 0.15),
             0 1px 0 rgba(255, 255, 255, 0.3) inset !important;
     }
 
-    /* Contenedor de texto con glassmorphism */
+    /* Contenedor de texto - MÁS COMPACTO */
     .glass-text-container {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         text-align: center !important;
+        line-height: 1.0 !important;
     }
 
     .glass-label {
-        font-size: 10px !important;
+        font-size: 7px !important;
         font-weight: 600 !important;
-        color: rgba(255, 255, 255, 0.9) !important;
-        line-height: 1.1 !important;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
-        margin-bottom: 2px !important;
+        color: #374151 !important;
+        line-height: 1.0 !important;
+        margin-bottom: 1px !important;
         text-align: center !important;
+        letter-spacing: 0.01em !important;
     }
 
     .glass-sublabel {
-        font-size: 7px !important;
+        font-size: 5.5px !important;
         font-weight: 500 !important;
-        color: rgba(255, 255, 255, 0.7) !important;
-        line-height: 1.1 !important;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+        color: #6b7280 !important;
+        line-height: 0.9 !important;
         text-align: center !important;
         max-width: 100% !important;
         overflow: hidden !important;
         word-wrap: break-word !important;
+        letter-spacing: 0.005em !important;
     }
 
-    /* Branding glassmorphism */
+    /* Branding glassmorphism - COMPACTO */
     .glass-branding {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        margin-top: 8px !important;
-        gap: 8px !important;
+        margin-top: 4px !important;
+        gap: 6px !important;
     }
 
     .glass-brand-line {
-        width: 32px !important;
-        height: 2px !important;
-        background: linear-gradient(90deg, transparent 0%, rgba(78, 205, 196, 0.6) 50%, transparent 100%) !important;
+        width: 24px !important;
+        height: 1.5px !important;
+        background: linear-gradient(90deg, transparent 0%, rgba(78, 205, 196, 0.5) 50%, transparent 100%) !important;
         border-radius: 1px !important;
     }
 
     .glass-brand-dot {
-        width: 4px !important;
-        height: 4px !important;
-        background: rgba(78, 205, 196, 0.8) !important;
+        width: 3px !important;
+        height: 3px !important;
+        background: rgba(78, 205, 196, 0.7) !important;
         border-radius: 50% !important;
-        box-shadow: 0 0 8px rgba(78, 205, 196, 0.4) !important;
+        box-shadow: 0 0 6px rgba(78, 205, 196, 0.3) !important;
     }
 
     /* Efectos específicos por categoría */
