@@ -247,12 +247,12 @@
         margin-bottom: 0 !important;
     }
     
-    /* Estilo botones gaming - COMPACTOS LATERALES */
+    /* Estilo botones gaming - ÁREA DE TOQUE OPTIMIZADA */
     .phone-nav-button {
-        min-height: 50px !important;
-        max-height: 50px !important;
-        width: 50px !important;
-        padding: 0.5rem !important;
+        min-height: 60px !important;
+        max-height: 60px !important;
+        width: 60px !important;
+        padding: 0.75rem !important;
         text-align: center !important;
         border-radius: 0.75rem !important;
         background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%) !important;
@@ -264,6 +264,8 @@
         justify-content: center !important;
         position: relative !important;
         flex-shrink: 0 !important;
+        cursor: pointer !important;
+        touch-action: manipulation !important;
     }
     
     .phone-nav-button:hover {
@@ -380,9 +382,9 @@
     
     /* Forzar botones gaming en veterinarios superiores */
     section#veterinarios .order-2.lg\:order-1 .phone-nav-button {
-        min-height: 50px !important;
-        max-height: 50px !important;
-        width: 50px !important;
+        min-height: 60px !important;
+        max-height: 60px !important;
+        width: 60px !important;
         margin: 0 !important;
     }
     
@@ -419,9 +421,9 @@
     
     /* Forzar botones gaming en veterinarios inferiores */
     section#veterinarios .order-3 .phone-nav-button {
-        min-height: 50px !important;
-        max-height: 50px !important;
-        width: 50px !important;
+        min-height: 60px !important;
+        max-height: 60px !important;
+        width: 60px !important;
         margin: 0 !important;
     }
 }
@@ -452,9 +454,9 @@
     
     /* Forzar botones gaming en clínicas superiores */
     section#clinicas .order-2.lg\:order-1 .phone-nav-button {
-        min-height: 50px !important;
-        max-height: 50px !important;
-        width: 50px !important;
+        min-height: 60px !important;
+        max-height: 60px !important;
+        width: 60px !important;
         margin: 0 !important;
     }
     
@@ -488,9 +490,9 @@
     
     /* Forzar botones gaming en clínicas inferiores */
     section#clinicas .order-3 .phone-nav-button {
-        min-height: 50px !important;
-        max-height: 50px !important;
-        width: 50px !important;
+        min-height: 60px !important;
+        max-height: 60px !important;
+        width: 60px !important;
         margin: 0 !important;
     }
 }
@@ -521,9 +523,9 @@
     
     /* Forzar botones gaming en empresas superiores */
     section#empresas .order-2.lg\:order-1 .phone-nav-button {
-        min-height: 50px !important;
-        max-height: 50px !important;
-        width: 50px !important;
+        min-height: 60px !important;
+        max-height: 60px !important;
+        width: 60px !important;
         margin: 0 !important;
     }
     
@@ -557,9 +559,9 @@
     
     /* Forzar botones gaming en empresas inferiores */
     section#empresas .order-3 .phone-nav-button {
-        min-height: 50px !important;
-        max-height: 50px !important;
-        width: 50px !important;
+        min-height: 60px !important;
+        max-height: 60px !important;
+        width: 60px !important;
         margin: 0 !important;
     }
 }
@@ -690,12 +692,12 @@
         max-width: none !important;
     }
     
-    /* Botones gaming más pequeños para landscape */
+    /* Botones gaming para landscape - TAMAÑO MÍNIMO MANTENIDO */
     .phone-nav-button {
-        min-height: 40px !important;
-        max-height: 40px !important;
-        width: 40px !important;
-        padding: 0.3rem !important;
+        min-height: 48px !important;
+        max-height: 48px !important;
+        width: 48px !important;
+        padding: 0.5rem !important;
     }
     
     .phone-nav-button .w-12.h-12 {
@@ -775,11 +777,11 @@
         margin: -1.5rem 0 !important;
     }
     
-    /* Botones aún más pequeños */
+    /* Botones para pantallas muy pequeñas - TAMAÑO MÍNIMO SEGURO */
     .phone-nav-button {
-        min-height: 35px !important;
-        max-height: 35px !important;
-        width: 35px !important;
+        min-height: 44px !important;
+        max-height: 44px !important;
+        width: 44px !important;
     }
     
     .phone-nav-button .w-12.h-12 {
