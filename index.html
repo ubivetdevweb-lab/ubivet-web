@@ -174,71 +174,51 @@
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- Menú Inferior Glassmorphism Compacto -->
-    <div id="bottom-menu" class="fixed bottom-0 left-0 right-0 z-40">
-        <div class="glass-menu-container">
-            <div class="max-w-lg mx-auto px-2 py-2">
-                <div class="grid grid-cols-4 gap-1">
-                    <!-- WhatsApp - Contacto -->
-                    <a href="https://wa.me/56988108227" target="_blank" rel="noopener noreferrer" aria-label="Contactar WhatsApp"
-                       class="glass-menu-item group" data-category="contact">
-                        <div class="glass-icon-container bg-gradient-to-br from-green-400 to-green-600">
-                            <i class="fab fa-whatsapp text-white text-lg"></i>
-                        </div>
-                        <div class="glass-text-container">
-                            <span class="glass-label">Consultas</span>
-                            <span class="glass-sublabel">WhatsApp</span>
-                        </div>
-                    </a>
-
-                    <!-- Google Play - Tutores -->
-                    <a href="https://play.google.com/store/apps/details?id=com.neering.ubivet&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" aria-label="App para Tutores Android"
-                       class="glass-menu-item group" data-category="tutor">
-                        <div class="glass-icon-container bg-gradient-to-br from-gray-700 to-gray-900">
-                            <i class="fab fa-android text-white text-lg"></i>
-                        </div>
-                        <div class="glass-text-container">
-                            <span class="glass-label">Tutores</span>
-                            <span class="glass-sublabel">Android</span>
-                        </div>
-                    </a>
-
-                    <!-- App Store - Tutores -->
-                    <a href="https://apps.apple.com/cl/app/ubivet/id6748315820" target="_blank" rel="noopener noreferrer" aria-label="App para Tutores iPhone"
-                       class="glass-menu-item group" data-category="tutor">
-                        <div class="glass-icon-container bg-gradient-to-br from-gray-500 to-gray-700">
-                            <i class="fab fa-apple text-white text-lg"></i>
-                        </div>
-                        <div class="glass-text-container">
-                            <span class="glass-label">Tutores</span>
-                            <span class="glass-sublabel">iPhone</span>
-                        </div>
-                    </a>
-
-                    <!-- Registro Profesionales -->
-                    <a href="https://app.ubivet.cl/" target="_blank" rel="noopener noreferrer" aria-label="Registro Veterinarios Clínicas Empresas"
-                       class="glass-menu-item group" data-category="professional">
-                        <div class="glass-icon-container bg-gradient-to-br from-vet-teal to-vet-teal-dark">
-                            <i class="fas fa-user-tie text-white text-lg"></i>
-                        </div>
-                        <div class="glass-text-container">
-                            <span class="glass-label">Registro</span>
-                            <span class="glass-sublabel">Vets • Clínicas • Empresas</span>
-                        </div>
-                    </a>
+    <!-- Mini Menú Flotante Inferior Discreto -->
+    <div id="floating-sidebar" class="fixed bottom-6 right-6 z-20">
+        <div class="flex flex-row gap-3">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/56988108227" target="_blank" rel="noopener noreferrer"
+               class="floating-btn floating-btn-whatsapp group" title="Consultas por WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+                <div class="floating-tooltip">
+                    <span class="tooltip-text">Consultas</span>
+                    <span class="tooltip-subtext">WhatsApp</span>
                 </div>
+            </a>
 
-                <!-- Indicador de branding glassmorphism -->
-                <div class="glass-branding">
-                    <div class="glass-brand-line"></div>
-                    <div class="glass-brand-dot"></div>
+            <!-- App Store -->
+            <a href="https://apps.apple.com/cl/app/ubivet/id6748315820" target="_blank" rel="noopener noreferrer"
+               class="floating-btn floating-btn-app group" title="Descargar App para Tutores">
+                <i class="fab fa-apple"></i>
+                <div class="floating-tooltip">
+                    <span class="tooltip-text">Descargar</span>
+                    <span class="tooltip-subtext">App Tutores</span>
                 </div>
-            </div>
+            </a>
+
+            <!-- Google Play -->
+            <a href="https://play.google.com/store/apps/details?id=com.neering.ubivet&pcampaignid=web_share" target="_blank" rel="noopener noreferrer"
+               class="floating-btn floating-btn-play group" title="Descargar App Android">
+                <i class="fab fa-google-play"></i>
+                <div class="floating-tooltip">
+                    <span class="tooltip-text">Android</span>
+                    <span class="tooltip-subtext">Google Play</span>
+                </div>
+            </a>
+
+            <!-- Registro Profesionales -->
+            <a href="https://app.ubivet.cl/" target="_blank" rel="noopener noreferrer"
+               class="floating-btn floating-btn-register group" title="Registro para Veterinarios y Clínicas">
+                <i class="fas fa-user-tie"></i>
+                <div class="floating-tooltip">
+                    <span class="tooltip-text">Únete</span>
+                    <span class="tooltip-subtext">Veterinarios • Clínicas</span>
+                </div>
+            </a>
         </div>
     </div>
 
-    <!-- Padding para el contenido para que no se superponga con el menú -->
-    <div class="h-14 md:h-0"></div>
 
     <!-- Version Control -->
     <script src="version.js"></script>
@@ -311,6 +291,7 @@
         };
 
         // Menú inferior - todo manejado con CSS
+
     </script>
 </body>
 </html>
