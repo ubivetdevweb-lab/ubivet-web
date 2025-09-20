@@ -266,7 +266,9 @@
         flex-shrink: 0 !important;
         cursor: pointer !important;
         touch-action: manipulation !important;
+        box-sizing: border-box !important;
     }
+
     
     .phone-nav-button:hover {
         transform: translateY(-2px) !important;
@@ -285,13 +287,14 @@
         color: white !important;
     }
     
-    /* Layout interno del botón - SOLO ICONO */
+    /* Layout interno del botón - SOLO ICONO, SIN INTERCEPTAR CLICKS */
     .phone-nav-button .flex.items-center {
         margin: 0 !important;
         padding: 0 !important;
+        pointer-events: none !important; /* El contenedor flex no intercepta clicks */
     }
     
-    /* Iconos gaming - COMPACTOS */
+    /* Iconos gaming - COMPACTOS CON ÁREA DE TOQUE EXPANDIDA */
     .phone-nav-button .w-12.h-12 {
         width: 1.5rem !important;
         height: 1.5rem !important;
@@ -299,6 +302,7 @@
         border-radius: 0.25rem !important;
         background: transparent !important;
         box-shadow: none !important;
+        pointer-events: none !important; /* El ícono no intercepta clicks */
     }
     
     .phone-nav-button.active .w-12.h-12 {
@@ -306,11 +310,12 @@
         box-shadow: none !important;
     }
     
-    /* SVG dentro del icono */
+    /* SVG dentro del icono - SIN INTERCEPTAR CLICKS */
     .phone-nav-button .w-12.h-12 svg {
         width: 1.5rem !important;
         height: 1.5rem !important;
         color: #4ECDC4 !important;
+        pointer-events: none !important; /* El SVG no intercepta clicks */
     }
     
     .phone-nav-button.active .w-12.h-12 svg {
@@ -355,7 +360,48 @@
     }
 }
 
-/* ===== 3. SECCIONES ESPECÍFICAS - VETERINARIOS ===== */
+/* ===== 3. SECCIONES ESPECÍFICAS - TUTORES ===== */
+@media (max-width: 767px) {
+    /* TUTORES - Forzar botones gaming con área de toque optimizada */
+    section#tutores .order-2.lg\:order-1 .phone-nav-button {
+        min-height: 60px !important;
+        max-height: 60px !important;
+        width: 60px !important;
+        margin: 0 !important;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        z-index: 10 !important;
+        position: relative !important;
+    }
+
+    section#tutores .order-3 .phone-nav-button {
+        min-height: 60px !important;
+        max-height: 60px !important;
+        width: 60px !important;
+        margin: 0 !important;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        z-index: 10 !important;
+        position: relative !important;
+    }
+
+    /* Prevenir interceptación de clicks en elementos hijos */
+    section#tutores .phone-nav-button .w-12.h-12 {
+        pointer-events: none !important;
+    }
+
+    section#tutores .phone-nav-button .w-12.h-12 svg {
+        pointer-events: none !important;
+    }
+
+    section#tutores .phone-nav-button .flex.items-center {
+        pointer-events: none !important;
+    }
+
+
+}
+
+/* ===== 4. SECCIONES ESPECÍFICAS - VETERINARIOS ===== */
 @media (max-width: 767px) {
     /* LAYOUT ESPECÍFICO PARA VETERINARIOS - Gaming Style */
     section#veterinarios .grid.lg\:grid-cols-3 {
@@ -386,6 +432,8 @@
         max-height: 60px !important;
         width: 60px !important;
         margin: 0 !important;
+        z-index: 10 !important;
+        position: relative !important;
     }
     
     /* MacBook centro en veterinarios - Centrado perfecto */
@@ -425,10 +473,13 @@
         max-height: 60px !important;
         width: 60px !important;
         margin: 0 !important;
+        z-index: 10 !important;
+        position: relative !important;
     }
+
 }
 
-/* ===== 4. SECCIONES ESPECÍFICAS - CLÍNICAS ===== */
+/* ===== 5. SECCIONES ESPECÍFICAS - CLÍNICAS ===== */
 @media (max-width: 767px) {
     /* Grid principal de clínicas */
     section#clinicas .grid.lg\:grid-cols-3 {
@@ -458,6 +509,8 @@
         max-height: 60px !important;
         width: 60px !important;
         margin: 0 !important;
+        z-index: 10 !important;
+        position: relative !important;
     }
     
     /* MacBook centro en clínicas - Centrado perfecto */
@@ -494,10 +547,13 @@
         max-height: 60px !important;
         width: 60px !important;
         margin: 0 !important;
+        z-index: 10 !important;
+        position: relative !important;
     }
+
 }
 
-/* ===== 5. SECCIONES ESPECÍFICAS - EMPRESAS ===== */
+/* ===== 6. SECCIONES ESPECÍFICAS - EMPRESAS ===== */
 @media (max-width: 767px) {
     /* Grid principal de empresas */
     section#empresas .grid.lg\:grid-cols-3 {
@@ -527,6 +583,8 @@
         max-height: 60px !important;
         width: 60px !important;
         margin: 0 !important;
+        z-index: 10 !important;
+        position: relative !important;
     }
     
     /* MacBook centro en empresas - Centrado perfecto */
@@ -563,10 +621,13 @@
         max-height: 60px !important;
         width: 60px !important;
         margin: 0 !important;
+        z-index: 10 !important;
+        position: relative !important;
     }
+
 }
 
-/* ===== 6. ÁREA DE DESCRIPCIÓN GAMING ===== */
+/* ===== 7. ÁREA DE DESCRIPCIÓN GAMING ===== */
 @media (max-width: 767px) {
     .description-area {
         background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.98) 100%) !important;
@@ -635,7 +696,7 @@
     }
 }
 
-/* ===== 7. OPTIMIZACIONES LANDSCAPE MÓVIL ===== */
+/* ===== 8. OPTIMIZACIONES LANDSCAPE MÓVIL ===== */
 @media (max-width: 926px) and (orientation: landscape) {
     /* Reducir spacing vertical para aprovechar altura limitada */
     .py-20 {
@@ -795,7 +856,7 @@
     }
 }
 
-/* ===== 8. UTILIDADES Y HELPERS ===== */
+/* ===== 9. UTILIDADES Y HELPERS ===== */
 /* Optimización de rendimiento para móviles */
 @media (max-width: 767px) {
     .phone-nav-button {
