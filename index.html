@@ -179,25 +179,37 @@
         <!-- Botones Expandidos (inicialmente ocultos) -->
         <div id="expanded-buttons" class="flex flex-col gap-3 transition-all duration-300 transform scale-0 opacity-0 origin-bottom">
             <!-- Botón Profesionales -->
-            <a href="https://app.ubivet.cl/" target="_blank" rel="noopener noreferrer" aria-label="Registro Profesionales"
-               class="bg-vet-teal hover:bg-vet-teal-dark text-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 md:w-16 md:h-16 transition-all duration-300 group transform hover:scale-110">
-                <i class="fas fa-user-tie text-lg md:text-xl"></i>
-                <span class="absolute opacity-0 group-hover:opacity-100 bg-vet-teal-dark text-white text-xs rounded px-3 py-2 bottom-full right-0 mb-2 transition-all duration-300 pointer-events-none whitespace-nowrap font-medium">Profesionales</span>
-            </a>
+            <div class="flex items-center gap-3">
+                <div class="bg-white/95 backdrop-blur-md text-vet-teal rounded-lg px-3 py-2 text-sm font-semibold whitespace-nowrap shadow-xl border border-vet-teal/30">
+                    Veterinarios • Clínicas • Empresas
+                </div>
+                <a href="https://app.ubivet.cl/" target="_blank" rel="noopener noreferrer" aria-label="Registro Profesionales"
+                   class="bg-vet-teal hover:bg-vet-teal-dark text-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 md:w-16 md:h-16 transition-all duration-300 transform hover:scale-110">
+                    <i class="fas fa-user-tie text-lg md:text-xl"></i>
+                </a>
+            </div>
 
             <!-- Botón Android -->
-            <a href="https://play.google.com/store/apps/details?id=com.neering.ubivet&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" aria-label="Descargar para Android"
-               class="bg-gray-800 hover:bg-gray-900 text-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 md:w-16 md:h-16 transition-all duration-300 group transform hover:scale-110">
-                <i class="fab fa-android text-lg md:text-xl"></i>
-                <span class="absolute opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs rounded px-3 py-2 bottom-full right-0 mb-2 transition-all duration-300 pointer-events-none whitespace-nowrap font-medium">Android</span>
-            </a>
+            <div class="flex items-center gap-3">
+                <div class="bg-white/95 backdrop-blur-md text-gray-800 rounded-lg px-3 py-2 text-sm font-semibold whitespace-nowrap shadow-xl border border-gray-800/30">
+                    App Tutores Android
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.neering.ubivet&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" aria-label="Descargar para Android"
+                   class="bg-gray-800 hover:bg-gray-900 text-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 md:w-16 md:h-16 transition-all duration-300 transform hover:scale-110">
+                    <i class="fab fa-android text-lg md:text-xl"></i>
+                </a>
+            </div>
 
             <!-- Botón iPhone -->
-            <a href="https://apps.apple.com/cl/app/ubivet/id6748315820" target="_blank" rel="noopener noreferrer" aria-label="Descargar para iPhone"
-               class="bg-gray-600 hover:bg-gray-700 text-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 md:w-16 md:h-16 transition-all duration-300 group transform hover:scale-110">
-                <i class="fab fa-apple text-lg md:text-xl"></i>
-                <span class="absolute opacity-0 group-hover:opacity-100 bg-gray-700 text-white text-xs rounded px-3 py-2 bottom-full right-0 mb-2 transition-all duration-300 pointer-events-none whitespace-nowrap font-medium">iPhone</span>
-            </a>
+            <div class="flex items-center gap-3">
+                <div class="bg-white/95 backdrop-blur-md text-gray-800 rounded-lg px-3 py-2 text-sm font-semibold whitespace-nowrap shadow-xl border border-gray-600/30">
+                    App Tutores iPhone
+                </div>
+                <a href="https://apps.apple.com/cl/app/ubivet/id6748315820" target="_blank" rel="noopener noreferrer" aria-label="Descargar para iPhone"
+                   class="bg-gray-600 hover:bg-gray-700 text-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 md:w-16 md:h-16 transition-all duration-300 transform hover:scale-110">
+                    <i class="fab fa-apple text-lg md:text-xl"></i>
+                </a>
+            </div>
         </div>
 
         <!-- Botón Principal -->
