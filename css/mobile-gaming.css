@@ -398,6 +398,23 @@
         pointer-events: none !important;
     }
 
+    /* CRÍTICO: Últimos dos botones con z-index máximo para evitar que algo los tape */
+    section#tutores .order-3 .phone-nav-button[data-destination="tutorItem5"],
+    section#tutores .order-3 .phone-nav-button[data-destination="tutorItem6"] {
+        z-index: 999 !important;
+        position: relative !important;
+        isolation: isolate !important;
+        transform: translateZ(0) !important;
+        will-change: transform !important;
+        backface-visibility: hidden !important;
+    }
+
+    /* Asegurar que el contenedor de estos botones también tenga prioridad */
+    section#tutores .order-3.responsive-button-grid {
+        z-index: 998 !important;
+        isolation: isolate !important;
+    }
+
 
 }
 
