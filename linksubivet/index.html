@@ -170,8 +170,8 @@
             background: rgba(255, 255, 255, 0.08);
         }
 
-        /* Responsive blobs para móvil */
-        @media (max-width: 480px) {
+        /* Responsive blobs - Solo para móvil real */
+        @media (max-width: 768px) and (orientation: portrait) {
             .blob-1 {
                 width: 120px;
                 height: 120px;
@@ -197,8 +197,8 @@
             }
         }
 
-        /* Para pantallas muy pequeñas, usar solo un blob */
-        @media (max-width: 360px) {
+        /* Para pantallas muy pequeñas */
+        @media (max-width: 480px) and (orientation: portrait) {
             .blob-1 {
                 width: 80px;
                 height: 80px;
@@ -223,7 +223,7 @@
         }
 
         /* Media query para móvil - animación más simple */
-        @media (max-width: 480px) {
+        @media (max-width: 768px) and (orientation: portrait) {
             .blob {
                 animation: blobFloatMobile 10s ease-in-out infinite;
             }
