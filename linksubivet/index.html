@@ -61,6 +61,8 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            max-width: 100vw;
         }
 
         .link-card {
@@ -171,33 +173,43 @@
         /* Responsive blobs para móvil */
         @media (max-width: 480px) {
             .blob-1 {
-                width: 150px;
-                height: 150px;
-                right: -25%;
+                width: 120px;
+                height: 120px;
+                right: -40%;
             }
 
             .blob-2 {
-                width: 130px;
-                height: 130px;
-                right: -30%;
+                width: 100px;
+                height: 100px;
+                right: -45%;
             }
 
             .blob-3 {
-                width: 140px;
-                height: 140px;
-                right: -28%;
+                width: 110px;
+                height: 110px;
+                right: -42%;
             }
 
-            .blob-4 {
-                width: 120px;
-                height: 120px;
-                left: -25%;
-            }
-
+            /* Ocultar blobs de la izquierda en móvil para evitar overflow */
+            .blob-4,
             .blob-5 {
-                width: 100px;
-                height: 100px;
-                left: -30%;
+                display: none;
+            }
+        }
+
+        /* Para pantallas muy pequeñas, usar solo un blob */
+        @media (max-width: 360px) {
+            .blob-1 {
+                width: 80px;
+                height: 80px;
+                right: -50%;
+            }
+
+            .blob-2,
+            .blob-3,
+            .blob-4,
+            .blob-5 {
+                display: none;
             }
         }
 
