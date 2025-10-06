@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubivet - Enlaces Rápidos</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Enlaces rápidos de Ubivet - Descarga la app, síguenos en redes sociales y accede a todos nuestros servicios veterinarios">
+    <meta name="keywords" content="Ubivet, app veterinaria, descarga app, Instagram, redes sociales, veterinarios, mascotas">
+    <meta name="author" content="Ubivet">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ubivet - Enlaces Rápidos">
+    <meta property="og:description" content="Descarga la app de Ubivet y síguenos en redes sociales">
+    <meta property="og:image" content="../plantilla/Asset 1@4x.png">
+    <meta property="og:url" content="https://ubivet.cl/linksubivet">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ubivet - Enlaces Rápidos">
+    <meta name="twitter:description" content="Descarga la app de Ubivet y síguenos en redes sociales">
+    <meta name="twitter:image" content="../plantilla/Asset 1@4x.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vet-orange': '#ff9500',
+                        'vet-orange-light': '#ffb347',
+                        'vet-brown': '#8B4513',
+                        'vet-teal': '#4ECDC4',
+                        'vet-teal-dark': '#2BB8B1',
+                        'vet-gray': '#f8f9fa'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .link-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .link-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .gradient-bg {
+            background: #4ECDC4;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+        .stagger-7 { animation-delay: 0.7s; }
+
+        /* Blobs animados del hero */
+        .blob {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            animation: blobFloat 20s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            top: -15%;
+            right: -8%;
+            width: 300px;
+            height: 300px;
+            border-radius: 70% 30% 60% 40% / 50% 70% 30% 50%;
+            animation-delay: 0s;
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .blob-2 {
+            top: 40%;
+            right: -10%;
+            width: 250px;
+            height: 250px;
+            border-radius: 40% 60% 30% 70% / 70% 30% 60% 40%;
+            animation-delay: -7s;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .blob-3 {
+            top: 5%;
+            right: -9%;
+            width: 280px;
+            height: 280px;
+            border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;
+            animation-delay: -14s;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .blob-4 {
+            top: 70%;
+            left: -5%;
+            width: 200px;
+            height: 200px;
+            border-radius: 30% 70% 40% 60% / 60% 40% 70% 30%;
+            animation-delay: -5s;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .blob-5 {
+            top: 10%;
+            left: -8%;
+            width: 180px;
+            height: 180px;
+            border-radius: 50% 50% 80% 20% / 30% 70% 50% 50%;
+            animation-delay: -12s;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        @keyframes blobFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translateY(-20px) rotate(90deg) scale(1.05);
+            }
+            50% {
+                transform: translateY(-10px) rotate(180deg) scale(0.95);
+            }
+            75% {
+                transform: translateY(-30px) rotate(270deg) scale(1.02);
+            }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Blobs animados de fondo -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+    <div class="blob blob-5"></div>
+
+    <div class="container mx-auto px-4 py-8 max-w-md relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-8 fade-in">
+            <div class="floating-animation">
+                <img src="../plantilla/Asset 3@4x.png" alt="Ubivet Logo" class="h-24 w-auto mx-auto mb-4">
+            </div>
+            <p class="text-white/80 text-lg">Tu plataforma veterinaria de confianza</p>
+        </div>
+
+        <!-- Links Container -->
+        <div class="space-y-4">
+
+            <!-- Descarga App para Tutores - iOS -->
+            <a href="https://apps.apple.com/cl/app/ubivet/id6748315820" target="_blank" rel="noopener noreferrer"
+               class="link-card rounded-2xl p-6 block w-full fade-in stagger-1">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-apple text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg">App Store</h3>
+                            <p class="text-gray-600 text-sm">Descarga para iPhone</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-external-link-alt text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- Descarga App para Tutores - Android -->
+            <a href="https://play.google.com/store/apps/details?id=com.neering.ubivet&pcampaignid=web_share" target="_blank" rel="noopener noreferrer"
+               class="link-card rounded-2xl p-6 block w-full fade-in stagger-2">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-google-play text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg">Google Play</h3>
+                            <p class="text-gray-600 text-sm">Descarga para Android</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-external-link-alt text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/ubivet_chile/" target="_blank" rel="noopener noreferrer"
+               class="link-card rounded-2xl p-6 block w-full fade-in stagger-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-instagram text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg">Instagram</h3>
+                            <p class="text-gray-600 text-sm">@ubivet_chile</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-external-link-alt text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@ubivet" target="_blank" rel="noopener noreferrer"
+               class="link-card rounded-2xl p-6 block w-full fade-in stagger-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-black to-gray-800 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-tiktok text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg">TikTok</h3>
+                            <p class="text-gray-600 text-sm">@ubivet</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-external-link-alt text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/56988108227" target="_blank" rel="noopener noreferrer"
+               class="link-card rounded-2xl p-6 block w-full fade-in stagger-5">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-whatsapp text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg">WhatsApp</h3>
+                            <p class="text-gray-600 text-sm">Consultas directas</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-external-link-alt text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- Sitio Web Principal -->
+            <a href="https://ubivet.cl/" target="_blank" rel="noopener noreferrer"
+               class="link-card rounded-2xl p-6 block w-full fade-in stagger-6">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-vet-teal to-vet-teal-dark rounded-xl flex items-center justify-center">
+                            <i class="fas fa-globe text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg">Sitio Web</h3>
+                            <p class="text-gray-600 text-sm">ubivet.cl</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-external-link-alt text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- Registro Profesionales -->
+            <a href="https://app.ubivet.cl/" target="_blank" rel="noopener noreferrer"
+               class="link-card rounded-2xl p-6 block w-full fade-in stagger-7">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-vet-orange to-vet-orange-light rounded-xl flex items-center justify-center">
+                            <i class="fas fa-user-tie text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg">Registro Profesional</h3>
+                            <p class="text-gray-600 text-sm">Veterinarios • Clínicas • Empresas</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-external-link-alt text-gray-400"></i>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-12 fade-in stagger-7">
+            <p class="text-white/60 text-sm">
+                © 2024 Ubivet. Conectando mascotas y veterinarios.
+            </p>
+            <p class="text-white/40 text-xs mt-2">
+                Hecho con ❤️ para la comunidad veterinaria
+            </p>
+        </div>
+    </div>
+
+    <!-- Analytics y Scripts adicionales -->
+    <script>
+        // Tracking de clics para analytics
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                const linkText = this.querySelector('h3')?.textContent || 'Unknown';
+
+                // Aquí puedes agregar tu código de analytics
+                console.log('Link clicked:', linkText, href);
+
+                // Ejemplo para Google Analytics (si lo tienes configurado)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'Link Tree',
+                        'event_label': linkText,
+                        'value': 1
+                    });
+                }
+            });
+        });
+
+        // Animación de entrada suave
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
