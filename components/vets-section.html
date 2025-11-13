@@ -8,10 +8,10 @@
     <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-                Si eres veterinario...
+                Si eres veterinario a domicilio
             </h2>
             <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
-                Únete a la Revolución en el cuidado animal Con nuestra app, puedes:
+                Una plataforma creada por veterinarios para veterinarios. Descubre todos los beneficios:
             </p>
         </div>
         
@@ -22,31 +22,54 @@
                     
                     <!-- Botones Izquierda - VETERINARIOS -->
                     <div class="space-y-6 order-2 lg:order-1 responsive-button-grid">
-                        <button id="vet-click" data-destination="vetItem1" class="phone-nav-button active w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                        <button id="vet-click" data-destination="vetItem1" class="phone-nav-button on-dark-bg active w-full text-left p-6 bg-white/95 rounded-2xl border-2 transition-all duration-300 hover:scale-105 shadow-md" style="border-color: #4ECDC4 !important;">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800">Visibilidad y valoración académica</h3>
+                            </div>
+                            <p class="text-sm text-gray-600">Muestra tus estudios acreditando con certificaciones y dale valor comercial a tu formación continua y esfuerzo.</p>
+                        </button>
+
+                        <button data-destination="vetItem2" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 transition-all duration-300 hover:scale-105 shadow-md" style="border-color: #4ECDC4 !important;">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                     </svg>
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Agendar citas de forma sencilla</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Agendamiento simple</h3>
                             </div>
-                            <p class="text-sm text-gray-600">Con nuestra app, puedes gestionar tus citas de manera fácil y eficiente.</p>
+                            <p class="text-sm text-gray-600">Te llega la solicitud por mail junto con datos de contacto del tutor y los detalles de la hora solicitada y lugar de consulta, coordinas, aceptas y listo!</p>
                         </button>
-                        
-                        <button data-destination="vetItem2" class="phone-nav-button w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+
+                        <button data-destination="vetItem3" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 transition-all duration-300 hover:scale-105 shadow-md" style="border-color: #4ECDC4 !important;">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800">¡No pagues por ofrecer!</h3>
+                            </div>
+                            <p class="text-sm text-gray-600">Somos una solución creada por veterinarios para veterinarios, y queremos ser un apoyo para crecer <strong>gratis!</strong></p>
+                        </button>
+
+                        <button data-destination="vetItem4" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 transition-all duration-300 hover:scale-105 shadow-md" style="border-color: #4ECDC4 !important;">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path>
                                     </svg>
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Acceder al perfil completo</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Verificación de identidad</h3>
                             </div>
-                            <p class="text-sm text-gray-600">de tus pacientes con todo su historial médico y tratamientos.</p>
+                            <p class="text-sm text-gray-600">Verifica tu identidad a la llegada al domicilio y aumenta la confianza de tu cliente.</p>
                         </button>
-                        
-                        
+
                     </div>
                     
                     <!-- Frame de Notebook Central -->
@@ -60,6 +83,33 @@
                                         <!-- Pantallas del carrusel -->
                                         <div class="laptop-content-area absolute inset-0">
                                         <div class="content show" id="vetItem1">
+                                            <div class="screen-content bg-gradient-to-br from-blue-500 to-blue-600 text-white">
+                                                <div class="p-6 h-full flex flex-col justify-center">
+                                                    <div class="text-center mb-6">
+                                                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <h2 class="text-xl font-bold mb-2">Perfil Profesional</h2>
+                                                        <p class="text-sm opacity-90">Destaca tu formación</p>
+                                                    </div>
+                                                    <div class="space-y-3">
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">🎓 Certificaciones visibles</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">📜 Estudios acreditados</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">💼 Valor comercial a tu formación</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="content" id="vetItem2">
                                             <div class="screen-content bg-gradient-to-br from-vet-teal to-vet-teal-dark text-white">
                                                 <div class="p-6 h-full flex flex-col justify-center">
                                                     <div class="text-center mb-6">
@@ -68,78 +118,159 @@
                                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                                             </svg>
                                                         </div>
-                                                        <h2 class="text-xl font-bold mb-2">Agenda Digital</h2>
-                                                        <p class="text-sm opacity-90">Gestión profesional de citas</p>
+                                                        <h2 class="text-xl font-bold mb-2">Agenda Simple</h2>
+                                                        <p class="text-sm opacity-90">Solicitudes por email</p>
                                                     </div>
                                                     <div class="space-y-3">
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">📅 Horarios y disponibilidad</p>
+                                                            <p class="text-sm">📧 Solicitud por mail</p>
                                                         </div>
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">⏰ Sincronización automática</p>
+                                                            <p class="text-sm">📱 Datos del tutor</p>
                                                         </div>
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">📱 Acceso desde cualquier lugar</p>
+                                                            <p class="text-sm">✅ Coordinas y aceptas</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        
-                                        <div class="content" id="vetItem2">
-                                            <div class="screen-content bg-gradient-to-br from-blue-500 to-blue-600 text-white">
+
+                                        <div class="content" id="vetItem3">
+                                            <div class="screen-content bg-gradient-to-br from-green-500 to-green-600 text-white">
+                                                <div class="p-6 h-full flex flex-col justify-center">
+                                                    <div class="text-center mb-6">
+                                                        <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                            <div class="text-3xl font-black">$0</div>
+                                                        </div>
+                                                        <h2 class="text-2xl font-bold mb-2">100% gratis</h2>
+                                                        <p class="text-sm opacity-90">Para veterinarios</p>
+                                                    </div>
+                                                    <div class="space-y-3">
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">🎉 No pagues por ofrecer</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">🤝 Por vets, para vets</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">📈 Apoyo para crecer</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="content" id="vetItem4">
+                                            <div class="screen-content bg-gradient-to-br from-indigo-500 to-indigo-600 text-white">
                                                 <div class="p-6 h-full flex flex-col justify-center">
                                                     <div class="text-center mb-6">
                                                         <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                                                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path>
                                                             </svg>
                                                         </div>
-                                                        <h2 class="text-xl font-bold mb-2">Historiales Médicos</h2>
-                                                        <p class="text-sm opacity-90">Información completa al instante</p>
+                                                        <h2 class="text-xl font-bold mb-2">Código QR</h2>
+                                                        <p class="text-sm opacity-90">Verifica tu identidad</p>
                                                     </div>
                                                     <div class="space-y-3">
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">📋 Expedientes completos</p>
+                                                            <p class="text-sm">🔒 Seguridad al llegar</p>
                                                         </div>
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">💉 Vacunas y tratamientos</p>
+                                                            <p class="text-sm">📱 Escaneo rápido</p>
                                                         </div>
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">📊 Datos en tiempo real</p>
+                                                            <p class="text-sm">✨ Confianza del cliente</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        
-                                        <div class="content" id="vetItem3">
+
+                                        <div class="content" id="vetItem5">
                                             <div class="screen-content bg-gradient-to-br from-purple-500 to-purple-600 text-white">
                                                 <div class="p-6 h-full flex flex-col justify-center">
                                                     <div class="text-center mb-6">
                                                         <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                                                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                                             </svg>
                                                         </div>
-                                                        <h2 class="text-xl font-bold mb-2">Gestión de Pacientes</h2>
-                                                        <p class="text-sm opacity-90">Organización inteligente</p>
+                                                        <h2 class="text-xl font-bold mb-2">Movilidad Total</h2>
+                                                        <p class="text-sm opacity-90">Presta servicios en cualquier lugar</p>
                                                     </div>
                                                     <div class="space-y-3">
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">🗂️ Seguimiento completo</p>
+                                                            <p class="text-sm">📍 Cambia tu ubicación</p>
                                                         </div>
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">🔔 Recordatorios automáticos</p>
+                                                            <p class="text-sm">🗺️ Nueva área de servicio</p>
                                                         </div>
                                                         <div class="bg-white/10 rounded-lg p-3">
-                                                            <p class="text-sm">📈 Estadísticas detalladas</p>
+                                                            <p class="text-sm">⚡ Desde tu panel</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
+                                        <div class="content" id="vetItem6">
+                                            <div class="screen-content bg-gradient-to-br from-orange-500 to-orange-600 text-white">
+                                                <div class="p-6 h-full flex flex-col justify-center">
+                                                    <div class="text-center mb-6">
+                                                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <h2 class="text-xl font-bold mb-2">Tus Cobros</h2>
+                                                        <p class="text-sm opacity-90">100% Independencia</p>
+                                                    </div>
+                                                    <div class="space-y-3">
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">💰 No pasan por Ubivet</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">📄 Tú emites tus boletas</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">✅ 100% tuyos</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="content" id="vetItem7">
+                                            <div class="screen-content bg-gradient-to-br from-teal-500 to-teal-600 text-white">
+                                                <div class="p-6 h-full flex flex-col justify-center">
+                                                    <div class="text-center mb-6">
+                                                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <h2 class="text-xl font-bold mb-2">Panel de Control</h2>
+                                                        <p class="text-sm opacity-90">Autoadministrable</p>
+                                                    </div>
+                                                    <div class="space-y-3">
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">⏰ Horarios y prestaciones</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">📍 Ubicación flexible</p>
+                                                        </div>
+                                                        <div class="bg-white/10 rounded-lg p-3">
+                                                            <p class="text-sm">🔐 Con tu mail y contraseña</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -153,16 +284,42 @@
                     
                     <!-- Botones Derecha - VETERINARIOS (Solo Desktop) -->
                     <div class="space-y-6 order-3 responsive-button-grid">
-                        <button data-destination="vetItem3" class="phone-nav-button w-full text-left p-6 bg-white/95 rounded-2xl border-2 border-transparent hover:border-vet-teal transition-all duration-300 hover:scale-105">
+                        <button data-destination="vetItem5" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 transition-all duration-300 hover:scale-105 shadow-md" style="border-color: #4ECDC4 !important;">
                             <div class="flex items-center mb-3">
                                 <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     </svg>
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Presta servicios a domicilio,</h3>
+                                <h3 class="text-lg font-bold text-gray-800">Presta servicios donde estés</h3>
                             </div>
-                            <p class="text-sm text-gray-600">cuando estés disponible. Amplía tu práctica y genera nuevos ingresos.</p>
+                            <p class="text-sm text-gray-600">Solo con cambiar tu dirección de residencia en tu panel de administración, cambias tu área de prestación de servicios.</p>
+                        </button>
+
+                        <button data-destination="vetItem6" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 transition-all duration-300 hover:scale-105 shadow-md" style="border-color: #4ECDC4 !important;">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800">Independencia en cobros</h3>
+                            </div>
+                            <p class="text-sm text-gray-600">Tus cobros no pasan por Ubivet, tú los gestionas al igual que las boletas porque son 100% tuyos!!</p>
+                        </button>
+
+                        <button data-destination="vetItem7" class="phone-nav-button on-dark-bg w-full text-left p-6 bg-white/95 rounded-2xl border-2 transition-all duration-300 hover:scale-105 shadow-md" style="border-color: #4ECDC4 !important;">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-vet-teal rounded-xl flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800">Perfil autoadministrable</h3>
+                            </div>
+                            <p class="text-sm text-gray-600">Administra tus horarios, prestaciones, ubicación y formación desde tu plataforma de administración con tu mail y contraseña.</p>
                         </button>
                     </div>
                     
