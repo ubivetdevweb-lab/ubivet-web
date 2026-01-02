@@ -1,0 +1,165 @@
+<!-- COUNTDOWN COMPONENT - Pre-Launch -->
+<div class="countdown-wrapper">
+    <!-- Background Pattern -->
+    <div class="countdown-background">
+        <div class="pattern-overlay"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="countdown-content">
+        <!-- Logo Section -->
+        <div class="countdown-logo">
+            <img src="../plantilla/Asset 3@4x.png" alt="Ubivet Logo" class="logo-image">
+        </div>
+
+        <!-- Title Section -->
+        <div class="countdown-title">
+            <h1 class="title-main">
+                Algo <span class="text-gradient">extraordinario</span> está por llegar
+            </h1>
+            <p class="title-subtitle">
+                Estamos preparando una nueva era en atención veterinaria
+            </p>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-timer" id="countdownTimer">
+            <div class="timer-unit">
+                <div class="timer-value" id="days">00</div>
+                <div class="timer-label">Días</div>
+            </div>
+            <div class="timer-separator">:</div>
+            <div class="timer-unit">
+                <div class="timer-value" id="hours">00</div>
+                <div class="timer-label">Horas</div>
+            </div>
+            <div class="timer-separator">:</div>
+            <div class="timer-unit">
+                <div class="timer-value" id="minutes">00</div>
+                <div class="timer-label">Minutos</div>
+            </div>
+            <div class="timer-separator">:</div>
+            <div class="timer-unit">
+                <div class="timer-value" id="seconds">00</div>
+                <div class="timer-label">Segundos</div>
+            </div>
+        </div>
+
+        <!-- Launch Date Display -->
+        <div class="launch-date">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Lanzamiento oficial: <strong>25 de Enero, 2026</strong></span>
+        </div>
+
+        <!-- Notify Me Section -->
+        <div class="notify-section">
+            <h3 class="notify-title">Sé el primero en saberlo</h3>
+            <p class="notify-subtitle">Regístrate y recibe notificaciones exclusivas</p>
+
+            <form class="notify-form" id="notifyForm">
+                <div class="form-group">
+                    <input
+                        type="email"
+                        class="notify-input"
+                        placeholder="Tu correo electrónico"
+                        required
+                        id="notifyEmail"
+                    >
+                    <button type="submit" class="notify-button">
+                        <i class="fas fa-bell"></i>
+                        Notificarme
+                    </button>
+                </div>
+                <p class="form-privacy">
+                    <i class="fas fa-lock"></i>
+                    Tu información está segura y no será compartida
+                </p>
+            </form>
+
+            <!-- Success Message -->
+            <div class="notify-success" id="notifySuccess" style="display: none;">
+                <i class="fas fa-check-circle"></i>
+                <p>¡Gracias! Te notificaremos cuando estemos listos.</p>
+            </div>
+        </div>
+
+        <!-- Social Media Teaser -->
+        <div class="social-teaser">
+            <p class="social-teaser-text">Síguenos para adelantos exclusivos</p>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@ubivet" target="_blank" class="social-link" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.instagram.com/ubivet" target="_blank" class="social-link" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/ubivet" target="_blank" class="social-link" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Elements (decorative) -->
+        <div class="floating-elements">
+            <div class="floating-paw floating-paw-1">🐾</div>
+            <div class="floating-paw floating-paw-2">🐾</div>
+            <div class="floating-paw floating-paw-3">🐾</div>
+        </div>
+    </div>
+</div>
+
+<!-- Countdown Timer Script -->
+<script>
+    (function() {
+        // Get the launch date from the controller or use default
+        const launchDate = new Date('2026-01-25T00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            if (distance < 0) {
+                // Countdown finished - reload to show launch page
+                document.getElementById('countdownTimer').innerHTML =
+                    '<div class="countdown-finished">¡El momento ha llegado!</div>';
+                return;
+            }
+
+            // Calculate time units
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Update display
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        // Update countdown every second
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Notify form handling
+        const notifyForm = document.getElementById('notifyForm');
+        if (notifyForm) {
+            notifyForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const email = document.getElementById('notifyEmail').value;
+
+                // TODO: Integrate with your email system (Google Apps Script)
+                console.log('Notify email:', email);
+
+                // Show success message
+                notifyForm.style.display = 'none';
+                document.getElementById('notifySuccess').style.display = 'block';
+
+                // TODO: Send to backend
+                // You can integrate this with your existing apps-script-api.js
+            });
+        }
+    })();
+</script>

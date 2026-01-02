@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprende a usar Ubivet - Guía completa para tutores, veterinarios y clínicas">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vet-teal': '#4ECDC4',
+                        'vet-teal-light': '#7EDDD7',
+                        'vet-teal-dark': '#2BB8B1',
+                        'vet-teal-darker': '#1A9B93',
+                        'vet-gray': '#f8f9fa',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/guia.css">
+
+    <title>Cómo usar Ubivet - Guía completa</title>
+</head>
+<body class="font-poppins bg-gray-50">
+
+    <!-- Header con logo y navegación -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex items-center gap-2">
+                    <img src="../plantilla/Asset 1@4x.png" alt="Ubivet Logo" class="h-10 md:h-12 w-auto">
+                </a>
+                <a href="/" class="text-sm text-gray-600 hover:text-vet-teal transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>Volver al inicio
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-vet-teal to-vet-teal-dark text-white py-12 md:py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="mb-6">
+                <i class="fas fa-book-open text-5xl md:text-6xl opacity-90"></i>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">
+                Cómo usar Ubivet
+            </h1>
+            <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
+                Guías paso a paso para sacar el máximo provecho de Ubivet según tu perfil
+            </p>
+        </div>
+    </section>
+
+    <!-- Selector de perfil (Tabs móvil-first) -->
+    <section class="max-w-6xl mx-auto px-4 -mt-8 relative z-10">
+        <div class="bg-white rounded-2xl shadow-xl p-2">
+            <div class="grid grid-cols-3 gap-2">
+                <button onclick="switchTab('tutores')" id="tab-tutores" class="tab-button active">
+                    <i class="fas fa-heart text-xl mb-2"></i>
+                    <span class="text-sm md:text-base font-semibold">Tutores</span>
+                </button>
+                <button onclick="switchTab('veterinarios')" id="tab-veterinarios" class="tab-button">
+                    <i class="fas fa-user-md text-xl mb-2"></i>
+                    <span class="text-sm md:text-base font-semibold">Veterinarios</span>
+                </button>
+                <button onclick="switchTab('clinicas')" id="tab-clinicas" class="tab-button">
+                    <i class="fas fa-clinic-medical text-xl mb-2"></i>
+                    <span class="text-sm md:text-base font-semibold">Clínicas</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido de guías -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+
+        <!-- GUÍA TUTORES -->
+        <div id="content-tutores" class="tab-content active">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                    Guía para Tutores de Mascotas
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Aprende a usar la app móvil de Ubivet para cuidar mejor de tus mascotas
+                </p>
+            </div>
+
+            <!-- CTA Descarga -->
+            <div class="bg-gradient-to-r from-vet-teal/10 to-vet-teal-light/10 rounded-2xl p-6 mb-12 border border-vet-teal/20">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">
+                            <i class="fas fa-mobile-alt text-vet-teal mr-2"></i>
+                            Descarga la App
+                        </h3>
+                        <p class="text-gray-600 text-sm md:text-base">
+                            Disponible gratis para iOS y Android
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="https://apps.apple.com/cl/app/ubivet/id6748315820" target="_blank"
+                           class="inline-block transform hover:scale-105 transition-transform">
+                            <img src="../assets/Download_on_the_App_Store_Badge_ESMX_RGB_blk_100217.svg"
+                                 alt="App Store" class="h-12">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.neering.ubivet&pcampaignid=web_share"
+                           target="_blank" class="inline-block transform hover:scale-105 transition-transform">
+                            <img src="../plantilla/Asset6.svg" alt="Google Play" class="h-12">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pasos para tutores -->
+            <div class="space-y-6">
+
+                <!-- Paso 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-download text-vet-teal mr-3"></i>
+                            Descarga e instala la app
+                        </h3>
+                        <p class="step-description">
+                            Descarga Ubivet desde App Store o Google Play. La app es completamente gratuita y no requiere tarjeta de crédito.
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>Compatible con iOS 13+ y Android 8+</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>Ocupa menos de 50 MB de espacio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-user-plus text-vet-teal mr-3"></i>
+                            Crea tu cuenta
+                        </h3>
+                        <p class="step-description">
+                            Abre la app y regístrate con tu email o continúa con Google/Apple. Solo toma 30 segundos.
+                        </p>
+                        <div class="step-screenshot">
+                            <div class="screenshot-placeholder">
+                                <i class="fas fa-image text-gray-300 text-4xl mb-3"></i>
+                                <p class="text-gray-400 text-sm">Screenshot: Pantalla de registro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-paw text-vet-teal mr-3"></i>
+                            Agrega tus mascotas
+                        </h3>
+                        <p class="step-description">
+                            Registra a tus mascotas con su nombre, especie, raza, edad y foto. Puedes agregar todas las que quieras.
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-lightbulb text-yellow-500"></i>
+                                <span><strong>Tip:</strong> Agrega una foto clara para identificar fácilmente a tu mascota</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="step-card highlighted">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-map-marked-alt text-vet-teal mr-3"></i>
+                            Explora el mapa de clínicas
+                        </h3>
+                        <p class="step-description">
+                            <strong>¡Feature estrella!</strong> Usa el mapa de emergencias para encontrar clínicas veterinarias abiertas cerca de ti. Gratis y sin membresía.
+                        </p>
+                        <div class="feature-highlight">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">En tiempo real</p>
+                                    <p class="text-sm text-gray-600">Ve qué clínicas están abiertas ahora</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-directions"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Navegación directa</p>
+                                    <p class="text-sm text-gray-600">Abre Google Maps con un toque</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Información completa</p>
+                                    <p class="text-sm text-gray-600">Servicios, horarios y contacto</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-search text-vet-teal mr-3"></i>
+                            Busca servicios específicos (Con membresía)
+                        </h3>
+                        <p class="step-description">
+                            Con la membresía premium, accede al buscador avanzado por prestaciones: encuentra clínicas que ofrezcan el servicio exacto que necesitas.
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-star text-yellow-500"></i>
+                                <span>Busca por: Cirugía, Ecografía, Rayos X, Peluquería, y más</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-sort-amount-down text-blue-500"></i>
+                                <span>Resultados ordenados por distancia a tu ubicación</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 6 -->
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-home text-vet-teal mr-3"></i>
+                            Agenda veterinario a domicilio (Con membresía)
+                        </h3>
+                        <p class="step-description">
+                            Con membresía, contacta y agenda hora con veterinarios a domicilio acreditados. Ve sus estudios, especialidades y aranceles.
+                        </p>
+                        <div class="step-screenshot">
+                            <div class="screenshot-placeholder">
+                                <i class="fas fa-image text-gray-300 text-4xl mb-3"></i>
+                                <p class="text-gray-400 text-sm">Screenshot: Lista de veterinarios a domicilio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 7 -->
+                <div class="step-card">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-qrcode text-vet-teal mr-3"></i>
+                            Verifica identidad con QR
+                        </h3>
+                        <p class="step-description">
+                            Cuando el veterinario a domicilio llegue a tu casa, escanea su código QR para verificar su identidad y credenciales.
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-shield-alt text-green-500"></i>
+                                <span><strong>Seguridad:</strong> Todos los veterinarios tienen título acreditado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAQ Tutores -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+                    Preguntas Frecuentes
+                </h3>
+                <div class="space-y-4">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Cuánto cuesta usar Ubivet?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>La app es <strong>gratis</strong> y el mapa de emergencias también. Las funciones premium (buscador de servicios y veterinarios a domicilio) requieren membresía.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Necesito membresía para todo?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. El <strong>mapa de emergencias</strong> para encontrar clínicas abiertas es completamente gratis. Solo necesitas membresía para el buscador por prestaciones y veterinarios a domicilio.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Puedo agendar citas desde la app?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, puedes contactar directamente a las clínicas o veterinarios a domicilio para agendar. Próximamente tendremos agenda integrada en la app.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- GUÍA VETERINARIOS -->
+        <div id="content-veterinarios" class="tab-content">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                    Guía para Veterinarios a Domicilio
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Únete a Ubivet y expande tu práctica veterinaria
+                </p>
+            </div>
+
+            <!-- CTA Registro -->
+            <div class="bg-gradient-to-r from-blue-500/10 to-blue-600/10 rounded-2xl p-6 mb-12 border border-blue-500/20">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">
+                            <i class="fas fa-user-tie text-blue-600 mr-2"></i>
+                            Regístrate como Veterinario
+                        </h3>
+                        <p class="text-gray-600 text-sm md:text-base">
+                            100% gratis - Sin comisiones por ofrecer servicios
+                        </p>
+                    </div>
+                    <a href="https://app.ubivet.cl/" target="_blank"
+                       class="bg-vet-teal text-white font-bold py-3 px-8 rounded-xl hover:bg-vet-teal-dark transition-colors">
+                        Únete Gratis
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pasos para veterinarios -->
+            <div class="space-y-6">
+
+                <!-- Paso 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-user-plus text-blue-600 mr-3"></i>
+                            Crea tu perfil profesional
+                        </h3>
+                        <p class="step-description">
+                            Regístrate en <a href="https://app.ubivet.cl/" target="_blank" class="text-vet-teal hover:underline font-semibold">app.ubivet.cl</a> con tus datos personales y profesionales.
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>Registro 100% web, sin descargar apps</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>Proceso toma menos de 5 minutos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-certificate text-blue-600 mr-3"></i>
+                            Sube tus certificaciones
+                        </h3>
+                        <p class="step-description">
+                            Acredita tu título profesional y certificaciones de especialidades. Esto aumenta tu visibilidad y confianza con los clientes.
+                        </p>
+                        <div class="feature-highlight">
+                            <div class="feature-item">
+                                <div class="feature-icon bg-blue-100">
+                                    <i class="fas fa-graduation-cap text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Título profesional</p>
+                                    <p class="text-sm text-gray-600">Requerido para activar perfil</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon bg-purple-100">
+                                    <i class="fas fa-award text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Especialidades</p>
+                                    <p class="text-sm text-gray-600">Opcional pero recomendado</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon bg-green-100">
+                                    <i class="fas fa-star text-green-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Formación continua</p>
+                                    <p class="text-sm text-gray-600">Dale valor a tus estudios</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-dollar-sign text-blue-600 mr-3"></i>
+                            Define tus aranceles
+                        </h3>
+                        <p class="step-description">
+                            Establece tus tarifas por tipo de consulta. Los tutores podrán ver tus aranceles referenciales antes de contactarte.
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-lightbulb text-yellow-500"></i>
+                                <span><strong>Tip:</strong> Sé transparente con tus precios para atraer más clientes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="step-card highlighted">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-envelope text-blue-600 mr-3"></i>
+                            Recibe solicitudes por email
+                        </h3>
+                        <p class="step-description">
+                            <strong>Así de simple:</strong> Cuando un tutor te solicite, recibirás un email con todos los datos de contacto y detalles de la consulta.
+                        </p>
+                        <div class="step-screenshot">
+                            <div class="screenshot-placeholder bg-blue-50 border-blue-200">
+                                <i class="fas fa-envelope-open-text text-blue-300 text-4xl mb-3"></i>
+                                <p class="text-blue-400 text-sm">Ejemplo: Email de solicitud</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-phone text-blue-600 mr-3"></i>
+                            Coordina directamente
+                        </h3>
+                        <p class="step-description">
+                            Contacta al tutor por teléfono o WhatsApp, coordina fecha/hora, acepta y confirma. Sin intermediarios.
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-money-bill-wave text-green-500"></i>
+                                <span><strong>Sin comisiones:</strong> El pago lo recibes directamente del cliente</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 6 -->
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-qrcode text-blue-600 mr-3"></i>
+                            Verifica tu identidad con QR
+                        </h3>
+                        <p class="step-description">
+                            Al llegar al domicilio, muestra tu código QR único para que el tutor verifique tu identidad y credenciales. Aumenta la confianza.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAQ Veterinarios -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+                    Preguntas Frecuentes
+                </h3>
+                <div class="space-y-4">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Cuánto cuesta registrarse como veterinario?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>¡Es completamente gratis!</strong> Ubivet no cobra ninguna membresía ni comisión a veterinarios. Creado por veterinarios para veterinarios.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Cobran comisión por las consultas?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>No.</strong> El pago lo recibes 100% directamente del cliente. Ubivet solo conecta, no cobra intermediación.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Necesito una app especial?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. Todo el registro y gestión se hace desde la web en <a href="https://app.ubivet.cl/" class="text-vet-teal hover:underline">app.ubivet.cl</a>. Las solicitudes te llegan por email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- GUÍA CLÍNICAS -->
+        <div id="content-clinicas" class="tab-content">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                    Guía para Clínicas Veterinarias
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Aumenta tu visibilidad y atrae más clientes con Ubivet
+                </p>
+            </div>
+
+            <!-- CTA Registro -->
+            <div class="bg-gradient-to-r from-purple-500/10 to-purple-600/10 rounded-2xl p-6 mb-12 border border-purple-500/20">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">
+                            <i class="fas fa-hospital text-purple-600 mr-2"></i>
+                            Registra tu Clínica
+                        </h3>
+                        <p class="text-gray-600 text-sm md:text-base">
+                            Aparece en el mapa y capta nuevos clientes
+                        </p>
+                    </div>
+                    <a href="https://app.ubivet.cl/" target="_blank"
+                       class="bg-vet-teal text-white font-bold py-3 px-8 rounded-xl hover:bg-vet-teal-dark transition-colors">
+                        Registrar Clínica
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pasos para clínicas -->
+            <div class="space-y-6">
+
+                <!-- Paso 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-building text-purple-600 mr-3"></i>
+                            Registra tu clínica
+                        </h3>
+                        <p class="step-description">
+                            Crea tu cuenta empresarial en <a href="https://app.ubivet.cl/" target="_blank" class="text-vet-teal hover:underline font-semibold">app.ubivet.cl</a> con los datos de tu clínica.
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>Nombre comercial y razón social</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>Dirección exacta (para el mapa)</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>Teléfono y email de contacto</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-clock text-purple-600 mr-3"></i>
+                            Configura tus horarios
+                        </h3>
+                        <p class="step-description">
+                            Define los horarios de atención de tu clínica. Los tutores verán en tiempo real si estás abierto o cerrado.
+                        </p>
+                        <div class="step-screenshot">
+                            <div class="screenshot-placeholder bg-purple-50 border-purple-200">
+                                <i class="fas fa-calendar-alt text-purple-300 text-4xl mb-3"></i>
+                                <p class="text-purple-400 text-sm">Panel de configuración de horarios</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-list-ul text-purple-600 mr-3"></i>
+                            Lista tus servicios y prestaciones
+                        </h3>
+                        <p class="step-description">
+                            Agrega todos los servicios que ofreces: consultas, cirugía, ecografía, rayos X, peluquería, hotel, etc.
+                        </p>
+                        <div class="feature-highlight">
+                            <div class="feature-item">
+                                <div class="feature-icon bg-blue-100">
+                                    <i class="fas fa-search text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Aparece en búsquedas</p>
+                                    <p class="text-sm text-gray-600">Los tutores premium te encontrarán por servicio</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon bg-green-100">
+                                    <i class="fas fa-users text-green-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Más visibilidad</p>
+                                    <p class="text-sm text-gray-600">Más servicios = más clientes potenciales</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="step-card highlighted">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-map-marker-alt text-purple-600 mr-3"></i>
+                            Aparece en el mapa de emergencias
+                        </h3>
+                        <p class="step-description">
+                            <strong>Feature estrella:</strong> Tu clínica aparecerá automáticamente en el mapa que usan miles de tutores para encontrar veterinarias abiertas.
+                        </p>
+                        <div class="step-screenshot">
+                            <div class="screenshot-placeholder bg-vet-teal/10 border-vet-teal/30">
+                                <i class="fas fa-map-marked-alt text-vet-teal text-4xl mb-3"></i>
+                                <p class="text-vet-teal text-sm">Mapa de clínicas veterinarias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-calendar-check text-purple-600 mr-3"></i>
+                            Gestiona tu agenda (opcional)
+                        </h3>
+                        <p class="step-description">
+                            Activa la agenda en línea para que los clientes reserven citas directamente. O deja que te contacten por teléfono.
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-lightbulb text-yellow-500"></i>
+                                <span><strong>Tip:</strong> La agenda en línea reduce llamadas y optimiza tu tiempo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 6 -->
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-chart-line text-purple-600 mr-3"></i>
+                            Recibe nuevos clientes
+                        </h3>
+                        <p class="step-description">
+                            Los tutores te encontrarán en el mapa, verán tus servicios y te contactarán. ¡Así de simple!
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-star text-yellow-500"></i>
+                                <span>Responde rápido a las consultas para mejor experiencia</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-comments text-blue-500"></i>
+                                <span>Los clientes satisfechos dejarán reseñas positivas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAQ Clínicas -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+                    Preguntas Frecuentes
+                </h3>
+                <div class="space-y-4">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Cuánto cuesta para clínicas?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>El registro básico y aparecer en el mapa es <strong>gratis</strong>. Hay planes premium para más visibilidad y funcionalidades avanzadas.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Cuántos clientes nuevos puedo esperar?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Depende de tu ubicación y servicios. Clínicas en zonas urbanas reciben en promedio 10-30 contactos mensuales de tutores buscando servicios.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Puedo actualizar mi información después?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, puedes editar horarios, servicios, fotos y toda tu información en cualquier momento desde tu panel de control.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer simplificado -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <img src="../plantilla/Asset 1@4x.png" alt="Ubivet Logo" class="h-12 mx-auto mb-4 brightness-0 invert">
+            <p class="text-gray-400 mb-6">
+                ¿Necesitas más ayuda? Contáctanos
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
+                <a href="mailto:jsolis@ubivet.cl" class="text-gray-300 hover:text-vet-teal transition-colors">
+                    <i class="fas fa-envelope mr-2"></i>jsolis@ubivet.cl
+                </a>
+                <span class="hidden sm:inline text-gray-600">|</span>
+                <a href="tel:+56988108227" class="text-gray-300 hover:text-vet-teal transition-colors">
+                    <i class="fas fa-phone mr-2"></i>+569 8810 8227
+                </a>
+                <span class="hidden sm:inline text-gray-600">|</span>
+                <a href="https://wa.me/56988108227" target="_blank" class="text-gray-300 hover:text-vet-teal transition-colors">
+                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                </a>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800">
+                <p class="text-gray-500 text-sm">
+                    © 2024 Ubivet. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/guia.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lanzamiento Ubivet - La revolución en atención veterinaria">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/countdown.css">
+    <link rel="stylesheet" href="css/launch.css">
+
+    <title>Lanzamiento Ubivet - 25 Enero 2026</title>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Smooth transitions between components */
+        #component-container {
+            min-height: 100vh;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #component-container.loading {
+            opacity: 0;
+        }
+
+        /* Preview mode indicator */
+        .preview-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ff9500;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 9999;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .preview-indicator.show {
+            display: block;
+            animation: slideInRight 0.3s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preview Mode Indicator -->
+    <div class="preview-indicator" id="previewIndicator">
+        <i class="fas fa-eye"></i> Modo Preview: <span id="previewMode"></span>
+    </div>
+
+    <!-- Component Container -->
+    <div id="component-container">
+        <!-- El contenido se cargará dinámicamente aquí -->
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="text-center">
+                <i class="fas fa-spinner fa-spin text-4xl text-teal-500 mb-4"></i>
+                <p class="text-gray-600">Cargando...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Launch Controller Script -->
+    <script src="js/launch-controller.js"></script>
+
+    <script>
+        // Initialize launch controller on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Initializing Launch Controller...');
+
+            if (typeof LaunchController !== 'undefined') {
+                const controller = new LaunchController({
+                    launchDate: '2026-01-25T00:00:00',
+                    countdownComponent: 'components/countdown.html',
+                    launchComponent: 'components/launch.html',
+                    container: '#component-container'
+                });
+
+                controller.init();
+            } else {
+                console.error('❌ LaunchController not found!');
+            }
+        });
+    </script>
+</body>
+</html>
