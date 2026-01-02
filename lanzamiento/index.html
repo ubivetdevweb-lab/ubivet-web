@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="css/countdown.css">
-    <link rel="stylesheet" href="css/launch.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/lanzamiento/css/countdown.css">
+    <link rel="stylesheet" href="/lanzamiento/css/launch.css">
 
     <title>Lanzamiento Ubivet - 25 Enero 2026</title>
 
@@ -93,7 +93,7 @@
     </div>
 
     <!-- Launch Controller Script -->
-    <script src="js/launch-controller.js"></script>
+    <script src="/lanzamiento/js/launch-controller.js"></script>
 
     <script>
         // Initialize launch controller on page load
@@ -103,8 +103,8 @@
             if (typeof LaunchController !== 'undefined') {
                 const controller = new LaunchController({
                     launchDate: '2026-01-25T00:00:00',
-                    countdownComponent: 'components/countdown.html',
-                    launchComponent: 'components/launch.html',
+                    countdownComponent: '/lanzamiento/components/countdown.html',
+                    launchComponent: '/lanzamiento/components/launch.html',
                     container: '#component-container'
                 });
 
