@@ -48,7 +48,7 @@
         <nav class="max-w-6xl mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <a href="/" class="flex items-center gap-2">
-                    <img src="../plantilla/Asset 1@4x.png" alt="Ubivet Logo" class="h-10 md:h-12 w-auto">
+                    <img src="/plantilla/Asset 1@4x.png" alt="Ubivet Logo" class="h-10 md:h-12 w-auto">
                 </a>
                 <a href="/" class="text-sm text-gray-600 hover:text-vet-teal transition-colors">
                     <i class="fas fa-arrow-left mr-2"></i>Volver al inicio
@@ -75,7 +75,7 @@
     <!-- Selector de perfil (Tabs móvil-first) -->
     <section class="max-w-6xl mx-auto px-4 -mt-8 relative z-10">
         <div class="bg-white rounded-2xl shadow-xl p-2">
-            <div class="grid grid-cols-3 gap-2">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
                 <button onclick="switchTab('tutores')" id="tab-tutores" class="tab-button active">
                     <i class="fas fa-heart text-xl mb-2"></i>
                     <span class="text-sm md:text-base font-semibold">Tutores</span>
@@ -87,6 +87,10 @@
                 <button onclick="switchTab('clinicas')" id="tab-clinicas" class="tab-button">
                     <i class="fas fa-clinic-medical text-xl mb-2"></i>
                     <span class="text-sm md:text-base font-semibold">Clínicas</span>
+                </button>
+                <button onclick="switchTab('empresas')" id="tab-empresas" class="tab-button">
+                    <i class="fas fa-building text-xl mb-2"></i>
+                    <span class="text-sm md:text-base font-semibold">Empresas</span>
                 </button>
             </div>
         </div>
@@ -121,12 +125,12 @@
                     <div class="flex flex-col sm:flex-row gap-3">
                         <a href="https://apps.apple.com/cl/app/ubivet/id6748315820" target="_blank"
                            class="inline-block transform hover:scale-105 transition-transform">
-                            <img src="../assets/Download_on_the_App_Store_Badge_ESMX_RGB_blk_100217.svg"
+                            <img src="/assets/Download_on_the_App_Store_Badge_ESMX_RGB_blk_100217.svg"
                                  alt="App Store" class="h-12">
                         </a>
                         <a href="https://play.google.com/store/apps/details?id=com.neering.ubivet&pcampaignid=web_share"
                            target="_blank" class="inline-block transform hover:scale-105 transition-transform">
-                            <img src="../plantilla/Asset6.svg" alt="Google Play" class="h-12">
+                            <img src="/plantilla/Asset6.svg" alt="Google Play" class="h-12">
                         </a>
                     </div>
                 </div>
@@ -781,12 +785,293 @@
 
         </div>
 
+        <!-- GUÍA EMPRESAS -->
+        <div id="content-empresas" class="tab-content">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                    Guía para Empresas Pet Friendly
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Ofrece beneficios veterinarios a tus empleados y conviértete en empresa Pet Friendly
+                </p>
+            </div>
+
+            <!-- CTA Registro -->
+            <div class="bg-gradient-to-r from-orange-500/10 to-orange-600/10 rounded-2xl p-6 mb-12 border border-orange-500/20">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">
+                            <i class="fas fa-handshake text-orange-600 mr-2"></i>
+                            Convenio Corporativo Ubivet
+                        </h3>
+                        <p class="text-gray-600 text-sm md:text-base">
+                            Beneficios veterinarios para tus colaboradores
+                        </p>
+                    </div>
+                    <a href="https://app.ubivet.cl/" target="_blank"
+                       class="bg-vet-teal text-white font-bold py-3 px-8 rounded-xl hover:bg-vet-teal-dark transition-colors">
+                        Solicitar Convenio
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pasos para empresas -->
+            <div class="space-y-6">
+
+                <!-- Paso 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-handshake text-orange-600 mr-3"></i>
+                            Solicita convenio corporativo
+                        </h3>
+                        <p class="step-description">
+                            Contacta al equipo Ubivet en <a href="https://app.ubivet.cl/" target="_blank" class="text-vet-teal hover:underline font-semibold">app.ubivet.cl</a> para establecer un convenio corporativo adaptado a tu empresa.
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>Proceso rápido y sin complicaciones</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span>Planes personalizables según tamaño de empresa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-file-contract text-orange-600 mr-3"></i>
+                            Firma el convenio
+                        </h3>
+                        <p class="step-description">
+                            Revisa y firma el acuerdo que mejor se ajuste a las necesidades de tu empresa y colaboradores.
+                        </p>
+                        <div class="feature-highlight">
+                            <div class="feature-item">
+                                <div class="feature-icon bg-blue-100">
+                                    <i class="fas fa-users text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Sin mínimo de empleados</p>
+                                    <p class="text-sm text-gray-600">Desde 5 colaboradores</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon bg-purple-100">
+                                    <i class="fas fa-percentage text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Descuentos exclusivos</p>
+                                    <p class="text-sm text-gray-600">En servicios veterinarios asociados</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon bg-green-100">
+                                    <i class="fas fa-dollar-sign text-green-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Tarifas corporativas</p>
+                                    <p class="text-sm text-gray-600">Precios especiales para convenios</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-user-plus text-orange-600 mr-3"></i>
+                            Registra a tus empleados
+                        </h3>
+                        <p class="step-description">
+                            Proporciona la lista de colaboradores que tendrán acceso al beneficio. Pueden ser todos o solo los que tengan mascotas.
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-lightbulb text-yellow-500"></i>
+                                <span><strong>Tip:</strong> Realizar encuesta interna para saber cuántos empleados tienen mascotas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="step-card highlighted">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-gift text-orange-600 mr-3"></i>
+                            Tus empleados reciben acceso premium
+                        </h3>
+                        <p class="step-description">
+                            <strong>Feature estrella:</strong> Los colaboradores reciben membresía premium de Ubivet con todos los beneficios sin costo adicional para ellos.
+                        </p>
+                        <div class="step-screenshot">
+                            <div class="screenshot-placeholder bg-orange-50 border-orange-200">
+                                <i class="fas fa-mobile-alt text-orange-300 text-4xl mb-3"></i>
+                                <p class="text-orange-400 text-sm">App Ubivet con acceso premium</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-heartbeat text-orange-600 mr-3"></i>
+                            Beneficios para empleados
+                        </h3>
+                        <p class="step-description">
+                            Tus colaboradores disfrutarán de acceso completo a la red de veterinarios y clínicas, con descuentos exclusivos.
+                        </p>
+                        <div class="feature-highlight">
+                            <div class="feature-item">
+                                <div class="feature-icon bg-vet-teal/20">
+                                    <i class="fas fa-map-marked-alt text-vet-teal"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Mapa de clínicas</p>
+                                    <p class="text-sm text-gray-600">Encuentra veterinarias abiertas 24/7</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon bg-vet-teal/20">
+                                    <i class="fas fa-search text-vet-teal"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Buscador de servicios</p>
+                                    <p class="text-sm text-gray-600">Encuentra especialidades específicas</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon bg-vet-teal/20">
+                                    <i class="fas fa-home text-vet-teal"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Veterinarios a domicilio</p>
+                                    <p class="text-sm text-gray-600">Atención en casa acreditada</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 6 -->
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-chart-line text-orange-600 mr-3"></i>
+                            Gestión simple y reportes
+                        </h3>
+                        <p class="step-description">
+                            Accede a un panel de control para ver estadísticas de uso y satisfacción de tus empleados con el beneficio.
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-chart-bar text-blue-500"></i>
+                                <span>Reportes mensuales de uso del beneficio</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-star text-yellow-500"></i>
+                                <span>Encuestas de satisfacción automáticas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 7 -->
+                <div class="step-card">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h3 class="step-title">
+                            <i class="fas fa-award text-orange-600 mr-3"></i>
+                            Certifícate como empresa Pet Friendly
+                        </h3>
+                        <p class="step-description">
+                            Recibe el sello oficial de "Empresa Pet Friendly Ubivet" para usar en tu comunicación interna y externa.
+                        </p>
+                        <div class="step-tips">
+                            <div class="tip-item">
+                                <i class="fas fa-trophy text-yellow-500"></i>
+                                <span><strong>Employer branding:</strong> Atrae y retén talento con beneficios innovadores</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-users text-blue-500"></i>
+                                <span>Mejora el clima laboral y bienestar de colaboradores</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAQ Empresas -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+                    Preguntas Frecuentes
+                </h3>
+                <div class="space-y-4">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Cuál es el costo del convenio corporativo?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>El costo varía según el número de colaboradores y el plan elegido. Contáctanos para una cotización personalizada sin compromiso.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Cuántos empleados necesito para un convenio?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Los convenios están disponibles <strong>desde 5 colaboradores</strong>. Ofrecemos planes para PyMEs y grandes empresas.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Los empleados pagan algo?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. La membresía premium es <strong>100% cubierta</strong> por la empresa. Los empleados solo pagan las atenciones veterinarias con descuento corporativo.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Qué pasa si un empleado se retira?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>La membresía queda inactiva automáticamente. Puedes agregar nuevos empleados en cualquier momento sin costo adicional dentro de tu plan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </main>
 
     <!-- Footer simplificado -->
     <footer class="bg-gray-900 text-white py-12 mt-16">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <img src="../plantilla/Asset 1@4x.png" alt="Ubivet Logo" class="h-12 mx-auto mb-4 brightness-0 invert">
+            <img src="/plantilla/Asset 1@4x.png" alt="Ubivet Logo" class="h-12 mx-auto mb-4 brightness-0 invert">
             <p class="text-gray-400 mb-6">
                 ¿Necesitas más ayuda? Contáctanos
             </p>

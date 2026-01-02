@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const tabParam = urlParams.get('tab');
 
-    if (tabParam && ['tutores', 'veterinarios', 'clinicas'].includes(tabParam)) {
+    if (tabParam && ['tutores', 'veterinarios', 'clinicas', 'empresas'].includes(tabParam)) {
         switchTab(tabParam);
     } else {
         // Default to tutores tab
@@ -276,7 +276,7 @@ function shareGuide(tabName) {
 document.addEventListener('keydown', function(e) {
     // Arrow keys for tab navigation
     if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-        const tabs = ['tutores', 'veterinarios', 'clinicas'];
+        const tabs = ['tutores', 'veterinarios', 'clinicas', 'empresas'];
         const activeTabBtn = document.querySelector('.tab-button.active');
         if (!activeTabBtn) return;
 

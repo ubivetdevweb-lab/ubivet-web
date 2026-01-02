@@ -5,7 +5,7 @@ Sistema de instructivos paso a paso optimizado para móviles con secciones separ
 ## 🎯 Características
 
 ✅ **Mobile-First Design** - Optimizado al 100% para dispositivos móviles
-✅ **3 Secciones Independientes** - Tutores, Veterinarios y Clínicas
+✅ **4 Secciones Independientes** - Tutores, Veterinarios, Clínicas y Empresas
 ✅ **Sistema de Tabs** - Navegación intuitiva entre secciones
 ✅ **Paso a Paso Visual** - Cards numeradas con iconos y descripciones
 ✅ **FAQ Interactivo** - Acordeones con preguntas frecuentes
@@ -38,6 +38,7 @@ https://tudominio.com/como-usar
 https://tudominio.com/como-usar?tab=tutores
 https://tudominio.com/como-usar?tab=veterinarios
 https://tudominio.com/como-usar?tab=clinicas
+https://tudominio.com/como-usar?tab=empresas
 ```
 
 ## 🎨 Sistema de Tabs
@@ -73,6 +74,18 @@ https://tudominio.com/como-usar?tab=clinicas
 - Captación de nuevos clientes
 - **3 FAQs**
 - **CTA**: Registro en app.ubivet.cl
+
+### Empresas
+- **7 pasos** para convenio corporativo
+- Solicitar convenio corporativo
+- Firmar el convenio
+- Registrar empleados
+- Empleados reciben acceso premium (feature principal)
+- Beneficios para empleados
+- Gestión simple y reportes
+- Certificación Pet Friendly
+- **4 FAQs**
+- **CTA**: Solicitar convenio en app.ubivet.cl
 
 ## 💻 Características Técnicas
 
