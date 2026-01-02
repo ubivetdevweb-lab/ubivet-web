@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Meta Tags -->
-    <title>Página no encontrada - Clínica Veterinaria Tarapacá</title>
-    <meta name="description" content="La página que buscas no existe. Vuelve a la página principal de Clínica Veterinaria Tarapacá.">
+    <title>Página no encontrada - Ubivet</title>
+    <meta name="description" content="La página que buscas no existe. Vuelve a la página principal de Ubivet.">
     <meta name="robots" content="noindex, nofollow">
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/dragonfly-icon.png">
-    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -19,9 +20,9 @@
             theme: {
                 extend: {
                     colors: {
-                        'vet-orange': '#ff9500',
-                        'vet-orange-light': '#ffb347',
-                        'vet-brown': '#8B4513',
+                        'vet-teal': '#4ECDC4',
+                        'vet-teal-light': '#7EDDD7',
+                        'vet-teal-dark': '#2BB8B1',
                         'vet-gray': '#f8f9fa'
                     },
                     fontFamily: {
@@ -31,154 +32,145 @@
             }
         }
     </script>
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-    
+
     <style>
-        @keyframes float {
-            0%, 100% { 
-                transform: translateY(0px) rotate(0deg);
-            }
-            50% { 
-                transform: translateY(-20px) rotate(180deg);
-            }
-        }
-        
         @keyframes bounce-gentle {
-            0%, 100% { 
+            0%, 100% {
                 transform: translateY(0px);
             }
-            50% { 
+            50% {
                 transform: translateY(-10px);
             }
         }
-        
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-        
+
         .animate-bounce-gentle {
             animation: bounce-gentle 2s ease-in-out infinite;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-vet-gray via-orange-50 to-yellow-50 min-h-screen flex items-center justify-center overflow-hidden">
-    <!-- Formas orgánicas de fondo -->
-    <div class="absolute top-1/4 right-0 w-80 h-80 bg-vet-orange/10 rounded-full blur-3xl animate-pulse transform translate-x-1/3"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-vet-brown/10 rounded-full blur-2xl animate-float transform -translate-x-1/4"></div>
-    <div class="absolute top-1/2 left-1/4 w-40 h-40 bg-vet-orange/5 rounded-full blur-xl animate-bounce-gentle"></div>
-    
+<body class="relative bg-gradient-to-br from-vet-teal to-vet-teal-dark min-h-screen overflow-x-hidden">
+    <!-- Blobs de fondo (igual que el landing) -->
+    <div class="absolute -top-60 -right-32 w-[30rem] h-[30rem] bg-white/60 z-0" style="border-radius: 70% 30% 60% 40% / 50% 70% 30% 50%;"></div>
+    <div class="absolute top-1/2 -right-40 w-[28rem] h-[28rem] bg-white/50 z-0" style="border-radius: 40% 60% 30% 70% / 70% 30% 60% 40%;"></div>
+    <div class="absolute top-10 -right-36 w-[32rem] h-[32rem] bg-white/25 z-1" style="border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;"></div>
+
     <!-- Contenido principal -->
-    <div class="relative z-10 text-center px-6 max-w-2xl mx-auto">
-        <!-- Icono de error -->
-        <div class="mb-8">
-            <div class="w-32 h-32 mx-auto bg-gradient-to-r from-vet-orange to-vet-orange-light rounded-full flex items-center justify-center text-white text-6xl shadow-2xl animate-bounce-gentle">
-                🐾
+    <div class="relative z-20 px-6 py-12">
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- Logo Ubivet -->
+            <div class="mb-6">
+                <img src="/plantilla/Asset 3@4x.png" alt="Ubivet Logo" class="w-40 h-auto mx-auto">
             </div>
-        </div>
-        
-        <!-- Número de error -->
-        <h1 class="text-8xl md:text-9xl font-bold text-vet-brown mb-4 font-poppins">
-            404
-        </h1>
-        
-        <!-- Mensaje principal -->
-        <h2 class="text-3xl md:text-4xl font-bold text-vet-brown mb-6 font-poppins">
-            ¡Ups! Página no encontrada
-        </h2>
-        
-        <!-- Descripción -->
-        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-            Parece que esta página se fue a pasear como un gatito curioso. 🐱<br>
-            No te preocupes, podemos ayudarte a encontrar lo que buscas.
-        </p>
-        
-        <!-- Botones de navegación -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="/" class="bg-gradient-to-r from-vet-orange to-vet-orange-light text-white font-semibold py-4 px-8 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
-                <i class="fas fa-home"></i>
-                Volver al Inicio
-            </a>
-            
-            <button onclick="history.back()" class="bg-white text-vet-brown border-2 border-vet-brown font-semibold py-4 px-8 rounded-full hover:bg-vet-brown hover:text-white transition-all duration-300 flex items-center gap-2">
-                <i class="fas fa-arrow-left"></i>
-                Página Anterior
-            </button>
-        </div>
-        
-        <!-- Enlaces útiles -->
-        <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-white/20">
-            <h3 class="text-xl font-bold text-vet-brown mb-6 font-poppins">
-                ¿Buscabas algo específico?
-            </h3>
-            
-            <div class="grid sm:grid-cols-2 gap-4">
-                <a href="/#servicios" class="flex items-center gap-3 p-4 bg-gradient-to-r from-vet-orange/5 to-transparent rounded-2xl hover:from-vet-orange/10 transition-all duration-300 text-vet-brown">
-                    <div class="w-10 h-10 bg-vet-orange rounded-full flex items-center justify-center text-white">
-                        <i class="fas fa-stethoscope"></i>
-                    </div>
-                    <span class="font-medium">Nuestros Servicios</span>
-                </a>
-                
-                <a href="/#equipo" class="flex items-center gap-3 p-4 bg-gradient-to-r from-vet-orange/5 to-transparent rounded-2xl hover:from-vet-orange/10 transition-all duration-300 text-vet-brown">
-                    <div class="w-10 h-10 bg-vet-orange rounded-full flex items-center justify-center text-white">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <span class="font-medium">Nuestro Equipo</span>
-                </a>
-                
-                <a href="/#contacto" class="flex items-center gap-3 p-4 bg-gradient-to-r from-vet-orange/5 to-transparent rounded-2xl hover:from-vet-orange/10 transition-all duration-300 text-vet-brown">
-                    <div class="w-10 h-10 bg-vet-orange rounded-full flex items-center justify-center text-white">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <span class="font-medium">Contacto</span>
-                </a>
-                
-                <a href="/#tiktok" class="flex items-center gap-3 p-4 bg-gradient-to-r from-vet-orange/5 to-transparent rounded-2xl hover:from-vet-orange/10 transition-all duration-300 text-vet-brown">
-                    <div class="w-10 h-10 bg-vet-orange rounded-full flex items-center justify-center text-white">
-                        <i class="fab fa-tiktok"></i>
-                    </div>
-                    <span class="font-medium">TikTok</span>
-                </a>
-            </div>
-        </div>
-        
-        <!-- Información de contacto de emergencia -->
-        <div class="mt-8 p-6 bg-vet-brown/5 rounded-2xl border border-vet-brown/10">
-            <p class="text-vet-brown font-medium mb-2">
-                <i class="fas fa-exclamation-circle text-vet-orange mr-2"></i>
-                ¿Emergencia veterinaria?
+
+            <!-- Número de error -->
+            <h1 class="text-7xl md:text-8xl font-bold text-white mb-4 font-poppins animate-bounce-gentle">
+                404
+            </h1>
+
+            <!-- Mensaje principal -->
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 font-poppins">
+                ¡Ups! Página no encontrada
+            </h2>
+
+            <!-- Descripción -->
+            <p class="text-lg text-white/90 mb-6 leading-relaxed">
+                Parece que esta página se perdió en el camino 🐾
             </p>
-            <a href="tel:+56953223402" class="text-vet-orange font-bold text-lg hover:text-vet-brown transition-colors">
-                +56 9 5322 3402
-            </a>
+
+            <!-- Botones de navegación -->
+            <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-8">
+                <a href="/" class="bg-white text-vet-teal font-semibold py-3 px-6 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                    <i class="fas fa-home"></i>
+                    Volver al Inicio
+                </a>
+
+                <button onclick="history.back()" class="bg-transparent text-white border-2 border-white font-semibold py-3 px-6 rounded-full hover:bg-white hover:text-vet-teal transition-all duration-300 flex items-center gap-2">
+                    <i class="fas fa-arrow-left"></i>
+                    Página Anterior
+                </button>
+            </div>
+
+            <!-- Enlaces útiles -->
+            <div class="bg-white/95 backdrop-blur-sm rounded-3xl shadow-xl p-6 border border-white/20 mb-8">
+                <h3 class="text-lg font-bold text-gray-800 mb-4 font-poppins">
+                    ¿Buscabas algo específico?
+                </h3>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    <a href="/#tutores" class="flex flex-col items-center gap-2 p-3 bg-gradient-to-r from-vet-teal/10 to-transparent rounded-xl hover:from-vet-teal/20 transition-all duration-300 text-gray-800">
+                        <div class="w-10 h-10 bg-vet-teal rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <span class="font-medium text-sm">Tutores</span>
+                    </a>
+
+                    <a href="/#veterinarios" class="flex flex-col items-center gap-2 p-3 bg-gradient-to-r from-vet-teal/10 to-transparent rounded-xl hover:from-vet-teal/20 transition-all duration-300 text-gray-800">
+                        <div class="w-10 h-10 bg-vet-teal rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <span class="font-medium text-sm">Veterinarios</span>
+                    </a>
+
+                    <a href="/#clinicas" class="flex flex-col items-center gap-2 p-3 bg-gradient-to-r from-vet-teal/10 to-transparent rounded-xl hover:from-vet-teal/20 transition-all duration-300 text-gray-800">
+                        <div class="w-10 h-10 bg-vet-teal rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-clinic-medical"></i>
+                        </div>
+                        <span class="font-medium text-sm">Clínicas</span>
+                    </a>
+
+                    <a href="/#empresas" class="flex flex-col items-center gap-2 p-3 bg-gradient-to-r from-vet-teal/10 to-transparent rounded-xl hover:from-vet-teal/20 transition-all duration-300 text-gray-800">
+                        <div class="w-10 h-10 bg-vet-teal rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <span class="font-medium text-sm">Empresas</span>
+                    </a>
+
+                    <a href="/como-usar" class="flex flex-col items-center gap-2 p-3 bg-gradient-to-r from-vet-teal/10 to-transparent rounded-xl hover:from-vet-teal/20 transition-all duration-300 text-gray-800">
+                        <div class="w-10 h-10 bg-vet-teal rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span class="font-medium text-sm">Cómo Usar</span>
+                    </a>
+
+                    <a href="/#contacto" class="flex flex-col items-center gap-2 p-3 bg-gradient-to-r from-vet-teal/10 to-transparent rounded-xl hover:from-vet-teal/20 transition-all duration-300 text-gray-800">
+                        <div class="w-10 h-10 bg-vet-teal rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span class="font-medium text-sm">Contacto</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Información de contacto -->
+            <div class="p-4 bg-white/10 rounded-2xl border border-white/20 backdrop-blur-sm">
+                <p class="text-white font-medium mb-1 text-sm">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    ¿Necesitas ayuda?
+                </p>
+                <a href="mailto:jsolis@ubivet.cl" class="text-white font-bold hover:text-white/80 transition-colors">
+                    jsolis@ubivet.cl
+                </a>
+            </div>
         </div>
     </div>
-    
+
     <!-- Script para navegación -->
     <script>
-        // Smooth scrolling para enlaces con hash
-        document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                // Permitir navegación normal para páginas con hash
-                window.location.href = this.getAttribute('href');
-            });
-        });
-        
         // Tracking de error 404 (opcional)
         if (typeof gtag !== 'undefined') {
             gtag('event', 'page_view', {
                 page_title: '404 - Página no encontrada',
-                page_location: window.location.href,
-                send_to: 'GA_TRACKING_ID'
+                page_location: window.location.href
             });
         }
     </script>
