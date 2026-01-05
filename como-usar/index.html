@@ -723,23 +723,81 @@
                     <div class="step-content">
                         <h3 class="step-title">
                             <i class="fas fa-building text-purple-600 mr-3"></i>
-                            Registra tu clínica
+                            Registrarte como clínica <span class="text-sm text-red-600">(no empresa)</span>
                         </h3>
                         <p class="step-description">
-                            Crea tu cuenta empresarial en <a href="https://app.ubivet.cl/" target="_blank" class="text-vet-teal hover:underline font-semibold">app.ubivet.cl</a> con los datos de tu clínica.
+                            Crea tu cuenta empresarial en <a href="https://app.ubivet.cl/" target="_blank" class="text-vet-teal hover:underline font-semibold">app.ubivet.cl</a> con los datos de tu clínica. Ten a mano los documentos mínimos requeridos.
                         </p>
+
+                        <!-- Documentos requeridos -->
+                        <div class="bg-amber-50 border-l-4 border-amber-500 p-4 mb-4 rounded-r-lg">
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-file-alt text-amber-500 text-lg mt-1"></i>
+                                <div>
+                                    <p class="text-sm text-amber-800 font-semibold">
+                                        Documentos mínimos requeridos
+                                    </p>
+                                    <ul class="text-xs text-amber-700 mt-1 list-disc ml-4">
+                                        <li>Patente comercial</li>
+                                        <li>Certificado de título del director médico</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="step-tips">
                             <div class="tip-item">
-                                <i class="fas fa-check-circle text-green-500"></i>
-                                <span>Nombre comercial y razón social</span>
+                                <i class="fas fa-exclamation-circle text-red-500"></i>
+                                <span><strong>Importante:</strong> El WhatsApp y el mail deben ser de la clínica (no personales) ya que estarán visibles para los tutores</span>
                             </div>
                             <div class="tip-item">
-                                <i class="fas fa-check-circle text-green-500"></i>
-                                <span>Dirección exacta (para el mapa)</span>
+                                <i class="fas fa-map-marker-alt text-purple-500"></i>
+                                <span><strong>Ubicación exacta:</strong> Ubica con el cursor dentro del mapa la ubicación exacta para evitar errores en el mapa de emergencias</span>
                             </div>
                             <div class="tip-item">
+                                <i class="fas fa-clock text-blue-500"></i>
+                                <span><strong>Horarios:</strong> Registra tus horarios y recuerda actualizarlos regularmente</span>
+                            </div>
+                        </div>
+
+                        <!-- Sistema de recordatorios de feriados -->
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded-r-lg mt-4">
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-calendar-day text-blue-500 text-lg mt-1"></i>
+                                <div>
+                                    <p class="text-sm text-blue-800 font-semibold">
+                                        Sistema de recordatorio de feriados
+                                    </p>
+                                    <p class="text-xs text-blue-700 mt-1">
+                                        2 días antes de cada feriado llegará al mail un recordatorio de actualización de horarios de atención. El link te llevará a donde puedes actualizar los datos informando si estará abierto o cerrado.
+                                    </p>
+                                    <p class="text-xs text-blue-700 mt-2 font-semibold">
+                                        ⚠️ En caso de no responder, la clínica figurará cerrada por defecto para evitar errores en estas fechas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mensaje inspiracional -->
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 p-4 rounded-lg mt-4">
+                            <div class="flex items-start gap-3">
+                                <div class="text-2xl">💜</div>
+                                <div>
+                                    <p class="text-sm text-purple-900 font-semibold">
+                                        Tu actualización salva vidas
+                                    </p>
+                                    <p class="text-xs text-purple-800 mt-1">
+                                        Nunca lo olvides, juntos hacemos Ubivet para que nunca más una mascota sufra o muera por falta de información o atención oportuna
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Espera aprobación -->
+                        <div class="step-tips mt-4">
+                            <div class="tip-item">
                                 <i class="fas fa-check-circle text-green-500"></i>
-                                <span>Teléfono y email de contacto</span>
+                                <span>Espera la aceptación de la postulación y listo</span>
                             </div>
                         </div>
                     </div>
@@ -776,6 +834,19 @@
                         <p class="step-description">
                             Agrega todos los servicios que ofreces: consultas, cirugía, ecografía, radiografías, laboratorio clínico, hospital, y más.
                         </p>
+
+                        <!-- Nota de contacto para nuevos servicios -->
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded-r-lg">
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-info-circle text-blue-500 text-lg mt-1"></i>
+                                <div>
+                                    <p class="text-sm text-blue-800">
+                                        Si requieres sumar un servicio que no se encuentre en la lista, <strong>contáctanos y lo agregamos</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="feature-highlight">
                             <div class="feature-item">
                                 <div class="feature-icon bg-blue-100">
@@ -783,7 +854,7 @@
                                 </div>
                                 <div>
                                     <p class="font-semibold">Aparece en búsquedas</p>
-                                    <p class="text-sm text-gray-600">Los tutores premium te encontrarán por servicio</p>
+                                    <p class="text-sm text-gray-600">Los tutores te encontrarán por servicio</p>
                                 </div>
                             </div>
                             <div class="feature-item">
@@ -824,40 +895,32 @@
                     <div class="step-number">5</div>
                     <div class="step-content">
                         <h3 class="step-title">
-                            <i class="fas fa-calendar-check text-purple-600 mr-3"></i>
-                            Gestiona tu agenda (opcional)
-                        </h3>
-                        <p class="step-description">
-                            Activa la agenda en línea para que los clientes reserven citas directamente. O deja que te contacten por teléfono.
-                        </p>
-                        <div class="step-tips">
-                            <div class="tip-item">
-                                <i class="fas fa-lightbulb text-yellow-500"></i>
-                                <span><strong>Tip:</strong> La agenda en línea reduce llamadas y optimiza tu tiempo</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Paso 6 -->
-                <div class="step-card">
-                    <div class="step-number">6</div>
-                    <div class="step-content">
-                        <h3 class="step-title">
                             <i class="fas fa-chart-line text-purple-600 mr-3"></i>
                             Recibe nuevos clientes
                         </h3>
                         <p class="step-description">
                             Los tutores te encontrarán en el mapa, verán tus servicios y te contactarán. ¡Así de simple!
                         </p>
+
+                        <!-- Mensaje sobre emergencias -->
+                        <div class="bg-gradient-to-r from-red-50 to-pink-50 border-l-4 border-red-500 p-4 mb-4 rounded-r-lg">
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-heartbeat text-red-500 text-lg mt-1"></i>
+                                <div>
+                                    <p class="text-sm text-red-800 font-semibold">
+                                        Tu visibilidad salva vidas
+                                    </p>
+                                    <p class="text-xs text-red-700 mt-1">
+                                        En caso de emergencia, estar visible con las características de tus servicios y horarios claros puede salvar muchas vidas y estar presente para tu mejor cliente
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="step-tips">
                             <div class="tip-item">
                                 <i class="fas fa-star text-yellow-500"></i>
                                 <span>Responde rápido a las consultas para mejor experiencia</span>
-                            </div>
-                            <div class="tip-item">
-                                <i class="fas fa-comments text-blue-500"></i>
-                                <span>Los clientes satisfechos dejarán reseñas positivas</span>
                             </div>
                         </div>
                     </div>
@@ -877,16 +940,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>El registro básico y aparecer en el mapa es <strong>gratis</strong>. Hay planes premium para más visibilidad y funcionalidades avanzadas.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                            <span>¿Cuántos clientes nuevos puedo esperar?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Depende de tu ubicación y servicios. Clínicas en zonas urbanas reciben en promedio 10-30 contactos mensuales de tutores buscando servicios.</p>
+                            <p>El registro básico y aparecer en el mapa es <strong>completamente gratis</strong>.</p>
                         </div>
                     </div>
                     <div class="faq-item">
