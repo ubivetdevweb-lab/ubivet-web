@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanzamiento Oficial Ubivet 2025 | El Futuro del Cuidado Veterinario</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vet-teal': '#4ECDC4',
+                        'vet-teal-light': '#7EDDD7',
+                        'vet-teal-dark': '#2BB8B1',
+                        'vet-teal-darker': '#1A9B93',
+                        'vet-gray': '#f8f9fa',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px #4ECDC4, 0 0 10px #4ECDC4' },
+                            '100%': { boxShadow: '0 0 20px #4ECDC4, 0 0 30px #4ECDC4, 0 0 40px #4ECDC4' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Gradientes dinámicos */
+        .gradient-hero {
+            background: linear-gradient(135deg, #1e1e2e 0%, #2a2a40 100%);
+            position: relative;
+        }
+
+        .gradient-teal {
+            background: linear-gradient(135deg, #4ECDC4 0%, #2BB8B1 100%);
+        }
+
+        .gradient-teal-alt {
+            background: linear-gradient(135deg, #7EDDD7 0%, #4ECDC4 100%);
+        }
+
+        .gradient-teal-darker {
+            background: linear-gradient(135deg, #2BB8B1 0%, #1A9B93 100%);
+        }
+
+        /* Blobs animados de fondo */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: 0.5;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            width: 500px;
+            height: 500px;
+            background: #4ECDC4;
+            top: -200px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: #7EDDD7;
+            bottom: -150px;
+            right: -150px;
+            animation-delay: 2s;
+        }
+
+        .blob-3 {
+            width: 350px;
+            height: 350px;
+            background: #2BB8B1;
+            top: 50%;
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        /* Countdown mejorado */
+        .countdown-digit {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .countdown-digit:hover {
+            transform: scale(1.1) rotate(-5deg);
+            border-color: #4ECDC4;
+            box-shadow: 0 0 30px rgba(78, 205, 196, 0.6);
+        }
+
+        /* Tarjetas con efecto 3D */
+        .card-3d {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+
+        .card-3d:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Timeline mejorada */
+        .timeline-dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4ECDC4, #2BB8B1);
+            box-shadow: 0 0 0 8px rgba(78, 205, 196, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        .timeline-line {
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, #4ECDC4, #2BB8B1);
+            top: 0;
+            bottom: 0;
+            left: 10px;
+        }
+
+        /* Animación de entrada */
+        .fade-in-up {
+            animation: slideUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+
+        /* Logo placeholders mejorados */
+        .logo-placeholder {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.1) 100%);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .logo-placeholder:hover {
+            border-color: #4ECDC4;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3);
+        }
+
+        /* Sección de color distintivo */
+        .section-colored {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-colored::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            top: -50%;
+            left: -50%;
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Texto con gradiente */
+        .text-gradient {
+            background: linear-gradient(135deg, #4ECDC4 0%, #7EDDD7 50%, #4ECDC4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Botones mejorados */
+        .btn-modern {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-modern::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-modern:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-modern span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Scroll smooth */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Stats counter */
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Hero Section Simplificado -->
+    <section class="bg-white py-12 md:py-20 lg:py-32">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12 md:mb-16">
+                    <!-- Logo Real -->
+                    <div class="mb-6 md:mb-8">
+                        <img src="plantilla/Asset 1@4x.png" alt="Ubivet Logo" class="h-20 md:h-24 lg:h-32 mx-auto">
+                    </div>
+
+                    <!-- Título -->
+                    <h1 class="text-3xl md:text-5xl lg:text-7xl font-black text-gray-900 mb-4 md:mb-6 leading-tight px-2">
+                        Lanzamiento Oficial
+                        <br/>
+                        <span class="text-vet-teal">Ubivet 2025</span>
+                    </h1>
+
+                    <p class="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 md:mb-12 max-w-3xl mx-auto px-4">
+                        El evento que revoluciona el cuidado veterinario en Chile
+                    </p>
+                </div>
+
+                <!-- Countdown Limpio -->
+                <div class="mb-12 md:mb-16">
+                    <p class="text-center text-xl md:text-2xl font-bold text-gray-800 mb-6 md:mb-8 px-4">
+                        El evento comienza en:
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:gap-6 max-w-4xl mx-auto">
+                        <div class="bg-gradient-to-br from-vet-teal to-vet-teal-dark rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 text-center shadow-lg hover:shadow-2xl transition-all">
+                            <div id="days" class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2">00</div>
+                            <div class="text-xs md:text-sm lg:text-base uppercase text-white/90 font-semibold">Días</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-vet-teal to-vet-teal-dark rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 text-center shadow-lg hover:shadow-2xl transition-all">
+                            <div id="hours" class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2">00</div>
+                            <div class="text-xs md:text-sm lg:text-base uppercase text-white/90 font-semibold">Horas</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-vet-teal to-vet-teal-dark rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 text-center shadow-lg hover:shadow-2xl transition-all">
+                            <div id="minutes" class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2">00</div>
+                            <div class="text-xs md:text-sm lg:text-base uppercase text-white/90 font-semibold">Minutos</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-vet-teal to-vet-teal-dark rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 text-center shadow-lg hover:shadow-2xl transition-all">
+                            <div id="seconds" class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2">00</div>
+                            <div class="text-xs md:text-sm lg:text-base uppercase text-white/90 font-semibold">Segundos</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTAs -->
+                <div class="flex flex-col md:flex-row gap-3 md:gap-4 justify-center items-center px-4">
+                    <a href="#detalles" class="w-full md:w-auto bg-gradient-to-r from-vet-teal to-vet-teal-dark text-white px-8 md:px-10 py-4 rounded-full text-base md:text-lg font-bold hover:shadow-2xl transition-all text-center">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Ver Detalles
+                    </a>
+                    <a href="#cronograma" class="w-full md:w-auto bg-white text-vet-teal border-2 border-vet-teal px-8 md:px-10 py-4 rounded-full text-base md:text-lg font-bold hover:bg-vet-teal hover:text-white transition-all text-center">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        Ver Cronograma
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-teal-50 via-cyan-50 to-teal-50 border-t border-b border-vet-teal/20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto text-center">
+                <div class="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl md:rounded-3xl border-2 border-vet-teal/30 shadow-lg hover:shadow-xl transition-all">
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-black text-vet-teal mb-2">50+</div>
+                    <p class="text-gray-700 text-sm md:text-base lg:text-lg font-semibold leading-tight">Veterinarias Participantes</p>
+                </div>
+                <div class="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl md:rounded-3xl border-2 border-vet-teal-light/30 shadow-lg hover:shadow-xl transition-all">
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-black text-vet-teal-light mb-2">30+</div>
+                    <p class="text-gray-700 text-sm md:text-base lg:text-lg font-semibold leading-tight">Empresas Pet Friendly</p>
+                </div>
+                <div class="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl md:rounded-3xl border-2 border-vet-teal-dark/30 shadow-lg hover:shadow-xl transition-all">
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-black text-vet-teal-dark mb-2">500+</div>
+                    <p class="text-gray-700 text-sm md:text-base lg:text-lg font-semibold leading-tight">Asistentes Esperados</p>
+                </div>
+                <div class="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl md:rounded-3xl border-2 border-vet-teal-darker/30 shadow-lg hover:shadow-xl transition-all">
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-black text-vet-teal-darker mb-2">8h</div>
+                    <p class="text-gray-700 text-sm md:text-base lg:text-lg font-semibold leading-tight">De Actividades</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detalles del Evento - Colorido -->
+    <section id="detalles" class="py-12 md:py-20 lg:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16 lg:mb-20">
+                <h2 class="text-3xl md:text-5xl lg:text-7xl font-black mb-4 md:mb-6 px-2">
+                    <span class="text-gradient">Detalles del Evento</span>
+                </h2>
+                <p class="text-lg md:text-xl lg:text-2xl text-gray-600 px-4">
+                    Marca tu calendario
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
+                <!-- Fecha -->
+                <div class="bg-gradient-to-br from-vet-teal to-vet-teal-dark rounded-xl md:rounded-2xl p-6 md:p-8 text-center shadow-lg hover:shadow-2xl transition-all">
+                    <div class="text-xs md:text-sm lg:text-base uppercase text-white/80 font-semibold mb-2 md:mb-3">FECHA</div>
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-1 md:mb-2">15</div>
+                    <div class="text-base md:text-lg lg:text-xl text-white/90 font-medium">Marzo</div>
+                    <div class="text-sm md:text-base lg:text-lg text-white/80 mt-1">2025</div>
+                </div>
+
+                <!-- Hora -->
+                <div class="bg-gradient-to-br from-vet-teal to-vet-teal-dark rounded-xl md:rounded-2xl p-6 md:p-8 text-center shadow-lg hover:shadow-2xl transition-all">
+                    <div class="text-xs md:text-sm lg:text-base uppercase text-white/80 font-semibold mb-2 md:mb-3">HORA</div>
+                    <div class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-1 md:mb-2">10:00</div>
+                    <div class="text-base md:text-lg lg:text-xl text-white/90 font-medium">a 18:00</div>
+                    <div class="text-sm md:text-base lg:text-lg text-white/80 mt-1">Horario Chile</div>
+                </div>
+
+                <!-- Lugar -->
+                <div class="bg-gradient-to-br from-vet-teal to-vet-teal-dark rounded-xl md:rounded-2xl p-6 md:p-8 text-center shadow-lg hover:shadow-2xl transition-all">
+                    <div class="text-xs md:text-sm lg:text-base uppercase text-white/80 font-semibold mb-2 md:mb-3">LUGAR</div>
+                    <div class="text-xl md:text-2xl lg:text-3xl font-black text-white mb-1 md:mb-2 leading-tight">[Nombre del Lugar]</div>
+                    <div class="text-sm md:text-base lg:text-lg text-white/80 mt-1">Iquique, Chile</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cronograma Ultra Moderno -->
+    <section id="cronograma" class="py-12 md:py-20 lg:py-24 bg-gradient-to-br from-teal-50 via-cyan-50 to-teal-50 section-colored">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16 lg:mb-20">
+                <h2 class="text-3xl md:text-5xl lg:text-7xl font-black mb-4 md:mb-6 px-2">
+                    <i class="fas fa-calendar-day text-vet-teal mr-2 md:mr-4"></i>
+                    <span class="text-gradient">Cronograma</span>
+                </h2>
+                <p class="text-lg md:text-xl lg:text-2xl text-gray-700 px-4">
+                    Un día lleno de innovación y conexión
+                </p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="max-w-5xl mx-auto relative">
+                <div class="timeline-line md:left-1/2"></div>
+
+                <!-- Item 1 -->
+                <div class="relative mb-10 md:mb-16 lg:mb-20">
+                    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                        <div class="w-full md:w-1/2 md:text-right">
+                            <div class="bg-white/90 backdrop-blur-sm border-2 border-vet-teal rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all">
+                                <div class="inline-block gradient-teal text-white px-5 py-2 md:px-6 md:py-3 rounded-full font-black text-xl md:text-2xl mb-3 md:mb-4 shadow-lg">
+                                    09:00
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-black mb-2 md:mb-3 text-gray-900">
+                                    <i class="fas fa-door-open text-vet-teal mr-2 md:mr-3"></i>
+                                    Apertura de Puertas
+                                </h3>
+                                <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                                    Recepción de asistentes, registro y welcome kit
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-dot hidden md:block"></div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative mb-10 md:mb-16 lg:mb-20">
+                    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="timeline-dot hidden md:block"></div>
+                        <div class="w-full md:w-1/2">
+                            <div class="bg-white/90 backdrop-blur-sm border-2 border-vet-teal-light rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all">
+                                <div class="inline-block gradient-teal-alt text-white px-5 py-2 md:px-6 md:py-3 rounded-full font-black text-xl md:text-2xl mb-3 md:mb-4 shadow-lg">
+                                    10:00
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-black mb-2 md:mb-3 text-gray-900">
+                                    <i class="fas fa-rocket text-vet-teal-light mr-2 md:mr-3"></i>
+                                    Ceremonia de Inauguración
+                                </h3>
+                                <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                                    ¡Lanzamiento oficial de Ubivet! Palabras de bienvenida y presentación de la plataforma
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative mb-10 md:mb-16 lg:mb-20">
+                    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                        <div class="w-full md:w-1/2 md:text-right">
+                            <div class="card-3d bg-white/90 backdrop-blur-sm border-2 border-vet-teal-dark rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all">
+                                <div class="inline-block gradient-teal-darker text-white px-5 py-2 md:px-6 md:py-3 rounded-full font-black text-xl md:text-2xl mb-3 md:mb-4 shadow-lg">
+                                    11:00
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-black mb-2 md:mb-3 text-gray-900">
+                                    <i class="fas fa-mobile-alt text-vet-teal-dark mr-2 md:mr-3"></i>
+                                    Demo en Vivo
+                                </h3>
+                                <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                                    Demostración interactiva de todas las funciones de Ubivet
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-dot hidden md:block"></div>
+                        <div class="w-full md:w-1/2"></div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="relative mb-10 md:mb-16 lg:mb-20">
+                    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                        <div class="w-full md:w-1/2"></div>
+                        <div class="timeline-dot hidden md:block"></div>
+                        <div class="w-full md:w-1/2">
+                            <div class="card-3d bg-white/90 backdrop-blur-sm border-2 border-vet-teal rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all">
+                                <div class="inline-block gradient-teal text-white px-5 py-2 md:px-6 md:py-3 rounded-full font-black text-xl md:text-2xl mb-3 md:mb-4 shadow-lg">
+                                    12:00
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-black mb-2 md:mb-3 text-gray-900">
+                                    <i class="fas fa-users text-vet-teal mr-2 md:mr-3"></i>
+                                    Panel de Expertos
+                                </h3>
+                                <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                                    Veterinarios y especialistas hablan sobre el futuro del cuidado animal en Chile
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="relative mb-10 md:mb-16 lg:mb-20">
+                    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                        <div class="w-full md:w-1/2 md:text-right">
+                            <div class="card-3d bg-white/90 backdrop-blur-sm border-2 border-vet-teal rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all">
+                                <div class="inline-block gradient-teal text-white px-5 py-2 md:px-6 md:py-3 rounded-full font-black text-xl md:text-2xl mb-3 md:mb-4 shadow-lg">
+                                    13:00
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-black mb-2 md:mb-3 text-gray-900">
+                                    <i class="fas fa-utensils text-vet-teal mr-2 md:mr-3"></i>
+                                    Almuerzo & Networking
+                                </h3>
+                                <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                                    Espacio para conectar con profesionales veterinarios y empresas del sector
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-dot hidden md:block"></div>
+                        <div class="w-full md:w-1/2"></div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="relative mb-10 md:mb-16 lg:mb-20">
+                    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                        <div class="w-full md:w-1/2"></div>
+                        <div class="timeline-dot hidden md:block"></div>
+                        <div class="w-full md:w-1/2">
+                            <div class="card-3d bg-white/90 backdrop-blur-sm border-2 border-vet-teal-light rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all">
+                                <div class="inline-block gradient-teal-alt text-white px-5 py-2 md:px-6 md:py-3 rounded-full font-black text-xl md:text-2xl mb-3 md:mb-4 shadow-lg">
+                                    15:00
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-black mb-2 md:mb-3 text-gray-900">
+                                    <i class="fas fa-handshake text-vet-teal-light mr-2 md:mr-3"></i>
+                                    Firma de Convenios
+                                </h3>
+                                <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                                    Alianzas estratégicas con clínicas veterinarias y veterinarios participantes
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="relative">
+                    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                        <div class="w-full md:w-1/2 md:text-right">
+                            <div class="card-3d bg-white/90 backdrop-blur-sm border-2 border-vet-teal-dark rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all">
+                                <div class="inline-block gradient-teal-darker text-white px-5 py-2 md:px-6 md:py-3 rounded-full font-black text-xl md:text-2xl mb-3 md:mb-4 shadow-lg">
+                                    17:00
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-black mb-2 md:mb-3 text-gray-900">
+                                    <i class="fas fa-glass-cheers text-vet-teal-dark mr-2 md:mr-3"></i>
+                                    Cierre y Brindis
+                                </h3>
+                                <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                                    Celebración del lanzamiento oficial de Ubivet 🎉
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-dot hidden md:block"></div>
+                        <div class="w-full md:w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación Ultra Visual -->
+    <section id="ubicacion" class="py-24 bg-gradient-to-br from-teal-50 via-cyan-50 to-teal-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-7xl font-black mb-6">
+                    <i class="fas fa-map-marked-alt text-vet-teal mr-4"></i>
+                    <span class="text-gradient">Ubicación</span>
+                </h2>
+                <p class="text-2xl text-gray-700">
+                    Te esperamos en
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="card-3d bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border-2 border-vet-teal/30">
+                    <!-- Placeholder para foto del lugar -->
+                    <div class="relative h-96 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
+                        <div class="text-center z-10">
+                            <i class="fas fa-image text-gray-400 text-8xl mb-6"></i>
+                            <p class="text-gray-600 text-2xl font-bold">Foto del Lugar del Evento</p>
+                            <p class="text-gray-500 text-lg mt-2">Próximamente</p>
+                        </div>
+                    </div>
+
+                    <div class="p-10 md:p-16">
+                        <div class="grid md:grid-cols-2 gap-12">
+                            <div>
+                                <h3 class="text-4xl font-black text-gray-900 mb-6">
+                                    [Nombre del Lugar]
+                                </h3>
+                                <div class="space-y-4 text-lg">
+                                    <p class="flex items-center gap-4 text-gray-700">
+                                        <i class="fas fa-map-marker-alt text-vet-teal text-2xl w-8"></i>
+                                        <span>[Dirección completa, Iquique]</span>
+                                    </p>
+                                    <p class="flex items-center gap-4 text-gray-700">
+                                        <i class="fas fa-phone text-vet-teal-light text-2xl w-8"></i>
+                                        <span>[Teléfono de contacto]</span>
+                                    </p>
+                                    <p class="flex items-center gap-4 text-gray-700">
+                                        <i class="fas fa-parking text-vet-teal-dark text-2xl w-8"></i>
+                                        <span>Estacionamiento disponible</span>
+                                    </p>
+                                    <p class="flex items-center gap-4 text-gray-700">
+                                        <i class="fas fa-wheelchair text-vet-teal-darker text-2xl w-8"></i>
+                                        <span>Acceso universal</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <!-- Placeholder para mapa -->
+                                <div class="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl h-80 flex items-center justify-center border-2 border-vet-teal/30">
+                                    <div class="text-center">
+                                        <i class="fas fa-map text-gray-400 text-6xl mb-4"></i>
+                                        <p class="text-gray-700 text-xl font-bold">Mapa Interactivo</p>
+                                        <p class="text-gray-600 mt-2">Google Maps</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-12 text-center">
+                            <a href="#" class="btn-modern inline-block gradient-teal px-12 py-5 rounded-full text-xl font-black hover:scale-110 transition-all shadow-2xl text-white">
+                                <span>
+                                    <i class="fas fa-directions mr-2 md:mr-3"></i>
+                                    Cómo Llegar
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Principal -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-7xl font-black mb-6">
+                    <span class="text-gradient">Sponsor Principal</span>
+                </h2>
+                <p class="text-2xl text-gray-600">
+                    Haciendo posible este gran evento
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="card-3d bg-gradient-to-br from-vet-teal/5 via-white to-vet-teal-light/5 rounded-2xl md:rounded-3xl p-16 shadow-2xl text-center border-4 border-vet-teal hover:border-vet-teal-dark transition-all">
+                    <!-- Placeholder para logo del sponsor -->
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl md:rounded-3xl h-80 mb-10 flex items-center justify-center border-2 border-vet-teal/20">
+                        <div>
+                            <i class="fas fa-building text-vet-teal text-8xl mb-6"></i>
+                            <p class="text-gray-700 text-2xl font-bold">Logo del Sponsor Principal</p>
+                        </div>
+                    </div>
+                    <h3 class="text-5xl font-black text-gray-900 mb-6">
+                        [Nombre del Sponsor]
+                    </h3>
+                    <p class="text-gray-700 text-xl leading-relaxed font-medium">
+                        [Descripción breve del sponsor y su compromiso con el evento. Explicar cómo su apoyo hace posible la realización de este lanzamiento histórico.]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entidades Colaboradoras -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-7xl font-black mb-6">
+                    <i class="fas fa-handshake text-vet-teal-light mr-4"></i>
+                    <span class="text-gradient">Colaboradores</span>
+                </h2>
+                <p class="text-2xl text-gray-600">
+                    Organizaciones que apoyan nuestro lanzamiento
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+                <!-- Colaborador 1-4 -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 rounded-2xl md:rounded-3xl p-6 md:p-8 flex items-center justify-center card-3d h-48 hover:border-vet-teal transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-building text-gray-400 text-5xl mb-3"></i>
+                        <p class="text-gray-600 text-sm font-semibold">Colaborador 1</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 rounded-2xl md:rounded-3xl p-6 md:p-8 flex items-center justify-center card-3d h-48 hover:border-vet-teal transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-building text-gray-400 text-5xl mb-3"></i>
+                        <p class="text-gray-600 text-sm font-semibold">Colaborador 2</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 rounded-2xl md:rounded-3xl p-6 md:p-8 flex items-center justify-center card-3d h-48 hover:border-vet-teal transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-building text-gray-400 text-5xl mb-3"></i>
+                        <p class="text-gray-600 text-sm font-semibold">Colaborador 3</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 rounded-2xl md:rounded-3xl p-6 md:p-8 flex items-center justify-center card-3d h-48 hover:border-vet-teal transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-building text-gray-400 text-5xl mb-3"></i>
+                        <p class="text-gray-600 text-sm font-semibold">Colaborador 4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empresas Participantes -->
+    <section class="py-24 bg-gradient-to-br from-teal-50 via-cyan-50 to-teal-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-7xl font-black mb-6">
+                    <i class="fas fa-briefcase text-vet-teal-dark mr-4"></i>
+                    <span class="text-gradient">Empresas Participantes</span>
+                </h2>
+                <p class="text-2xl text-gray-700">
+                    Empresas Pet Friendly de nuestra comunidad
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6 max-w-6xl mx-auto">
+                <!-- Empresas 1-10 -->
+                <div class="bg-white/80 backdrop-blur-sm border-2 border-vet-teal/30 rounded-2xl p-6 flex items-center justify-center card-3d h-36 hover:border-vet-teal hover:shadow-lg transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-store text-vet-teal text-3xl mb-2"></i>
+                        <p class="text-gray-700 text-xs font-semibold">Empresa 1</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm border-2 border-vet-teal/30 rounded-2xl p-6 flex items-center justify-center card-3d h-36 hover:border-vet-teal hover:shadow-lg transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-store text-vet-teal text-3xl mb-2"></i>
+                        <p class="text-gray-700 text-xs font-semibold">Empresa 2</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm border-2 border-vet-teal/30 rounded-2xl p-6 flex items-center justify-center card-3d h-36 hover:border-vet-teal hover:shadow-lg transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-store text-vet-teal text-3xl mb-2"></i>
+                        <p class="text-gray-700 text-xs font-semibold">Empresa 3</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm border-2 border-vet-teal/30 rounded-2xl p-6 flex items-center justify-center card-3d h-36 hover:border-vet-teal hover:shadow-lg transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-store text-vet-teal text-3xl mb-2"></i>
+                        <p class="text-gray-700 text-xs font-semibold">Empresa 4</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm border-2 border-vet-teal/30 rounded-2xl p-6 flex items-center justify-center card-3d h-36 hover:border-vet-teal hover:shadow-lg transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-store text-vet-teal text-3xl mb-2"></i>
+                        <p class="text-gray-700 text-xs font-semibold">Empresa 5</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm border-2 border-vet-teal/30 rounded-2xl p-6 flex items-center justify-center card-3d h-36 hover:border-vet-teal hover:shadow-lg transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-store text-vet-teal text-3xl mb-2"></i>
+                        <p class="text-gray-700 text-xs font-semibold">Empresa 6</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm border-2 border-vet-teal/30 rounded-2xl p-6 flex items-center justify-center card-3d h-36 hover:border-vet-teal hover:shadow-lg transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-store text-vet-teal text-3xl mb-2"></i>
+                        <p class="text-gray-700 text-xs font-semibold">Empresa 7</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm border-2 border-vet-teal/30 rounded-2xl p-6 flex items-center justify-center card-3d h-36 hover:border-vet-teal hover:shadow-lg transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-store text-vet-teal text-3xl mb-2"></i>
+                        <p class="text-gray-700 text-xs font-semibold">Empresa 8</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm border-2 border-vet-teal/30 rounded-2xl p-6 flex items-center justify-center card-3d h-36 hover:border-vet-teal hover:shadow-lg transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-store text-vet-teal text-3xl mb-2"></i>
+                        <p class="text-gray-700 text-xs font-semibold">Empresa 9</p>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm border-2 border-vet-teal/30 rounded-2xl p-6 flex items-center justify-center card-3d h-36 hover:border-vet-teal hover:shadow-lg transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-store text-vet-teal text-3xl mb-2"></i>
+                        <p class="text-gray-700 text-xs font-semibold">Empresa 10</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Veterinarias Participantes -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-7xl font-black mb-6">
+                    <i class="fas fa-clinic-medical text-vet-teal-darker mr-4"></i>
+                    <span class="text-gradient">Clínicas Participantes</span>
+                </h2>
+                <p class="text-2xl text-gray-600">
+                    Comprometidas con el cuidado de nuestras mascotas
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+                <!-- Veterinaria 1-6 -->
+                <div class="card-3d bg-gradient-to-br from-vet-teal/5 to-white border-2 border-vet-teal/40 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all">
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl h-56 mb-6 flex items-center justify-center border-2 border-gray-200">
+                        <div class="text-center">
+                            <i class="fas fa-hospital text-gray-400 text-6xl mb-3"></i>
+                            <p class="text-gray-600 text-sm font-semibold">Logo Veterinaria</p>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-900 mb-3">
+                        [Nombre Veterinaria]
+                    </h3>
+                    <p class="text-vet-teal text-sm mb-3 flex items-center gap-2 font-semibold">
+                        <i class="fas fa-map-marker-alt"></i>
+                        [Ubicación, Iquique]
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        [Breve descripción de servicios y especialidades]
+                    </p>
+                </div>
+
+                <div class="card-3d bg-gradient-to-br from-vet-teal-light/5 to-white border-2 border-vet-teal-light/40 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all">
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl h-56 mb-6 flex items-center justify-center border-2 border-gray-200">
+                        <div class="text-center">
+                            <i class="fas fa-hospital text-gray-400 text-6xl mb-3"></i>
+                            <p class="text-gray-600 text-sm font-semibold">Logo Veterinaria</p>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-900 mb-3">
+                        [Nombre Veterinaria]
+                    </h3>
+                    <p class="text-vet-teal-light text-sm mb-3 flex items-center gap-2 font-semibold">
+                        <i class="fas fa-map-marker-alt"></i>
+                        [Ubicación, Iquique]
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        [Breve descripción de servicios y especialidades]
+                    </p>
+                </div>
+
+                <div class="card-3d bg-gradient-to-br from-vet-teal-dark/5 to-white border-2 border-vet-teal-dark/40 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all">
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl h-56 mb-6 flex items-center justify-center border-2 border-gray-200">
+                        <div class="text-center">
+                            <i class="fas fa-hospital text-gray-400 text-6xl mb-3"></i>
+                            <p class="text-gray-600 text-sm font-semibold">Logo Veterinaria</p>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-900 mb-3">
+                        [Nombre Veterinaria]
+                    </h3>
+                    <p class="text-vet-teal-dark text-sm mb-3 flex items-center gap-2 font-semibold">
+                        <i class="fas fa-map-marker-alt"></i>
+                        [Ubicación, Iquique]
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        [Breve descripción de servicios y especialidades]
+                    </p>
+                </div>
+
+                <div class="card-3d bg-gradient-to-br from-vet-teal/5 to-white border-2 border-vet-teal/40 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all">
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl h-56 mb-6 flex items-center justify-center border-2 border-gray-200">
+                        <div class="text-center">
+                            <i class="fas fa-hospital text-gray-400 text-6xl mb-3"></i>
+                            <p class="text-gray-600 text-sm font-semibold">Logo Veterinaria</p>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-900 mb-3">
+                        [Nombre Veterinaria]
+                    </h3>
+                    <p class="text-vet-teal-darker text-sm mb-3 flex items-center gap-2 font-semibold">
+                        <i class="fas fa-map-marker-alt"></i>
+                        [Ubicación, Iquique]
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        [Breve descripción de servicios y especialidades]
+                    </p>
+                </div>
+
+                <div class="card-3d bg-gradient-to-br from-vet-teal/5 to-white border-2 border-vet-teal/40 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all">
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl h-56 mb-6 flex items-center justify-center border-2 border-gray-200">
+                        <div class="text-center">
+                            <i class="fas fa-hospital text-gray-400 text-6xl mb-3"></i>
+                            <p class="text-gray-600 text-sm font-semibold">Logo Veterinaria</p>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-900 mb-3">
+                        [Nombre Veterinaria]
+                    </h3>
+                    <p class="text-vet-teal text-sm mb-3 flex items-center gap-2 font-semibold">
+                        <i class="fas fa-map-marker-alt"></i>
+                        [Ubicación, Iquique]
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        [Breve descripción de servicios y especialidades]
+                    </p>
+                </div>
+
+                <div class="card-3d bg-gradient-to-br from-vet-teal-light/5 to-white border-2 border-vet-teal-light/40 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all">
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl h-56 mb-6 flex items-center justify-center border-2 border-gray-200">
+                        <div class="text-center">
+                            <i class="fas fa-hospital text-gray-400 text-6xl mb-3"></i>
+                            <p class="text-gray-600 text-sm font-semibold">Logo Veterinaria</p>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-900 mb-3">
+                        [Nombre Veterinaria]
+                    </h3>
+                    <p class="text-vet-teal-light text-sm mb-3 flex items-center gap-2 font-semibold">
+                        <i class="fas fa-map-marker-alt"></i>
+                        [Ubicación, Iquique]
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        [Breve descripción de servicios y especialidades]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-16 md:py-24 lg:py-32 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <!-- Tarjeta principal -->
+                <div class="bg-gradient-to-br from-vet-teal/10 via-white to-vet-teal-light/10 rounded-2xl md:rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl border-2 border-vet-teal/30 text-center">
+                    <div class="mb-8 md:mb-10">
+                        <img src="plantilla/Asset 1@4x.png" alt="Ubivet Logo" class="h-16 md:h-20 mx-auto">
+                    </div>
+
+                    <h2 class="text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 text-gray-900 leading-tight px-2">
+                        Únete al Evento
+                        <br/>
+                        <span class="text-vet-teal">Descarga Ubivet</span>
+                    </h2>
+
+                    <p class="text-lg md:text-xl lg:text-2xl mb-8 md:mb-12 max-w-3xl mx-auto text-gray-700 font-medium px-4">
+                        Descarga la app ahora y descubre el futuro del cuidado veterinario
+                    </p>
+
+                    <!-- App Store Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center max-w-2xl mx-auto">
+                        <a href="https://apps.apple.com/cl/app/ubivet/id6748315820" target="_blank" rel="noopener noreferrer"
+                           class="w-full sm:w-auto bg-gradient-to-r from-vet-teal to-vet-teal-dark text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg font-bold hover:shadow-2xl hover:scale-105 transition-all inline-flex items-center justify-center gap-3">
+                            <i class="fab fa-apple text-2xl md:text-3xl"></i>
+                            <div class="text-left">
+                                <div class="text-xs opacity-90">Descargar en</div>
+                                <div class="text-base md:text-lg font-black">App Store</div>
+                            </div>
+                        </a>
+
+                        <a href="https://play.google.com/store/apps/details?id=com.neering.ubivet&pcampaignid=web_share" target="_blank" rel="noopener noreferrer"
+                           class="w-full sm:w-auto bg-gradient-to-r from-vet-teal-dark to-vet-teal-darker text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg font-bold hover:shadow-2xl hover:scale-105 transition-all inline-flex items-center justify-center gap-3">
+                            <i class="fab fa-google-play text-2xl md:text-3xl"></i>
+                            <div class="text-left">
+                                <div class="text-xs opacity-90">Disponible en</div>
+                                <div class="text-base md:text-lg font-black">Google Play</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Stats pequeños -->
+                    <div class="grid grid-cols-3 gap-4 md:gap-8 mt-10 md:mt-12 pt-8 md:pt-10 border-t-2 border-vet-teal/20 max-w-2xl mx-auto">
+                        <div>
+                            <div class="text-2xl md:text-3xl font-black text-vet-teal mb-1">50+</div>
+                            <p class="text-xs md:text-sm text-gray-600 font-semibold">Veterinarias</p>
+                        </div>
+                        <div>
+                            <div class="text-2xl md:text-3xl font-black text-vet-teal-light mb-1">24/7</div>
+                            <p class="text-xs md:text-sm text-gray-600 font-semibold">Disponible</p>
+                        </div>
+                        <div>
+                            <div class="text-2xl md:text-3xl font-black text-vet-teal-dark mb-1">100%</div>
+                            <p class="text-xs md:text-sm text-gray-600 font-semibold">Gratis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-12 border-t-4 border-vet-teal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <!-- Logo Blanco Ubivet -->
+                <div class="mb-6">
+                    <img src="plantilla/Asset 3@4x.png" alt="Ubivet Logo" class="h-16 md:h-20 mx-auto opacity-90 hover:opacity-100 transition-opacity">
+                </div>
+                <p class="text-gray-300 text-base md:text-lg font-medium leading-relaxed">&copy; 2025 Ubivet. Todos los derechos reservados.</p>
+            </div>
+            <div class="flex justify-center gap-6 md:gap-8">
+                <a href="#" class="text-gray-300 hover:text-vet-teal transition-all transform hover:scale-125">
+                    <i class="fab fa-facebook text-3xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-vet-teal-light transition-all transform hover:scale-125">
+                    <i class="fab fa-instagram text-3xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-vet-teal-light transition-all transform hover:scale-125">
+                    <i class="fab fa-tiktok text-3xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-vet-teal-dark transition-all transform hover:scale-125">
+                    <i class="fab fa-linkedin text-3xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para Countdown -->
+    <script>
+        // Establecer la fecha del evento (CAMBIAR ESTA FECHA)
+        const eventDate = new Date('2025-03-15T10:00:00').getTime();
+
+        // Actualizar countdown cada segundo
+        const countdown = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            // Cálculos de tiempo
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Mostrar resultado
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+            // Si el countdown termina
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }, 1000);
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animaciones al scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos con clase fade-in-up
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
