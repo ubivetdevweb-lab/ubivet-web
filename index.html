@@ -168,23 +168,23 @@
             <div class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
                 <!-- Contenido del banner -->
                 <div class="flex items-center gap-4 md:gap-6 text-center md:text-left">
-                    <!-- Icono animado -->
-                    <div class="hidden md:block bg-white/20 backdrop-blur-sm rounded-full p-4 animate-bounce">
-                        <i class="fas fa-rocket text-white text-3xl"></i>
+                    <!-- Icono -->
+                    <div class="hidden md:block bg-white/20 backdrop-blur-sm rounded-full p-4">
+                        <i class="fas fa-heart text-white text-3xl"></i>
                     </div>
 
                     <!-- Texto -->
                     <div>
                         <h2 class="text-xl md:text-3xl font-black text-white mb-1 md:mb-2">
-                            <i class="fas fa-calendar-star mr-2 md:hidden"></i>
-                            ¡Lanzamiento Oficial 2026!
+                            <i class="fas fa-play-circle mr-2 md:hidden"></i>
+                            ¡Revive el Lanzamiento Oficial!
                         </h2>
                         <p class="text-sm md:text-lg text-white/90 font-medium">
-                            <i class="fas fa-map-marker-alt mr-1"></i>
-                            Domingo 25 de Enero • 17:00-20:00 • Playa Brava, Iquique
+                            <i class="fas fa-check-circle mr-1"></i>
+                            25 de Enero 2026 • Playa Brava, Iquique
                         </p>
                         <p class="text-xs md:text-sm text-white/80 mt-1">
-                            Región de Tarapacá • Entrada Gratuita
+                            ¡Gracias a todos los que nos acompañaron!
                         </p>
                     </div>
                 </div>
@@ -201,35 +201,10 @@
                                 color: white !important;
                             }
                         </style>
-                        <i class="fas fa-ticket-alt mr-2"></i>
-                        Ver Detalles del Evento
+                        <i class="fas fa-images mr-2"></i>
+                        Ver Fotos y Agradecimientos
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
-                </div>
-            </div>
-
-            <!-- Countdown compacto -->
-            <div class="mt-4 pt-4 border-t border-white/20">
-                <div class="flex items-center justify-center gap-2 md:gap-4 text-white">
-                    <span class="text-xs md:text-sm font-semibold uppercase tracking-wider">El evento comienza en:</span>
-                    <div class="flex gap-2 md:gap-3">
-                        <div class="bg-white/20 backdrop-blur-sm rounded-lg px-2 md:px-3 py-1 md:py-2 min-w-[50px] md:min-w-[60px]">
-                            <div id="banner-days" class="text-lg md:text-2xl font-black">00</div>
-                            <div class="text-[10px] md:text-xs uppercase opacity-90">Días</div>
-                        </div>
-                        <div class="bg-white/20 backdrop-blur-sm rounded-lg px-2 md:px-3 py-1 md:py-2 min-w-[50px] md:min-w-[60px]">
-                            <div id="banner-hours" class="text-lg md:text-2xl font-black">00</div>
-                            <div class="text-[10px] md:text-xs uppercase opacity-90">Hrs</div>
-                        </div>
-                        <div class="bg-white/20 backdrop-blur-sm rounded-lg px-2 md:px-3 py-1 md:py-2 min-w-[50px] md:min-w-[60px]">
-                            <div id="banner-minutes" class="text-lg md:text-2xl font-black">00</div>
-                            <div class="text-[10px] md:text-xs uppercase opacity-90">Min</div>
-                        </div>
-                        <div class="bg-white/20 backdrop-blur-sm rounded-lg px-2 md:px-3 py-1 md:py-2 min-w-[50px] md:min-w-[60px]">
-                            <div id="banner-seconds" class="text-lg md:text-2xl font-black">00</div>
-                            <div class="text-[10px] md:text-xs uppercase opacity-90">Seg</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -334,39 +309,6 @@
                 document.getElementById('loading-indicator').style.display = 'none';
             }, 1000);
         });
-
-        // 🎉 COUNTDOWN BANNER EVENTO LANZAMIENTO
-        (function() {
-            const eventDate = new Date('2026-01-25T17:00:00').getTime();
-
-            function updateCountdown() {
-                const now = new Date().getTime();
-                const distance = eventDate - now;
-
-                if (distance < 0) {
-                    // Evento terminado
-                    document.getElementById('banner-days').textContent = '00';
-                    document.getElementById('banner-hours').textContent = '00';
-                    document.getElementById('banner-minutes').textContent = '00';
-                    document.getElementById('banner-seconds').textContent = '00';
-                    return;
-                }
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById('banner-days').textContent = String(days).padStart(2, '0');
-                document.getElementById('banner-hours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('banner-minutes').textContent = String(minutes).padStart(2, '0');
-                document.getElementById('banner-seconds').textContent = String(seconds).padStart(2, '0');
-            }
-
-            // Actualizar cada segundo
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-        })();
 
         // Monitorear carga de componentes
         let loadedComponents = 0;
